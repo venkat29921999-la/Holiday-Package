@@ -2321,3 +2321,35 @@ body.lock { overflow: hidden; }
   .header-actions .btn-login,
   #loginBtn { display: none !important; }
 }
+
+/* ==========================================================================
+   DATE PICKER ICON -> WEBP (add-on only)
+   Replaces the browser's built-in calendar icon (a data:image/svg+xml)
+   with a .webp image. Needs Assest/calendar-icon.webp and
+   Assest/calendar-icon-light.webp next to your other images.
+   Nothing above this block is edited.
+   ========================================================================== */
+input[type="date"]::-webkit-calendar-picker-indicator {
+  background: url("Assest/calendar-icon.webp") center / 16px 16px no-repeat;
+  cursor: pointer;
+  opacity: 1;
+}
+/* contact form date box sits on a dark background -> light icon */
+.ct-grp input[type="date"]::-webkit-calendar-picker-indicator {
+  background: url("Assest/calendar-icon-light.webp") center / 16px 16px no-repeat;
+}
+
+
+/* ==========================================================================
+   DESTINATIONS - MOBILE / TABLET FIX (add-on only)
+   On screens under 992px the old script slides the cards in from the right
+   (translateX 80px) and the animation gets stuck, so every card sits 80px
+   to the right and is cut off. This keeps the cards in place, full width.
+   Nothing above this block is edited.
+   ========================================================================== */
+@media (max-width: 991px) {
+  .d-card { transform: none !important; opacity: 1 !important; translate: none !important; }
+}
+@media (max-width: 991px) and (hover: hover) {
+  .d-card:hover { transform: translateY(-8px) !important; }
+}
