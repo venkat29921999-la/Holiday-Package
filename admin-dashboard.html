@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin dashboard | Stackly Holidays</title>
+<meta name="theme-color" content="#0b1f2e">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"><link rel="stylesheet" href="auth.css"><link rel="stylesheet" href="dash-premium.css">
+<script>try{var s=JSON.parse(localStorage.getItem('stk_session')||'null');if(!s||s.role!=='admin')location.replace(s&&s.role==='admin'?'admin-dashboard.html':s?'user-dashboard.html':'login.html')}catch(e){}</script>
+<style>
+/* fixed sidebar: always fits the screen, no inner scrollbar (desktop). The mobile drawer is unchanged. */
+@media (min-width: 1025px) {
+  .d-side { overflow: hidden; gap: clamp(8px, 1.5vh, 18px); padding-block: clamp(12px, 2.2vh, 24px); }
+  .d-side .logo { padding-bottom: clamp(8px, 1.4vh, 16px); }
+  .d-nav { gap: clamp(2px, .5vh, 6px); }
+  .d-nav button { padding-block: clamp(.45rem, 1.2vh, .85rem); }
+  .d-promo { min-height: clamp(96px, 14vh, 140px); }
+  /* pin the sidebar to the screen (sticky is broken by overflow on html/body) */
+  .d-side { position: fixed; left: 0; top: 0; bottom: 0; width: 270px; height: 100vh; height: 100dvh; }
+  .d-main { grid-column: 2; }
+}
+@media (min-width: 1025px) and (max-height: 760px) { .d-promo { display: none; } }
+@media (min-width: 1025px) and (max-height: 600px) { .d-badge, .d-label { display: none; } }
+/* user name chip in the top bar */
+.d-user { display: flex; align-items: center; gap: 10px; flex: none; min-width: 0; max-width: 260px; padding: 5px 16px 5px 5px; border-radius: 99px; background: #fff; box-shadow: 0 10px 24px -12px rgba(var(--ocean-rgb), .4); transition: transform .4s var(--out), box-shadow .4s; }
+.d-user:hover { transform: translateY(-2px); box-shadow: 0 16px 28px -14px rgba(var(--ocean-rgb), .5); }
+.d-user .av { width: 38px; height: 38px; font-size: 1.2rem; }
+.d-user div { min-width: 0; }
+.d-user b { display: block; font-size: .92rem; line-height: 1.2; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.d-user small { display: block; font-size: .68rem; line-height: 1.3; letter-spacing: .1em; text-transform: uppercase; opacity: .6; }
+@media (max-width: 575px) { .d-user { display: none; } }
+</style>
+</head>
+<body class="d-body" data-page="dash" data-role="admin">
+<div class="d-app">
+  <aside class="d-side" id="dSide" aria-label="Dashboard menu">
+    <a class="logo" href="admin-dashboard.html" aria-label="Stackly Holidays home"><img src="Assest/stackly-logo.webp" alt="Stackly Holidays" width="229" height="58"></a>
+    <span class="d-badge"><i class="fa-solid fa-user-shield"></i> Admin</span>
+    <p class="d-label">Menu</p>
+    <nav class="d-nav" aria-label="Dashboard sections"><button type="button" data-view="overview"><i class="fa-solid fa-gauge-high"></i><span>Overview</span></button><button type="button" data-view="mail"><i class="fa-solid fa-envelope"></i><span>Mailbox</span><span class="cnt mcnt"></span></button><button type="button" data-view="users"><i class="fa-solid fa-users"></i><span>Travellers</span></button><button type="button" data-x="bookings"><i class="fa-solid fa-suitcase-rolling"></i><span>Bookings</span></button><button type="button" data-x="reports"><i class="fa-solid fa-chart-line"></i><span>Reports</span></button></nav>
+    <span class="grow"></span>
+    <a class="d-promo" href="index.html#packages"><img src="Assest/hp9_11zon.webp" alt="" width="640" height="640" loading="lazy"><small>Live on the website</small><b>Explore holiday packages</b><span class="go">View packages <i class="fa-solid fa-arrow-right"></i></span></a>
+    <a class="d-site" href="index.html"><i class="fa-solid fa-house"></i><span>Back to website</span></a>
+    <div class="d-me"><span class="av" id="meAv">?</span><div><b id="meName"></b><small id="meMail"></small></div><button type="button" class="d-out" id="logout" aria-label="Log out" title="Log out"><i class="fa-solid fa-right-from-bracket"></i></button></div>
+  </aside>
+  <div class="d-scrim" id="dScrim"></div>
+  <div class="d-main">
+    <header class="d-top"><button type="button" class="d-burger" id="dBurger" aria-label="Open menu" aria-expanded="false" aria-controls="dSide"><span></span><span></span><span></span></button>
+      <div class="d-title"><small id="dSub">Welcome back</small><h1 id="dH">Overview</h1></div>
+      <div class="d-user" id="dUser"><span class="av" id="hAv">?</span><div><b id="hName"></b><small>Administrator</small></div></div><button type="button" class="d-bell" id="dBell" aria-label="Open inbox"><i class="fa-regular fa-bell"></i><b></b></button></header>
+    <section class="d-view on" data-view="overview">
+      <div class="dash-hero"><img src="Assest/hp1_11zon.webp" alt="" width="1920" height="1080" fetchpriority="high"><span class="eb"><i class="fa-solid fa-user-shield"></i> Admin console</span><h2>Welcome back, <em data-name></em></h2><p>Track bookings, answer travellers and keep every journey running smoothly, all from one calm place.</p><div class="acts"><a class="btn btn-primary" href="404.html"><i class="fa-solid fa-pen"></i><span>Compose an email</span></a><a class="btn btn-ghost" href="404.html"><i class="fa-solid fa-users"></i><span>Manage travellers</span></a></div><div class="dash-chips"><span><i class="fa-solid fa-earth-asia"></i> 85+ destinations</span><span><i class="fa-solid fa-star"></i> 4.9 guest rating</span><span><i class="fa-solid fa-headset"></i> 24/7 support</span></div></div>
+      <div class="sec-head"><div><small>Today</small><h2>Performance at a glance</h2></div><p>Live numbers across travellers, bookings and revenue.</p></div>
+      <div class="d-grid stats"><article class="card stat rise" style="--i:0"><span class="si "><i class="fa-solid fa-users"></i></span><div><b id="stUsers" data-count="5">0</b><span>Registered travellers</span></div></article><article class="card stat rise" style="--i:1"><span class="si b"><i class="fa-solid fa-suitcase-rolling"></i></span><div><b data-count="128">0</b><span>Bookings this year</span></div></article><article class="card stat rise" style="--i:2"><span class="si g"><i class="fa-solid fa-indian-rupee-sign"></i></span><div><b data-count="24" data-pre="₹" data-suf=".6L">0</b><span>Revenue</span></div></article><article class="card stat rise" style="--i:3"><span class="si o"><i class="fa-solid fa-envelope"></i></span><div><b id="stUnread">0</b><span>Unread emails</span></div></article></div>
+      <div class="sec-head"><div><small>Insights</small><h2>Bookings &amp; activity</h2></div><p>How the year is shaping up and what just happened.</p></div>
+      <div class="d-grid cols2">
+        <article class="card rise" style="--i:4"><h3>Bookings this year</h3><div class="chart" id="chart"></div><div class="chart-l" id="chartL"></div></article>
+        <article class="card rise" style="--i:5"><h3>Recent activity</h3><ul class="feed" id="feed"></ul></article>
+      </div>
+      <div class="sec-head"><div><small>Trending now</small><h2>Top destinations this season</h2></div><p>Where travellers are booking most right now.</p></div>
+      <div class="dest-grid"><a class="dcard" href="404.html" style="--i:0"><img src="Assest/hp2_11zon.webp" alt="Maldives sunset with a sailboat" width="800" height="1040" loading="lazy"><span class="tag"><i class="fa-solid fa-fire"></i> Hot</span><h3>Maldives</h3><p>Overwater villas, glowing lagoons.</p><div class="row"><span><b>42</b> bookings</span><span class="go"><i class="fa-solid fa-arrow-right"></i></span></div></a><a class="dcard" href="404.html" style="--i:1"><img src="Assest/hp10_11zon.webp" alt="Bali beach with palm trees at dawn" width="800" height="1040" loading="lazy"><span class="tag"><i class="fa-solid fa-arrow-trend-up"></i> Rising</span><h3>Bali</h3><p>Temples, rice terraces and surf.</p><div class="row"><span><b>31</b> bookings</span><span class="go"><i class="fa-solid fa-arrow-right"></i></span></div></a><a class="dcard" href="404.html" style="--i:2"><img src="Assest/hp11_11zon.webp" alt="Snowy Swiss peaks at sunrise" width="800" height="1040" loading="lazy"><span class="tag"><i class="fa-solid fa-mountain"></i> Popular</span><h3>Switzerland</h3><p>Scenic trains and snow-capped peaks.</p><div class="row"><span><b>27</b> bookings</span><span class="go"><i class="fa-solid fa-arrow-right"></i></span></div></a><a class="dcard" href="404.html" style="--i:3"><img src="Assest/hp15_11zon.webp" alt="Japanese pagoda in front of a rising sun" width="800" height="1040" loading="lazy"><span class="tag"><i class="fa-solid fa-torii-gate"></i> Culture</span><h3>Japan</h3><p>Pagodas, blossoms and bullet trains.</p><div class="row"><span><b>19</b> bookings</span><span class="go"><i class="fa-solid fa-arrow-right"></i></span></div></a></div>
+      <div class="sec-head"><div><small>Stay on top</small><h2>Inbox &amp; shortcuts</h2></div><p>Reply fast and jump to the tools you use most.</p></div>
+      <div class="d-grid cols2 eq">
+        <article class="card rise" style="--i:6"><h3>Latest emails <button type="button" data-view="mail">Open mailbox</button></h3><ul class="mini-mail" id="miniMail"></ul></article>
+        <article class="card rise" style="--i:7"><h3>Quick actions</h3><div class="quick"><button type="button" class="btn btn-dark" data-act="compose"><i class="fa-solid fa-pen"></i><span>Compose an email</span></button><button type="button" class="btn btn-ghost" data-view="users"><i class="fa-solid fa-users"></i><span>Manage travellers</span></button><a class="btn btn-ghost" href="blog.html"><i class="fa-solid fa-pen-nib"></i><span>View the blog</span></a></div></article>
+      </div>
+      <div class="sec-head"><div><small>Operations</small><h2>What needs your attention</h2></div><p>Pipeline, support and tasks for today.</p></div>
+      <div class="d-grid" style="grid-template-columns:repeat(auto-fit,minmax(min(100%,270px),1fr))">
+        <article class="card rise" style="--i:8"><h3>Booking pipeline</h3><div style="margin-bottom:1rem"><div style="display:flex;justify-content:space-between;gap:12px;font-size:.92rem"><span>Enquiries</span><b>72%</b></div><div class="pbar"><i data-w="72"></i></div></div><div style="margin-bottom:1rem"><div style="display:flex;justify-content:space-between;gap:12px;font-size:.92rem"><span>Quotes sent</span><b>58%</b></div><div class="pbar"><i data-w="58"></i></div></div><div style="margin-bottom:1rem"><div style="display:flex;justify-content:space-between;gap:12px;font-size:.92rem"><span>Deposits paid</span><b>41%</b></div><div class="pbar"><i data-w="41"></i></div></div><div style="margin-bottom:1rem"><div style="display:flex;justify-content:space-between;gap:12px;font-size:.92rem"><span>Fully paid</span><b>29%</b></div><div class="pbar"><i data-w="29"></i></div></div></article>
+        <article class="card rise" style="--i:9"><h3>Support snapshot</h3><ul class="feed"><li style="--i:0"><span class="dot"></span><div>18 tickets closed this week<small>Up 12% on last week</small></div></li><li style="--i:1"><span class="dot"></span><div>3 tickets waiting on suppliers<small>Follow up before Friday</small></div></li><li style="--i:2"><span class="dot"></span><div>Average first reply: 14 minutes<small>Best result this quarter</small></div></li><li style="--i:3"><span class="dot"></span><div>98% guest satisfaction<small>Based on post-trip surveys</small></div></li></ul></article>
+        <article class="card rise" style="--i:10"><h3>Today&rsquo;s checklist</h3><ul><li style="display:flex;align-items:center;justify-content:space-between;gap:12px;padding:.75rem 0;border-top:1px solid rgba(var(--ocean-rgb),.08)"><div style="min-width:0">Approve October payouts<small style="display:block;opacity:.55">Finance &middot; shared drive</small></div><span style="white-space:nowrap" class="pill wait">Due Fri</span></li><li style="display:flex;align-items:center;justify-content:space-between;gap:12px;padding:.75rem 0;border-top:1px solid rgba(var(--ocean-rgb),.08)"><div style="min-width:0">Send Maldives honeymoon quote<small style="display:block;opacity:.55">Booking desk</small></div><span style="white-space:nowrap" class="pill wait">Today</span></li><li style="display:flex;align-items:center;justify-content:space-between;gap:12px;padding:.75rem 0;border-top:1px solid rgba(var(--ocean-rgb),.08)"><div style="min-width:0">Publish sunrise blog follow-up<small style="display:block;opacity:.55">Marketing</small></div><span style="white-space:nowrap" class="pill ok">Done</span></li><li style="display:flex;align-items:center;justify-content:space-between;gap:12px;padding:.75rem 0;border-top:1px solid rgba(var(--ocean-rgb),.08)"><div style="min-width:0">Review winter partner rates<small style="display:block;opacity:.55">Partner desk</small></div><span style="white-space:nowrap" class="pill ">Next week</span></li></ul></article>
+      </div>
+    </section>
+    <section class="d-view" data-view="mail"><div class="v-banner"><img src="Assest/hp8_11zon.webp" alt="" width="1600" height="800" loading="lazy"><small>Mailbox</small><h2>Every conversation, one calm inbox</h2><p>Enquiries, payouts and partner updates, all in one place.</p></div><div class="mail">
+  <aside class="m-fold" id="mFold"><button type="button" class="btn btn-primary btn-sm" id="compose"><i class="fa-solid fa-pen"></i><span>Compose</span></button>
+    <button type="button" class="f on" data-f="inbox"><i class="fa-solid fa-inbox"></i>Inbox<span class="n"></span></button>
+    <button type="button" class="f" data-f="starred"><i class="fa-solid fa-star"></i>Starred<span class="n"></span></button>
+    <button type="button" class="f" data-f="sent"><i class="fa-solid fa-paper-plane"></i>Sent<span class="n"></span></button>
+    <button type="button" class="f" data-f="archive"><i class="fa-solid fa-box-archive"></i>Archive<span class="n"></span></button></aside>
+  <section class="m-list"><div class="m-search"><i class="fa-solid fa-magnifying-glass"></i><input id="mSearch" type="search" placeholder="Search emails" aria-label="Search emails"></div><div class="m-items" id="mItems"></div></section>
+  <section class="m-pane" id="mPane"><div class="m-ph" id="mPh"><i class="fa-regular fa-envelope-open"></i><p>Select an email to read it</p></div><div class="m-read" id="mRead" hidden></div></section>
+</div></section>
+    <section class="d-view" data-view="users"><div class="v-banner"><img src="Assest/hp7_11zon.webp" alt="" width="1600" height="800" loading="lazy"><small>Travellers</small><h2>The people behind every journey</h2><p>Everyone who has joined Stackly Holidays, in one tidy directory.</p></div><article class="card"><h3>All travellers</h3><div class="tbl" id="userTbl"></div></article></section>
+
+    <section class="d-view" data-x="bookings"><div class="v-banner"><img src="Assest/hp3_11zon.webp" alt="" width="1600" height="800" loading="lazy"><small>Bookings</small><h2>Every journey, from enquiry to take-off</h2><p>Track deposits, balances and departures.</p></div><div class="d-grid stats"><article class="card stat rise" style="--i:0"><span class="si "><i class="fa-solid fa-suitcase-rolling"></i></span><div><b>128</b><span>Bookings this year</span></div></article><article class="card stat rise" style="--i:1"><span class="si b"><i class="fa-solid fa-hourglass-half"></i></span><div><b>14</b><span>Awaiting payment</span></div></article><article class="card stat rise" style="--i:2"><span class="si g"><i class="fa-solid fa-plane-departure"></i></span><div><b>9</b><span>Departing this month</span></div></article></div><article class="card rise" style="--i:3"><h3>Latest bookings</h3><ul><li style="display:flex;align-items:center;gap:12px;padding:.8rem 0;border-top:1px solid rgba(var(--ocean-rgb),.08)"><div style="min-width:0;flex:1"><b style="display:block">Priya &amp; Rohan &middot; Maldives honeymoon</b><small style="opacity:.6">6 nights &middot; March</small></div><span style="white-space:nowrap" class="pill wait">Quote sent</span></li><li style="display:flex;align-items:center;gap:12px;padding:.8rem 0;border-top:1px solid rgba(var(--ocean-rgb),.08)"><div style="min-width:0;flex:1"><b style="display:block">Rahul Sharma &middot; Santorini group</b><small style="opacity:.6">8 travellers &middot; May</small></div><span style="white-space:nowrap" class="pill ok">Deposit paid</span></li><li style="display:flex;align-items:center;gap:12px;padding:.8rem 0;border-top:1px solid rgba(var(--ocean-rgb),.08)"><div style="min-width:0;flex:1"><b style="display:block">Sneha Pillai &middot; Kyoto in the rain</b><small style="opacity:.6">7 nights &middot; November</small></div><span style="white-space:nowrap" class="pill ok">Fully paid</span></li><li style="display:flex;align-items:center;gap:12px;padding:.8rem 0;border-top:1px solid rgba(var(--ocean-rgb),.08)"><div style="min-width:0;flex:1"><b style="display:block">Vikram Nair &middot; Alps hut-to-hut</b><small style="opacity:.6">5 nights &middot; December</small></div><span style="white-space:nowrap" class="pill ">Enquiry</span></li></ul></article></section>
+    <section class="d-view" data-x="reports"><div class="v-banner"><img src="Assest/hp1_11zon.webp" alt="" width="1600" height="800" loading="lazy"><small>Reports</small><h2>Numbers that tell the story</h2><p>Revenue, popular packages and guest satisfaction.</p></div><div class="d-grid cols2 eq"><article class="card rise" style="--i:0"><h3>Bookings by month</h3><div class="chart"><div class="bar" style="--h:48%;--k:0" data-v="48 bookings"></div><div class="bar" style="--h:62%;--k:1" data-v="62 bookings"></div><div class="bar" style="--h:55%;--k:2" data-v="55 bookings"></div><div class="bar" style="--h:78%;--k:3" data-v="78 bookings"></div><div class="bar" style="--h:90%;--k:4" data-v="90 bookings"></div><div class="bar" style="--h:100%;--k:5" data-v="100 bookings"></div></div><div class="chart-l"><span>May</span><span>Jun</span><span>Jul</span><span>Aug</span><span>Sep</span><span>Oct</span></div></article><article class="card rise" style="--i:1"><h3>Top packages</h3><div style="margin-bottom:1rem"><div style="display:flex;justify-content:space-between;gap:12px;font-size:.92rem"><span>Maldives honeymoon</span><b>42</b></div><div class="pbar"><i data-w="92"></i></div></div><div style="margin-bottom:1rem"><div style="display:flex;justify-content:space-between;gap:12px;font-size:.92rem"><span>Santorini caldera</span><b>35</b></div><div class="pbar"><i data-w="76"></i></div></div><div style="margin-bottom:1rem"><div style="display:flex;justify-content:space-between;gap:12px;font-size:.92rem"><span>Kyoto in the rain</span><b>28</b></div><div class="pbar"><i data-w="61"></i></div></div><div style="margin-bottom:1rem"><div style="display:flex;justify-content:space-between;gap:12px;font-size:.92rem"><span>Alps hut-to-hut</span><b>19</b></div><div class="pbar"><i data-w="41"></i></div></div></article></div></section>
+  </div>
+</div>
+<div class="modal" id="cmp" hidden role="dialog" aria-modal="true" aria-labelledby="cT"><div class="modal-box"><h3 id="cT">New email <button type="button" data-close aria-label="Close"><i class="fa-solid fa-xmark"></i></button></h3><form id="cForm" novalidate>
+<div class="fld"><input id="cTo" type="email" placeholder=" " autocomplete="off"><label for="cTo">To</label></div>
+<div class="fld"><input id="cSub" type="text" placeholder=" " autocomplete="off"><label for="cSub">Subject</label></div>
+<label class="sr" for="cBody">Message</label><textarea id="cBody" placeholder="Write your message…"></textarea>
+<p id="cErr" role="alert" style="color:#a8262b;min-height:1.4em;font-size:.9rem;margin-bottom:.6rem"></p>
+<button type="submit" class="btn btn-primary btn-block"><i class="fa-solid fa-paper-plane"></i><span>Send email</span></button></form></div></div>
+<div class="toasts" id="toasts" aria-live="polite"></div>
+<script src="auth.js"></script>
+<script>
+/* fill the top-bar user chip from the logged-in session */
+(function () {
+  try {
+    var s = JSON.parse(localStorage.getItem('stk_session') || 'null');
+    if (!s) return;
+    var n = document.getElementById('hName'), a = document.getElementById('hAv');
+    if (n) n.textContent = s.name || '';
+    if (a) a.textContent = (s.name || '?').trim().charAt(0).toUpperCase();
+  } catch (e) {}
+})();
+</script>
+<script>
+/* extra menu pages (Bookings/Reports or Wishlist/Rewards) - separate from auth.js */
+(function () {
+  var d = document, b = d.body;
+  var $ = function (s) { return d.querySelector(s); }, A = function (s) { return Array.prototype.slice.call(d.querySelectorAll(s)); };
+  var T = {bookings:['Manage','Bookings'],reports:['Insights','Reports'],wishlist:['Saved','Wishlist'],rewards:['Perks','Rewards']};
+  A('.d-nav button[data-x]').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var v = btn.getAttribute('data-x');
+      A('.d-view').forEach(function (s) { s.classList.toggle('on', s.getAttribute('data-x') === v); });
+      A('.d-nav button').forEach(function (n) { var on = n === btn; n.classList.toggle('on', on); if (on) n.setAttribute('aria-current', 'page'); else n.removeAttribute('aria-current'); });
+      $('#dSub').textContent = T[v][0]; $('#dH').textContent = T[v][1];
+      b.classList.remove('menu-open', 'lock'); $('#dBurger').classList.remove('open'); $('#dBurger').setAttribute('aria-expanded', 'false');
+      window.scrollTo({ top: 0 });
+    });
+  });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 - Page not found | Stackly Holidays</title>
+  <meta name="description" content="This page could not be found. Head back to Stackly Holidays and keep exploring.">
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#0b1f2e">
+
+  <!-- Fonts (same as the main site) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="404.css">
+</head>
+<body>
+
+  <!-- Background photo (existing site image) -->
+  <div class="nf-bg" aria-hidden="true">
+    <img src="Assest/hp1_11zon.webp" alt="" width="1920" height="1080" fetchpriority="high">
+  </div>
+
+  <header class="nf-head">
+    <div class="container">
+      <a href="index.html" class="nf-logo" aria-label="Stackly Holidays - home">
+        <img src="Assest/stackly-logo.webp" alt="Stackly logo" width="229" height="58">
+      </a>
+      <span class="nf-tag">Error 404</span>
+    </div>
+  </header>
+
+  <main class="nf-main">
+    <div class="container nf-grid">
+
+      <div class="nf-copy">
+        <span class="nf-eyebrow">Off the map</span>
+
+        <h1 class="nf-code" aria-label="Error 404">
+          <span class="d" aria-hidden="true">4</span>
+          <span class="d nf-zero" aria-hidden="true">
+            <svg viewBox="0 0 100 100">
+              <circle class="ring" cx="50" cy="50" r="45"/>
+              <circle class="dash" cx="50" cy="50" r="33"/>
+            </svg>
+            <span class="nf-orbit"><i><svg viewBox="0 0 24 24"><path d="M2.5 11.2 21.5 2.8 17 21.2 11.8 14.6 7.2 17.2l.9-5.1z"/></svg></i></span>
+            <span class="nf-compass"><svg viewBox="0 0 24 24"><path d="M12 2.5 15 12l-3 9.5L9 12z"/></svg></span>
+          </span>
+          <span class="d" aria-hidden="true">4</span>
+        </h1>
+
+        <h2 class="nf-title">Looks like you took a <em>wrong turn</em></h2>
+        <p class="nf-text">The page you are looking for has moved, been renamed, or never existed. No worries, let us get you back on the route.</p>
+
+        <div class="nf-actions">
+          <a href="index.html" class="btn btn-primary" id="goHome">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11.5 12 4l9 7.5"/><path d="M5.5 10v10h13V10"/></svg>
+            <span>Back to home</span>
+          </a>
+          <a href="index.html" class="btn btn-ghost" id="goPrev">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5"/><path d="m11 6-6 6 6 6"/></svg>
+            <span>Go to previous page</span>
+          </a>
+        </div>
+
+        <nav class="nf-links" aria-label="Popular pages">
+          <span>Or explore:</span>
+          <a href="about.html">About</a>
+          <a href="services.html">Services</a>
+          <a href="blog.html">Blog</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+      </div>
+
+      <div class="nf-stage" id="nfStage" aria-hidden="true">
+        <figure class="nf-card c1">
+          <div class="ph"><img src="Assest/hp2_11zon.webp" alt="" width="640" height="820" loading="lazy"></div>
+          <figcaption>Maldives</figcaption>
+        </figure>
+        <figure class="nf-card c2">
+          <div class="ph"><img src="Assest/hp3_11zon.webp" alt="" width="640" height="820" loading="lazy"></div>
+          <figcaption>Switzerland</figcaption>
+        </figure>
+        <figure class="nf-card c3">
+          <div class="ph"><img src="Assest/hp5_11zon.webp" alt="" width="640" height="820" loading="lazy"></div>
+          <figcaption>Sahara</figcaption>
+        </figure>
+        <div class="nf-pin">
+          <svg viewBox="0 0 120 120"><defs><path id="nfCirc" d="M60,60 m-46,0 a46,46 0 1,1 92,0 a46,46 0 1,1 -92,0"/></defs><text><textPath href="#nfCirc">LOST • FOUND • LOST • FOUND • </textPath></text></svg>
+          <b>?</b>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="nf-foot">
+    <div class="container">
+      <span>&copy; <span id="nfYear">2026</span> Stackly Holidays. All rights reserved.</span>
+      <span>Handcrafted holiday packages</span>
+    </div>
+  </footer>
+
+  <script src="404.js"></script>
+  <script>document.getElementById('nfYear').textContent = new Date().getFullYear();</script>
+</body>
+</html>

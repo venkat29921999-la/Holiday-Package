@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My dashboard | Stackly Holidays</title>
+<meta name="theme-color" content="#0b1f2e">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"><link rel="stylesheet" href="auth.css"><link rel="stylesheet" href="dash-premium.css">
+<script>try{var s=JSON.parse(localStorage.getItem('stk_session')||'null');if(!s||s.role!=='user')location.replace(s&&s.role==='admin'?'admin-dashboard.html':s?'user-dashboard.html':'login.html')}catch(e){}</script>
+<style>
+/* fixed sidebar: always fits the screen, no inner scrollbar (desktop). The mobile drawer is unchanged. */
+@media (min-width: 1025px) {
+  .d-side { overflow: hidden; gap: clamp(8px, 1.5vh, 18px); padding-block: clamp(12px, 2.2vh, 24px); }
+  .d-side .logo { padding-bottom: clamp(8px, 1.4vh, 16px); }
+  .d-nav { gap: clamp(2px, .5vh, 6px); }
+  .d-nav button { padding-block: clamp(.45rem, 1.2vh, .85rem); }
+  .d-promo { min-height: clamp(96px, 14vh, 140px); }
+  /* pin the sidebar to the screen (sticky is broken by overflow on html/body) */
+  .d-side { position: fixed; left: 0; top: 0; bottom: 0; width: 270px; height: 100vh; height: 100dvh; }
+  .d-main { grid-column: 2; }
+}
+@media (min-width: 1025px) and (max-height: 760px) { .d-promo { display: none; } }
+@media (min-width: 1025px) and (max-height: 600px) { .d-badge, .d-label { display: none; } }
+/* user name chip in the top bar */
+.d-user { display: flex; align-items: center; gap: 10px; flex: none; min-width: 0; max-width: 260px; padding: 5px 16px 5px 5px; border-radius: 99px; background: #fff; box-shadow: 0 10px 24px -12px rgba(var(--ocean-rgb), .4); transition: transform .4s var(--out), box-shadow .4s; }
+.d-user:hover { transform: translateY(-2px); box-shadow: 0 16px 28px -14px rgba(var(--ocean-rgb), .5); }
+.d-user .av { width: 38px; height: 38px; font-size: 1.2rem; }
+.d-user div { min-width: 0; }
+.d-user b { display: block; font-size: .92rem; line-height: 1.2; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.d-user small { display: block; font-size: .68rem; line-height: 1.3; letter-spacing: .1em; text-transform: uppercase; opacity: .6; }
+@media (max-width: 575px) { .d-user { display: none; } }
+</style>
+</head>
+<body class="d-body" data-page="dash" data-role="user">
+<div class="d-app">
+  <aside class="d-side" id="dSide" aria-label="Dashboard menu">
+    <a class="logo" href="user-dashboard.html" aria-label="Stackly Holidays home"><img src="Assest/stackly-logo.webp" alt="Stackly Holidays" width="229" height="58"></a>
+    <span class="d-badge"><i class="fa-solid fa-user"></i> Traveller</span>
+    <p class="d-label">Menu</p>
+    <nav class="d-nav" aria-label="Dashboard sections"><button type="button" data-view="overview"><i class="fa-solid fa-gauge-high"></i><span>Overview</span></button><button type="button" data-view="mail"><i class="fa-solid fa-envelope"></i><span>Mailbox</span><span class="cnt mcnt"></span></button><button type="button" data-view="trips"><i class="fa-solid fa-plane-departure"></i><span>My trips</span></button><button type="button" data-x="wishlist"><i class="fa-solid fa-heart"></i><span>Wishlist</span></button><button type="button" data-x="rewards"><i class="fa-solid fa-gift"></i><span>Rewards</span></button></nav>
+    <span class="grow"></span>
+    <a class="d-promo" href="index.html#contact"><img src="Assest/hp8_11zon.webp" alt="" width="640" height="640" loading="lazy"><small>Dreaming already?</small><b>Plan your next escape</b><span class="go">Talk to a designer <i class="fa-solid fa-arrow-right"></i></span></a>
+    <a class="d-site" href="index.html"><i class="fa-solid fa-house"></i><span>Back to website</span></a>
+    <div class="d-me"><span class="av" id="meAv">?</span><div><b id="meName"></b><small id="meMail"></small></div><button type="button" class="d-out" id="logout" aria-label="Log out" title="Log out"><i class="fa-solid fa-right-from-bracket"></i></button></div>
+  </aside>
+  <div class="d-scrim" id="dScrim"></div>
+  <div class="d-main">
+    <header class="d-top"><button type="button" class="d-burger" id="dBurger" aria-label="Open menu" aria-expanded="false" aria-controls="dSide"><span></span><span></span><span></span></button>
+      <div class="d-title"><small id="dSub">Welcome back</small><h1 id="dH">Overview</h1></div>
+      <div class="d-user" id="dUser"><span class="av" id="hAv">?</span><div><b id="hName"></b><small>Traveller</small></div></div><button type="button" class="d-bell" id="dBell" aria-label="Open inbox"><i class="fa-regular fa-bell"></i><b></b></button></header>
+    <section class="d-view on" data-view="overview">
+      <div class="sec-head"><div><small>Welcome back</small><h2>Your next adventure</h2></div><p>Your itinerary is ready and the countdown has begun.</p></div>
+      <div class="d-grid"><article class="card hero-trip rise"><div class="ph"><img src="Assest/hp37.webp" alt="White houses above the sea in Santorini" width="800" height="560"></div><div class="tx"><span class="pill ok" style="width:fit-content">Next trip</span><h2>Santorini <em>caldera escape</em></h2><p style="opacity:.8">Hi <span data-name></span>, your itinerary is ready. Sunrise walk, sunset dinner and one very blue dome.</p><div class="cd" id="cd" role="timer" aria-label="Time until departure"><div><b>00</b><small>Days</small></div><div><b>00</b><small>Hours</small></div><div><b>00</b><small>Mins</small></div><div><b>00</b><small>Secs</small></div></div></div></article></div>
+      <div class="sec-head"><div><small>At a glance</small><h2>Your travel snapshot</h2></div><p>Trips, wishlist and rewards in one look.</p></div>
+      <div class="d-grid stats"><article class="card stat rise" style="--i:0"><span class="si "><i class="fa-solid fa-suitcase-rolling"></i></span><div><b data-count="3">0</b><span>Trips booked</span></div></article><article class="card stat rise" style="--i:1"><span class="si b"><i class="fa-solid fa-heart"></i></span><div><b data-count="7">0</b><span>Wishlist places</span></div></article><article class="card stat rise" style="--i:2"><span class="si g"><i class="fa-solid fa-gift"></i></span><div><b data-count="2450">0</b><span>Reward points</span></div></article><article class="card stat rise" style="--i:3"><span class="si o"><i class="fa-solid fa-envelope"></i></span><div><b id="stUnread">0</b><span>Unread emails</span></div></article></div>
+      <div class="sec-head"><div><small>Inspired by you</small><h2>Recommended for you</h2></div><p>Hand-picked escapes our travellers love right now.</p></div>
+      <div class="dest-grid"><a class="dcard" href="404.html" style="--i:0"><img src="Assest/hp12_11zon.webp" alt="Paris skyline with the Eiffel Tower at night" width="800" height="1040" loading="lazy"><span class="tag"><i class="fa-solid fa-heart"></i> Romance</span><h3>Paris</h3><p>Cafes, art and lights by the Seine.</p><div class="row"><span>From <b>₹99,999</b></span><span class="go"><i class="fa-solid fa-arrow-right"></i></span></div></a><a class="dcard" href="404.html" style="--i:1"><img src="Assest/hp13_11zon.webp" alt="Dubai skyline with a tall tower at sunset" width="800" height="1040" loading="lazy"><span class="tag"><i class="fa-solid fa-gem"></i> Luxury</span><h3>Dubai</h3><p>Skyscrapers, souks and desert nights.</p><div class="row"><span>From <b>₹54,999</b></span><span class="go"><i class="fa-solid fa-arrow-right"></i></span></div></a><a class="dcard" href="404.html" style="--i:2"><img src="Assest/hp14_11zon.webp" alt="Kerala backwaters with a houseboat and palms" width="800" height="1040" loading="lazy"><span class="tag"><i class="fa-solid fa-leaf"></i> Backwaters</span><h3>Kerala</h3><p>Houseboats, spice hills and calm.</p><div class="row"><span>From <b>₹24,999</b></span><span class="go"><i class="fa-solid fa-arrow-right"></i></span></div></a><a class="dcard" href="404.html" style="--i:3"><img src="Assest/hp15_11zon.webp" alt="Japanese pagoda in front of a rising sun" width="800" height="1040" loading="lazy"><span class="tag"><i class="fa-solid fa-torii-gate"></i> Culture</span><h3>Japan</h3><p>Pagodas, blossoms and bullet trains.</p><div class="row"><span>From <b>₹1,19,999</b></span><span class="go"><i class="fa-solid fa-arrow-right"></i></span></div></a></div>
+      <div class="sec-head"><div><small>Stay in the loop</small><h2>Inbox &amp; activity</h2></div><p>Messages from your travel team and what happened lately.</p></div>
+      <div class="d-grid cols2 eq">
+        <article class="card rise" style="--i:4"><h3>Latest emails <button type="button" data-view="mail">Open mailbox</button></h3><ul class="mini-mail" id="miniMail"></ul></article>
+        <article class="card rise" style="--i:5"><h3>Recent activity</h3><ul class="feed" id="feed"></ul></article>
+      </div>
+      <div class="sec-head"><div><small>Before you fly</small><h2>Your trip essentials</h2></div><p>Checklist, payments and help in one place.</p></div>
+      <div class="d-grid" style="grid-template-columns:repeat(auto-fit,minmax(min(100%,270px),1fr))">
+        <article class="card rise" style="--i:6"><h3>Travel checklist</h3><ul><li style="display:flex;align-items:center;gap:12px;padding:.75rem 0;border-top:1px solid rgba(var(--ocean-rgb),.08)"><i class="fa-solid fa-passport" style="color:var(--sun);width:20px;text-align:center"></i><div style="min-width:0;flex:1">Passport valid for 6 months<small style="display:block;opacity:.55">Checked by our visa desk</small></div><span style="white-space:nowrap" class="pill ok">Done</span></li><li style="display:flex;align-items:center;gap:12px;padding:.75rem 0;border-top:1px solid rgba(var(--ocean-rgb),.08)"><i class="fa-solid fa-file-circle-check" style="color:var(--sun);width:20px;text-align:center"></i><div style="min-width:0;flex:1">Visa documents<small style="display:block;opacity:.55">Passport scan and photo needed</small></div><span style="white-space:nowrap" class="pill wait">Pending</span></li><li style="display:flex;align-items:center;gap:12px;padding:.75rem 0;border-top:1px solid rgba(var(--ocean-rgb),.08)"><i class="fa-solid fa-shield-heart" style="color:var(--sun);width:20px;text-align:center"></i><div style="min-width:0;flex:1">Travel insurance<small style="display:block;opacity:.55">Medical and baggage cover</small></div><span style="white-space:nowrap" class="pill ok">Done</span></li><li style="display:flex;align-items:center;gap:12px;padding:.75rem 0;border-top:1px solid rgba(var(--ocean-rgb),.08)"><i class="fa-solid fa-van-shuttle" style="color:var(--sun);width:20px;text-align:center"></i><div style="min-width:0;flex:1">Airport transfer<small style="display:block;opacity:.55">Driver details 24 hours before</small></div><span style="white-space:nowrap" class="pill ok">Booked</span></li></ul></article>
+        <article class="card rise" style="--i:7"><h3>Payment progress</h3><p style="opacity:.7;font-size:.92rem;margin-bottom:1rem">Santorini caldera escape</p><div style="margin-bottom:1rem"><div style="display:flex;justify-content:space-between;gap:12px;font-size:.92rem"><span>Paid so far</span><b>&#8377;42,000</b></div><div class="pbar"><i data-w="68"></i></div></div><p style="font-size:.88rem;opacity:.65">Balance of &#8377;20,000 is due 30 days before departure.</p></article>
+        <article class="card rise" style="--i:8"><h3>Need a hand?</h3><p style="opacity:.7;font-size:.92rem;margin-bottom:1rem">Your travel designer replies within the hour.</p><div class="quick"><button type="button" class="btn btn-dark" data-act="compose"><i class="fa-solid fa-pen"></i><span>Message your designer</span></button><a class="btn btn-ghost" href="404.html"><i class="fa-solid fa-headset"></i><span>Contact support</span></a></div></article>
+      </div>
+    </section>
+    <section class="d-view" data-view="mail"><div class="v-banner"><img src="Assest/hp8_11zon.webp" alt="" width="1600" height="800" loading="lazy"><small>Mailbox</small><h2>Every message, one calm inbox</h2><p>Your travel designer, visa desk and billing team, all in one place.</p></div><div class="mail">
+  <aside class="m-fold" id="mFold"><button type="button" class="btn btn-primary btn-sm" id="compose"><i class="fa-solid fa-pen"></i><span>Compose</span></button>
+    <button type="button" class="f on" data-f="inbox"><i class="fa-solid fa-inbox"></i>Inbox<span class="n"></span></button>
+    <button type="button" class="f" data-f="starred"><i class="fa-solid fa-star"></i>Starred<span class="n"></span></button>
+    <button type="button" class="f" data-f="sent"><i class="fa-solid fa-paper-plane"></i>Sent<span class="n"></span></button>
+    <button type="button" class="f" data-f="archive"><i class="fa-solid fa-box-archive"></i>Archive<span class="n"></span></button></aside>
+  <section class="m-list"><div class="m-search"><i class="fa-solid fa-magnifying-glass"></i><input id="mSearch" type="search" placeholder="Search emails" aria-label="Search emails"></div><div class="m-items" id="mItems"></div></section>
+  <section class="m-pane" id="mPane"><div class="m-ph" id="mPh"><i class="fa-regular fa-envelope-open"></i><p>Select an email to read it</p></div><div class="m-read" id="mRead" hidden></div></section>
+</div></section>
+    <section class="d-view" data-view="trips"><div class="v-banner"><img src="Assest/hp3_11zon.webp" alt="" width="1600" height="800" loading="lazy"><small>My trips</small><h2>Where you’ve been, where you’re going</h2><p>Every booking, enquiry and plan in the making.</p></div><article class="card"><h3>My trips</h3><div class="trip"><img src="Assest/hp33.webp" alt="" width="64" height="64" loading="lazy"><div><b>Santorini caldera escape</b><small>12 Dec · 6 nights</small><div class="pbar"><i data-w="85"></i></div></div><span class="pill ok">Confirmed</span></div><div class="trip"><img src="Assest/hp32.webp" alt="" width="64" height="64" loading="lazy"><div><b>Kyoto in the rain</b><small>Feb · 7 nights</small><div class="pbar"><i data-w="60"></i></div></div><span class="pill wait">Planning</span></div><div class="trip"><img src="Assest/hp26.webp" alt="" width="64" height="64" loading="lazy"><div><b>Northern lights chase</b><small>Mar · 5 nights</small><div class="pbar"><i data-w="30"></i></div></div><span class="pill wait">Enquiry</span></div></article><div class="sec-head"><div><small>Get inspired</small><h2>Ideas for your next trip</h2></div><p>Save a few favourites and we will plan the rest.</p></div><div class="dest-grid"><a class="dcard" href="404.html" style="--i:0"><img src="Assest/hp11_11zon.webp" alt="Snowy Swiss peaks at sunrise" width="800" height="1040" loading="lazy"><span class="tag"><i class="fa-solid fa-mountain"></i> Alpine</span><h3>Switzerland</h3><p>Scenic trains and snow-capped peaks.</p><div class="row"><span>From <b>₹1,29,999</b></span><span class="go"><i class="fa-solid fa-arrow-right"></i></span></div></a><a class="dcard" href="404.html" style="--i:1"><img src="Assest/hp2_11zon.webp" alt="Maldives sunset with a sailboat" width="800" height="1040" loading="lazy"><span class="tag"><i class="fa-solid fa-umbrella-beach"></i> Island escape</span><h3>Maldives</h3><p>Overwater villas, glowing lagoons.</p><div class="row"><span>From <b>₹89,999</b></span><span class="go"><i class="fa-solid fa-arrow-right"></i></span></div></a><a class="dcard" href="404.html" style="--i:2"><img src="Assest/hp10_11zon.webp" alt="Bali beach with palm trees at dawn" width="800" height="1040" loading="lazy"><span class="tag"><i class="fa-solid fa-sun"></i> Tropical</span><h3>Bali</h3><p>Temples, rice terraces and surf.</p><div class="row"><span>From <b>₹49,999</b></span><span class="go"><i class="fa-solid fa-arrow-right"></i></span></div></a></div></section>
+
+    <section class="d-view" data-x="wishlist"><div class="v-banner"><img src="Assest/hp8_11zon.webp" alt="" width="1600" height="800" loading="lazy"><small>Wishlist</small><h2>Places you are dreaming of</h2><p>Save ideas now, we will turn them into a plan.</p></div><div class="dest-grid"><a class="dcard" href="404.html" style="--i:0"><img src="Assest/hp2_11zon.webp" alt="Maldives sunset with a sailboat" width="800" height="1040" loading="lazy"><span class="tag"><i class="fa-solid fa-heart"></i> Saved</span><h3>Maldives</h3><p>Overwater villas, glowing lagoons.</p><div class="row"><span>From <b>&#8377;89,999</b></span><span class="go"><i class="fa-solid fa-arrow-right"></i></span></div></a><a class="dcard" href="404.html" style="--i:1"><img src="Assest/hp12_11zon.webp" alt="Paris skyline at night" width="800" height="1040" loading="lazy"><span class="tag"><i class="fa-solid fa-heart"></i> Saved</span><h3>Paris</h3><p>Cafes, art and lights by the Seine.</p><div class="row"><span>From <b>&#8377;99,999</b></span><span class="go"><i class="fa-solid fa-arrow-right"></i></span></div></a><a class="dcard" href="404.html" style="--i:2"><img src="Assest/hp9_11zon.webp" alt="Holiday packages" width="800" height="1040" loading="lazy"><span class="tag"><i class="fa-solid fa-heart"></i> Saved</span><h3>Lofoten</h3><p>Northern lights and fishing villages.</p><div class="row"><span>From <b>&#8377;1,24,999</b></span><span class="go"><i class="fa-solid fa-arrow-right"></i></span></div></a></div></section>
+    <section class="d-view" data-x="rewards"><div class="v-banner"><img src="Assest/hp7_11zon.webp" alt="" width="1600" height="800" loading="lazy"><small>Rewards</small><h2>Every trip earns you more</h2><p>Points, perks and member-only offers.</p></div><div class="d-grid cols2 eq"><article class="card rise" style="--i:0"><h3>Your points</h3><div class="stat" style="padding:0;box-shadow:none"><span class="si g"><i class="fa-solid fa-gift"></i></span><div><b>2,450</b><span>Reward points</span></div></div><div style="margin-top:1.2rem"><div style="margin-bottom:1rem"><div style="display:flex;justify-content:space-between;gap:12px;font-size:.92rem"><span>Next tier: Gold</span><b>2,450 / 3,000</b></div><div class="pbar"><i data-w="82"></i></div></div></div></article><article class="card rise" style="--i:1"><h3>Ways to earn</h3><ul class="feed"><li style="--i:0"><span class="dot"></span><div>Book a package<small>500 points per trip</small></div></li><li style="--i:1"><span class="dot"></span><div>Refer a friend<small>300 points each</small></div></li><li style="--i:2"><span class="dot"></span><div>Share a travel review<small>100 points</small></div></li></ul></article></div></section>
+  </div>
+</div>
+<div class="modal" id="cmp" hidden role="dialog" aria-modal="true" aria-labelledby="cT"><div class="modal-box"><h3 id="cT">New email <button type="button" data-close aria-label="Close"><i class="fa-solid fa-xmark"></i></button></h3><form id="cForm" novalidate>
+<div class="fld"><input id="cTo" type="email" placeholder=" " autocomplete="off"><label for="cTo">To</label></div>
+<div class="fld"><input id="cSub" type="text" placeholder=" " autocomplete="off"><label for="cSub">Subject</label></div>
+<label class="sr" for="cBody">Message</label><textarea id="cBody" placeholder="Write your message…"></textarea>
+<p id="cErr" role="alert" style="color:#a8262b;min-height:1.4em;font-size:.9rem;margin-bottom:.6rem"></p>
+<button type="submit" class="btn btn-primary btn-block"><i class="fa-solid fa-paper-plane"></i><span>Send email</span></button></form></div></div>
+<div class="toasts" id="toasts" aria-live="polite"></div>
+<script src="auth.js"></script>
+<script>
+/* fill the top-bar user chip from the logged-in session */
+(function () {
+  try {
+    var s = JSON.parse(localStorage.getItem('stk_session') || 'null');
+    if (!s) return;
+    var n = document.getElementById('hName'), a = document.getElementById('hAv');
+    if (n) n.textContent = s.name || '';
+    if (a) a.textContent = (s.name || '?').trim().charAt(0).toUpperCase();
+  } catch (e) {}
+})();
+</script>
+<script>
+/* extra menu pages (Bookings/Reports or Wishlist/Rewards) - separate from auth.js */
+(function () {
+  var d = document, b = d.body;
+  var $ = function (s) { return d.querySelector(s); }, A = function (s) { return Array.prototype.slice.call(d.querySelectorAll(s)); };
+  var T = {bookings:['Manage','Bookings'],reports:['Insights','Reports'],wishlist:['Saved','Wishlist'],rewards:['Perks','Rewards']};
+  A('.d-nav button[data-x]').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var v = btn.getAttribute('data-x');
+      A('.d-view').forEach(function (s) { s.classList.toggle('on', s.getAttribute('data-x') === v); });
+      A('.d-nav button').forEach(function (n) { var on = n === btn; n.classList.toggle('on', on); if (on) n.setAttribute('aria-current', 'page'); else n.removeAttribute('aria-current'); });
+      $('#dSub').textContent = T[v][0]; $('#dH').textContent = T[v][1];
+      b.classList.remove('menu-open', 'lock'); $('#dBurger').classList.remove('open'); $('#dBurger').setAttribute('aria-expanded', 'false');
+      window.scrollTo({ top: 0 });
+    });
+  });
+})();
+</script>
+</body>
+</html>

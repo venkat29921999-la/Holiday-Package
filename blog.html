@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Travel Journal | Stackly Holidays</title>
+  <meta name="description" content="The Stackly Journal: destination guides, packing lists, city breaks and honest travel tips from the people who plan your holiday.">
+  <meta name="theme-color" content="#0b1f2e">
+  <link rel="icon" href="Assest/stackly-logo.webp" type="image/webp">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome (only icon set used) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <!-- AOS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ============ PRELOADER ============ -->
+  <div class="preloader" id="preloader" aria-hidden="true">
+    <div class="pre-panel pre-top"></div>
+    <div class="pre-panel pre-bottom"></div>
+    <div class="pre-center">
+      <img src="Assest/stackly-logo.webp" alt="" width="229" height="58" class="pre-logo">
+      <div class="pre-bar"><span id="preBar"></span></div>
+      <div class="pre-count"><span id="preCount">0</span>%</div>
+    </div>
+  </div>
+
+  <div class="scroll-progress" id="scrollProgress"></div>
+  <div class="cursor" id="cursor" aria-hidden="true"><span id="cursorText"></span></div>
+
+  <!-- ============ HEADER ============ -->
+  <header class="site-header" id="header">
+    <div class="header-inner container">
+      <a href="index.html" class="logo" aria-label="Stackly Holidays - home">
+        <img src="Assest/stackly-logo.webp" alt="Stackly logo" width="229" height="58">
+      </a>
+
+      <nav class="main-nav" id="mainNav" aria-label="Primary navigation">
+        <ul class="nav-list">
+          <li><a href="index.html" class="nav-link" data-text="Home">Home</a></li>
+          <li><a href="about.html" class="nav-link" data-text="About">About</a></li>
+          <li><a href="services.html" class="nav-link" data-text="Services">Services</a></li>
+          <li><a href="blog.html" class="nav-link active" data-text="Blog">Blog</a></li>
+          <li><a href="contact.html" class="nav-link" data-text="Contact">Contact</a></li>
+        </ul>
+        <div class="nav-extra">
+          <p><i class="fa-solid fa-phone"></i> +91 98765 43210</p>
+          <p><i class="fa-solid fa-envelope"></i> hello@stacklyholidays.com</p>
+          <div class="socials">
+            <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          </div>
+        </div>
+      </nav>
+
+      <div class="header-actions">
+       <a href="login.html" class="btn btn-login magnetic" id="loginBtn">
+  <i class="fa-regular fa-user"></i><span>Login</span>
+</a>
+        <button class="hamburger" id="hamburger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mainNav">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="bl-page">
+
+  <!-- ============ 1. HERO : photo-filled title, search typewriter, postcards fan out ============ -->
+  <section class="bl-sec bl-hero" id="top">
+    <div class="container bl-hero-grid">
+      <div class="bl-hero-copy">
+        <nav class="ab-crumb" aria-label="Breadcrumb"><a href="index.html">Home</a><i class="fa-solid fa-chevron-right"></i><span>Journal</span></nav>
+        <h1 class="bl-title" id="blTitle"><span class="bl-w">The Stackly</span> <em class="bl-ink bl-w">Journal</em></h1>
+        <p class="bl-lead bl-in">Destination guides, packing lists and honest tips from the travel designers who have actually been there. Pull a postcard, start reading.</p>
+        <form class="bl-search bl-in" id="blSearch" role="search" autocomplete="off">
+          <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+          <input type="search" id="blQ" aria-label="Search stories" placeholder="Search stories, guides and tips">
+          <button type="submit" class="btn btn-primary btn-sm magnetic"><span>Search</span></button>
+        </form>
+        <div class="bl-tags bl-in" aria-label="Popular searches">
+          <button type="button" class="bl-tag" data-q="lakes">Lakes</button>
+          <button type="button" class="bl-tag" data-q="packing">Packing</button>
+          <button type="button" class="bl-tag" data-q="paris">Paris</button>
+          <button type="button" class="bl-tag" data-q="japan">Japan</button>
+        </div>
+      </div>
+
+      <div class="bl-fan" id="blFan">
+        <figure class="bl-pc" style="--n:0" tabindex="0"><img src="Assest/hp2_11zon.webp" alt="Sailboat at sunset" width="420" height="560" fetchpriority="high">
+          <figcaption><span>Maldives</span><i class="fa-solid fa-location-dot"></i></figcaption></figure>
+        <figure class="bl-pc" style="--n:1" tabindex="0"><img src="Assest/hp3_11zon.webp" alt="Misty mountain ridges" width="420" height="560">
+          <figcaption><span>Swiss Alps</span><i class="fa-solid fa-location-dot"></i></figcaption></figure>
+        <figure class="bl-pc" style="--n:2" tabindex="0"><img src="Assest/hp15_11zon.webp" alt="Pagoda and rising sun" width="420" height="560">
+          <figcaption><span>Kyoto</span><i class="fa-solid fa-location-dot"></i></figcaption></figure>
+        <figure class="bl-pc" style="--n:3" tabindex="0"><img src="Assest/hp5_11zon.webp" alt="Acacia trees at golden hour" width="420" height="560">
+          <figcaption><span>Masai Mara</span><i class="fa-solid fa-location-dot"></i></figcaption></figure>
+        <div class="bl-seal" aria-hidden="true">
+          <svg viewBox="0 0 120 120"><defs><path id="blSealPath" d="M60,60 m-46,0 a46,46 0 1,1 92,0 a46,46 0 1,1 -92,0"/></defs><text><textPath href="#blSealPath">WRITTEN ON THE ROAD • FRESH EVERY WEEK • </textPath></text></svg>
+          <i class="fa-solid fa-feather-pointed"></i>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 2. FEATURED STORY : magnifying-glass loupe ============ -->
+  <section class="bl-sec bl-feat" id="featured">
+    <div class="container bl-feat-grid">
+      <figure class="bl-lens" id="blLens">
+        <img src="Assest/hp22.webp" alt="Cruise ship sailing into a glowing Mediterranean sunset" width="820" height="1025" loading="lazy">
+        <span class="bl-lens-tip"><i class="fa-solid fa-magnifying-glass-plus"></i> Hover or drag to magnify</span>
+        <span class="bl-loupe" id="blLoupe" aria-hidden="true"></span>
+      </figure>
+      <div class="bl-feat-copy">
+        <span class="eyebrow bl-fi"><i class="fa-solid fa-star"></i> Editor's pick</span>
+        <h2 class="section-title bl-fi">The slow way to see the <em>Mediterranean</em></h2>
+        <div class="bl-meta bl-fi"><span><i class="fa-regular fa-calendar"></i>20 Oct 2026</span><span><i class="fa-regular fa-clock"></i>11 min read</span><span><i class="fa-solid fa-ship"></i>Cruise stories</span></div>
+        <p class="bl-fi">Eight nights, six ports and not a single alarm clock. We sailed the long coast of the Mediterranean to find out why slow travel keeps winning, and what a good cruise looks like when nobody is rushing you.</p>
+        <p class="bl-fi bl-sub">Inside: the best cabins for sunrise, three shore trips worth skipping the buffet for, and a day-by-day map you can copy.</p>
+        <div class="bl-by bl-fi">
+          <img src="Assest/hp28.webp" alt="Arjun Menon" width="56" height="56" loading="lazy">
+          <div><b>Arjun Menon</b><small>Founder &amp; Chief Dreamer</small></div>
+        </div>
+        <a href="404.html" class="btn btn-primary magnetic bl-fi"><span>Read the full story</span> <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 3. LATEST STORIES : sliding pill filter + cards that glide ============ -->
+  <section class="bl-sec bl-latest" id="latest">
+    <div class="container">
+      <div class="section-head split-head">
+        <div>
+          <span class="eyebrow" data-aos="fade-up"><i class="fa-solid fa-pen-nib"></i> Latest stories</span>
+          <h2 class="section-title" data-aos="fade-up">Fresh from the <em>road</em></h2>
+        </div>
+        <div class="bl-tools" data-aos="fade-up">
+          <div class="bl-tabs" id="blTabs" role="tablist" aria-label="Filter stories">
+            <span class="bl-pill" id="blPill" aria-hidden="true"></span>
+            <button type="button" class="bl-tab active" data-cat="all" role="tab" aria-selected="true">All</button>
+            <button type="button" class="bl-tab" data-cat="guides" role="tab" aria-selected="false">Guides</button>
+            <button type="button" class="bl-tab" data-cat="city" role="tab" aria-selected="false">City breaks</button>
+            <button type="button" class="bl-tab" data-cat="tips" role="tab" aria-selected="false">Tips</button>
+            <button type="button" class="bl-tab" data-cat="culture" role="tab" aria-selected="false">Culture</button>
+          </div>
+          <p class="bl-count" id="blCount" role="status" aria-live="polite">8 stories</p>
+        </div>
+      </div>
+
+      <div class="bl-grid" id="blGrid">
+        <article class="bl-post" data-cat="guides" data-title="10 quiet lakes you should visit before the crowds do">
+          <a href="404.html" class="bl-post-img hover-view" data-cursor="Read"><img src="Assest/hp24.webp" alt="Calm lake reflecting a sunset sky" width="560" height="420" loading="lazy"><span class="bl-post-cat">Guides</span><span class="bl-fold" aria-hidden="true"></span></a>
+          <div class="bl-post-body">
+            <div class="bl-meta"><span><i class="fa-regular fa-calendar"></i>12 Oct 2026</span><span><i class="fa-regular fa-clock"></i>6 min read</span></div>
+            <h3><a href="404.html">10 quiet lakes you should visit before the crowds do</a></h3>
+            <p>Hidden shores, mirror-still water and the best month to see each one.</p>
+            <a href="404.html" class="read">Read more <i class="fa-solid fa-arrow-right-long"></i></a>
+          </div>
+        </article>
+        <article class="bl-post" data-cat="city" data-title="A 48-hour guide to the world's most photogenic cities">
+          <a href="404.html" class="bl-post-img hover-view" data-cursor="Read"><img src="Assest/hp29.webp" alt="Warm dawn light over a city skyline" width="560" height="420" loading="lazy"><span class="bl-post-cat">City breaks</span><span class="bl-fold" aria-hidden="true"></span></a>
+          <div class="bl-post-body">
+            <div class="bl-meta"><span><i class="fa-regular fa-calendar"></i>04 Oct 2026</span><span><i class="fa-regular fa-clock"></i>5 min read</span></div>
+            <h3><a href="404.html">A 48-hour guide to the world's most photogenic cities</a></h3>
+            <p>Where to wake up, what to eat and how to see more with less rushing.</p>
+            <a href="404.html" class="read">Read more <i class="fa-solid fa-arrow-right-long"></i></a>
+          </div>
+        </article>
+        <article class="bl-post" data-cat="tips" data-title="Smart packing for island holidays: the only checklist you need">
+          <a href="404.html" class="bl-post-img hover-view" data-cursor="Read"><img src="Assest/hp20.webp" alt="Bright beach with palm trees and a boat" width="560" height="420" loading="lazy"><span class="bl-post-cat">Tips</span><span class="bl-fold" aria-hidden="true"></span></a>
+          <div class="bl-post-body">
+            <div class="bl-meta"><span><i class="fa-regular fa-calendar"></i>27 Sep 2026</span><span><i class="fa-regular fa-clock"></i>7 min read</span></div>
+            <h3><a href="404.html">Smart packing for island holidays: the only checklist you need</a></h3>
+            <p>Travel light, stay prepared and skip the extra baggage fees.</p>
+            <a href="404.html" class="read">Read more <i class="fa-solid fa-arrow-right-long"></i></a>
+          </div>
+        </article>
+        <article class="bl-post" data-cat="guides" data-title="Sleeping under the Sahara: what a desert camp is really like">
+          <a href="404.html" class="bl-post-img hover-view" data-cursor="Read"><img src="Assest/hp30.webp" alt="Golden dunes under a setting sun" width="560" height="420" loading="lazy"><span class="bl-post-cat">Guides</span><span class="bl-fold" aria-hidden="true"></span></a>
+          <div class="bl-post-body">
+            <div class="bl-meta"><span><i class="fa-regular fa-calendar"></i>19 Sep 2026</span><span><i class="fa-regular fa-clock"></i>8 min read</span></div>
+            <h3><a href="404.html">Sleeping under the Sahara: what a desert camp is really like</a></h3>
+            <p>Sunset dunes, campfire music and the quietest night sky you will ever see.</p>
+            <a href="404.html" class="read">Read more <i class="fa-solid fa-arrow-right-long"></i></a>
+          </div>
+        </article>
+        <article class="bl-post" data-cat="city" data-title="Paris after dark: five unhurried evenings by the Seine">
+          <a href="404.html" class="bl-post-img hover-view" data-cursor="Read"><img src="Assest/hp23.webp" alt="City skyline and iron tower at sunset" width="560" height="420" loading="lazy"><span class="bl-post-cat">City breaks</span><span class="bl-fold" aria-hidden="true"></span></a>
+          <div class="bl-post-body">
+            <div class="bl-meta"><span><i class="fa-regular fa-calendar"></i>11 Sep 2026</span><span><i class="fa-regular fa-clock"></i>5 min read</span></div>
+            <h3><a href="404.html">Paris after dark: five unhurried evenings by the Seine</a></h3>
+            <p>Bridges, bistros and the lights that make the city feel like a film.</p>
+            <a href="404.html" class="read">Read more <i class="fa-solid fa-arrow-right-long"></i></a>
+          </div>
+        </article>
+        <article class="bl-post" data-cat="tips" data-title="How to plan a night-sky trip and what to pack for the cold">
+          <a href="404.html" class="bl-post-img hover-view" data-cursor="Read"><img src="Assest/hp31.webp" alt="Pine forest under a night sky" width="560" height="420" loading="lazy"><span class="bl-post-cat">Tips</span><span class="bl-fold" aria-hidden="true"></span></a>
+          <div class="bl-post-body">
+            <div class="bl-meta"><span><i class="fa-regular fa-calendar"></i>03 Sep 2026</span><span><i class="fa-regular fa-clock"></i>6 min read</span></div>
+            <h3><a href="404.html">How to plan a night-sky trip and what to pack for the cold</a></h3>
+            <p>Dark-sky spots, the right month and the layers that actually work.</p>
+            <a href="404.html" class="read">Read more <i class="fa-solid fa-arrow-right-long"></i></a>
+          </div>
+        </article>
+        <article class="bl-post" data-cat="culture" data-title="Blossoms, bullet trains and tea: Japan in spring">
+          <a href="404.html" class="bl-post-img hover-view" data-cursor="Read"><img src="Assest/hp32.webp" alt="Pagoda silhouette with drifting blossoms" width="560" height="420" loading="lazy"><span class="bl-post-cat">Culture</span><span class="bl-fold" aria-hidden="true"></span></a>
+          <div class="bl-post-body">
+            <div class="bl-meta"><span><i class="fa-regular fa-calendar"></i>26 Aug 2026</span><span><i class="fa-regular fa-clock"></i>9 min read</span></div>
+            <h3><a href="404.html">Blossoms, bullet trains and tea: Japan in spring</a></h3>
+            <p>A slow route through temples, tea houses and quiet side streets.</p>
+            <a href="404.html" class="read">Read more <i class="fa-solid fa-arrow-right-long"></i></a>
+          </div>
+        </article>
+        <article class="bl-post" data-cat="culture" data-title="Safari etiquette: how to travel the Masai Mara kindly">
+          <a href="404.html" class="bl-post-img hover-view" data-cursor="Read"><img src="Assest/hp33.webp" alt="Acacia trees on the savanna at dawn" width="560" height="420" loading="lazy"><span class="bl-post-cat">Culture</span><span class="bl-fold" aria-hidden="true"></span></a>
+          <div class="bl-post-body">
+            <div class="bl-meta"><span><i class="fa-regular fa-calendar"></i>18 Aug 2026</span><span><i class="fa-regular fa-clock"></i>6 min read</span></div>
+            <h3><a href="404.html">Safari etiquette: how to travel the Masai Mara kindly</a></h3>
+            <p>Simple habits that protect wildlife and make every game drive better.</p>
+            <a href="404.html" class="read">Read more <i class="fa-solid fa-arrow-right-long"></i></a>
+          </div>
+        </article>
+      </div>
+      <div class="bl-empty" id="blEmpty" hidden>
+        <i class="fa-regular fa-compass"></i>
+        <h3>No stories on that route yet</h3>
+        <p>Try another word or head back to all stories.</p>
+        <button type="button" class="btn btn-primary btn-sm" id="blReset"><span>Show all stories</span></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 4. DESTINATION GUIDES : 3D cover-flow carousel ============ -->
+  <section class="bl-sec bl-guides" id="guides">
+    <div class="container">
+      <header class="bl-head center">
+        <span class="eyebrow" data-aos="fade-up"><i class="fa-solid fa-earth-asia"></i> Destination guides</span>
+        <h2 class="section-title" data-aos="fade-up">Pick a place, <em>flip</em> through it</h2>
+        <p data-aos="fade-up">Drag, swipe or use the arrows. Every cover opens a stack of guides written by people who live there.</p>
+      </header>
+    </div>
+    <div class="bl-flow">
+      <div class="bl-track" id="blTrack" tabindex="0" aria-label="Destination guides carousel">
+        <article class="bl-gc" data-name="Maldives" data-text="Overwater villas, glowing lagoons and the calmest honeymoons." data-cursor="Drag">
+          <img src="Assest/hp2_11zon.webp" alt="Maldives travel guide" width="560" height="750" loading="lazy" draggable="false">
+          <span class="bl-gc-no">01</span>
+          <div class="bl-gc-in"><span class="bl-gc-chip"><i class="fa-regular fa-bookmark"></i> 12 guides</span><h3>Maldives</h3><a href="404.html" class="bl-gc-go" aria-label="Read Maldives guides"><i class="fa-solid fa-arrow-right"></i></a></div>
+        </article>
+        <article class="bl-gc" data-name="Bali" data-text="Rice terraces, temple mornings and surf-side sunsets." data-cursor="Drag">
+          <img src="Assest/hp10_11zon.webp" alt="Bali travel guide" width="560" height="750" loading="lazy" draggable="false">
+          <span class="bl-gc-no">02</span>
+          <div class="bl-gc-in"><span class="bl-gc-chip"><i class="fa-regular fa-bookmark"></i> 18 guides</span><h3>Bali</h3><a href="404.html" class="bl-gc-go" aria-label="Read Bali guides"><i class="fa-solid fa-arrow-right"></i></a></div>
+        </article>
+        <article class="bl-gc" data-name="Switzerland" data-text="Scenic trains, snow-capped peaks and chalet evenings." data-cursor="Drag">
+          <img src="Assest/hp34.webp" alt="Switzerland travel guide" width="560" height="750" loading="lazy" draggable="false">
+          <span class="bl-gc-no">03</span>
+          <div class="bl-gc-in"><span class="bl-gc-chip"><i class="fa-regular fa-bookmark"></i> 15 guides</span><h3>Switzerland</h3><a href="404.html" class="bl-gc-go" aria-label="Read Switzerland guides"><i class="fa-solid fa-arrow-right"></i></a></div>
+        </article>
+        <article class="bl-gc" data-name="Paris" data-text="Cafes, galleries and lights along the Seine." data-cursor="Drag">
+          <img src="Assest/hp12_11zon.webp" alt="Paris travel guide" width="560" height="750" loading="lazy" draggable="false">
+          <span class="bl-gc-no">04</span>
+          <div class="bl-gc-in"><span class="bl-gc-chip"><i class="fa-regular fa-bookmark"></i> 21 guides</span><h3>Paris</h3><a href="404.html" class="bl-gc-go" aria-label="Read Paris guides"><i class="fa-solid fa-arrow-right"></i></a></div>
+        </article>
+        <article class="bl-gc" data-name="Dubai" data-text="Skyline views, souk bargains and desert dinners." data-cursor="Drag">
+          <img src="Assest/hp4_11zon.webp" alt="Dubai travel guide" width="560" height="750" loading="lazy" draggable="false">
+          <span class="bl-gc-no">05</span>
+          <div class="bl-gc-in"><span class="bl-gc-chip"><i class="fa-regular fa-bookmark"></i> 9 guides</span><h3>Dubai</h3><a href="404.html" class="bl-gc-go" aria-label="Read Dubai guides"><i class="fa-solid fa-arrow-right"></i></a></div>
+        </article>
+        <article class="bl-gc" data-name="Kerala" data-text="Houseboats, spice hills and slow backwater days." data-cursor="Drag">
+          <img src="Assest/hp14_11zon.webp" alt="Kerala travel guide" width="560" height="750" loading="lazy" draggable="false">
+          <span class="bl-gc-no">06</span>
+          <div class="bl-gc-in"><span class="bl-gc-chip"><i class="fa-regular fa-bookmark"></i> 14 guides</span><h3>Kerala</h3><a href="404.html" class="bl-gc-go" aria-label="Read Kerala guides"><i class="fa-solid fa-arrow-right"></i></a></div>
+        </article>
+        <article class="bl-gc" data-name="Japan" data-text="Pagodas, blossoms and bullet trains across the seasons." data-cursor="Drag">
+          <img src="Assest/hp15_11zon.webp" alt="Japan travel guide" width="560" height="750" loading="lazy" draggable="false">
+          <span class="bl-gc-no">07</span>
+          <div class="bl-gc-in"><span class="bl-gc-chip"><i class="fa-regular fa-bookmark"></i> 17 guides</span><h3>Japan</h3><a href="404.html" class="bl-gc-go" aria-label="Read Japan guides"><i class="fa-solid fa-arrow-right"></i></a></div>
+        </article>
+      </div>
+    </div>
+    <div class="container bl-flow-ui">
+      <button class="round-btn" id="blPrev" type="button" aria-label="Previous destination"><i class="fa-solid fa-chevron-left"></i></button>
+      <div class="bl-flow-cap" aria-live="polite">
+        <h3 id="blGcName">Maldives</h3>
+        <p id="blGcText">Overwater villas, glowing lagoons and the calmest honeymoons.</p>
+        <div class="bl-dots" id="blDots"></div>
+      </div>
+      <button class="round-btn" id="blNext" type="button" aria-label="Next destination"><i class="fa-solid fa-chevron-right"></i></button>
+    </div>
+  </section>
+
+  <!-- ============ 5. TRAVEL HACKS : swipe-away card deck ============ -->
+  <section class="bl-sec bl-deck-sec" id="hacks">
+    <div class="container bl-deck-grid">
+      <div class="bl-deck-copy">
+        <span class="eyebrow" data-aos="fade-up"><i class="fa-solid fa-lightbulb"></i> Travel hacks</span>
+        <h2 class="section-title" data-aos="fade-up">Swipe through <em>smart</em> tips</h2>
+        <p data-aos="fade-up">Six small habits that make every trip smoother. Drag a card right to keep it, left to skip it, or use the buttons.</p>
+        <div class="bl-deck-stats" data-aos="fade-up">
+          <div><b id="blDeckCount">1 / 6</b><small>Card</small></div>
+          <div><b id="blKept">0</b><small>Tips kept</small></div>
+        </div>
+      </div>
+      <div class="bl-deck-wrap" data-aos="fade-left">
+        <div class="bl-deck" id="blDeck" tabindex="0" aria-label="Travel tips card deck. Use left and right arrow keys to skip or keep." data-cursor="Swipe">
+        <article class="bl-tip" style="--j:0">
+          <div class="bl-tip-img"><img src="Assest/hp35.webp" alt="" width="640" height="380" loading="lazy" draggable="false"><span class="bl-stamp keep">Keep</span><span class="bl-stamp skip">Skip</span></div>
+          <div class="bl-tip-body"><span class="bl-tip-no">Tip 01</span><h3>Roll, do not fold</h3><p>Rolled clothes pack tighter and crease less, which leaves room for the souvenirs.</p></div>
+        </article>
+        <article class="bl-tip" style="--j:1">
+          <div class="bl-tip-img"><img src="Assest/hp36.webp" alt="" width="640" height="380" loading="lazy" draggable="false"><span class="bl-stamp keep">Keep</span><span class="bl-stamp skip">Skip</span></div>
+          <div class="bl-tip-body"><span class="bl-tip-no">Tip 02</span><h3>Book the shoulder season</h3><p>Travel just before or after peak months for lower fares, thinner crowds and the same views.</p></div>
+        </article>
+        <article class="bl-tip" style="--j:2">
+          <div class="bl-tip-img"><img src="Assest/hp25.webp" alt="" width="640" height="380" loading="lazy" draggable="false"><span class="bl-stamp keep">Keep</span><span class="bl-stamp skip">Skip</span></div>
+          <div class="bl-tip-body"><span class="bl-tip-no">Tip 03</span><h3>Download offline maps</h3><p>Save city maps before you fly so a weak signal never leaves you lost.</p></div>
+        </article>
+        <article class="bl-tip" style="--j:3">
+          <div class="bl-tip-img"><img src="Assest/hp37.webp" alt="" width="640" height="380" loading="lazy" draggable="false"><span class="bl-stamp keep">Keep</span><span class="bl-stamp skip">Skip</span></div>
+          <div class="bl-tip-body"><span class="bl-tip-no">Tip 04</span><h3>Copy it, then cloud it</h3><p>Keep digital copies of passports and visas in a secure folder, plus one paper set in a separate bag.</p></div>
+        </article>
+        <article class="bl-tip" style="--j:4">
+          <div class="bl-tip-img"><img src="Assest/hp38.webp" alt="" width="640" height="380" loading="lazy" draggable="false"><span class="bl-stamp keep">Keep</span><span class="bl-stamp skip">Skip</span></div>
+          <div class="bl-tip-body"><span class="bl-tip-no">Tip 05</span><h3>Chase the golden hour</h3><p>Plan big viewpoints for the first or last hour of daylight: softer light, smaller crowds.</p></div>
+        </article>
+        <article class="bl-tip" style="--j:5">
+          <div class="bl-tip-img"><img src="Assest/hp26.webp" alt="" width="640" height="380" loading="lazy" draggable="false"><span class="bl-stamp keep">Keep</span><span class="bl-stamp skip">Skip</span></div>
+          <div class="bl-tip-body"><span class="bl-tip-no">Tip 06</span><h3>Carry a tiny first-aid kit</h3><p>Plasters, rehydration salts and your regular medicines belong in hand luggage.</p></div>
+        </article>
+          <div class="bl-deck-end" id="blDeckEnd" hidden>
+            <i class="fa-solid fa-suitcase-rolling"></i>
+            <h3>You're ready to go</h3>
+            <p>Want to look at them again?</p>
+            <button type="button" class="btn btn-primary btn-sm" id="blReshuffle"><span>Reshuffle deck</span> <i class="fa-solid fa-rotate"></i></button>
+          </div>
+        </div>
+        <div class="bl-deck-btns">
+          <button type="button" class="bl-dbtn skip" id="blSkip" aria-label="Skip this tip"><i class="fa-solid fa-xmark"></i></button>
+          <button type="button" class="bl-dbtn keep" id="blKeep" aria-label="Keep this tip"><i class="fa-solid fa-heart"></i></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 6. MOST READ : live bar-chart race ============ -->
+  <section class="bl-sec bl-trend" id="trending">
+    <div class="container">
+      <div class="section-head split-head">
+        <div>
+          <span class="eyebrow" data-aos="fade-up"><i class="fa-solid fa-fire"></i> Trending now</span>
+          <h2 class="section-title" data-aos="fade-up" id="blPerTitle">Most read this week</h2>
+        </div>
+        <div class="bl-pers" data-aos="fade-up" role="group" aria-label="Choose a time range">
+          <button type="button" class="bl-per active" data-p="week" aria-pressed="true">This week</button>
+          <button type="button" class="bl-per" data-p="month" aria-pressed="false">This month</button>
+          <button type="button" class="bl-per" data-p="all" aria-pressed="false">All time</button>
+        </div>
+      </div>
+      <ol class="bl-race" id="blRace">
+          <li class="bl-row" style="--i:0;--w:0" data-week="6300" data-month="21400" data-all="120500" data-rank="1">
+            <span class="rk">1</span>
+            <img src="Assest/hp20.webp" alt="" width="140" height="140" loading="lazy">
+            <div class="bl-row-main"><a href="#" class="bl-row-t">Smart packing for island holidays</a><div class="bl-bar"><span></span></div></div>
+            <div class="bl-views"><b>0</b><small>reads</small></div>
+          </li>
+          <li class="bl-row" style="--i:1;--w:0" data-week="5100" data-month="15200" data-all="88100" data-rank="2">
+            <span class="rk">2</span>
+            <img src="Assest/hp23.webp" alt="" width="140" height="140" loading="lazy">
+            <div class="bl-row-main"><a href="#" class="bl-row-t">Paris after dark: five unhurried evenings</a><div class="bl-bar"><span></span></div></div>
+            <div class="bl-views"><b>0</b><small>reads</small></div>
+          </li>
+          <li class="bl-row" style="--i:2;--w:0" data-week="4700" data-month="13400" data-all="131000" data-rank="3">
+            <span class="rk">3</span>
+            <img src="Assest/hp32.webp" alt="" width="140" height="140" loading="lazy">
+            <div class="bl-row-main"><a href="#" class="bl-row-t">Blossoms, bullet trains and tea: Japan in spring</a><div class="bl-bar"><span></span></div></div>
+            <div class="bl-views"><b>0</b><small>reads</small></div>
+          </li>
+          <li class="bl-row" style="--i:3;--w:0" data-week="4200" data-month="18800" data-all="96400" data-rank="4">
+            <span class="rk">4</span>
+            <img src="Assest/hp24.webp" alt="" width="140" height="140" loading="lazy">
+            <div class="bl-row-main"><a href="#" class="bl-row-t">10 quiet lakes to visit before the crowds</a><div class="bl-bar"><span></span></div></div>
+            <div class="bl-views"><b>0</b><small>reads</small></div>
+          </li>
+          <li class="bl-row" style="--i:4;--w:0" data-week="3800" data-month="22600" data-all="70300" data-rank="5">
+            <span class="rk">5</span>
+            <img src="Assest/hp30.webp" alt="" width="140" height="140" loading="lazy">
+            <div class="bl-row-main"><a href="#" class="bl-row-t">Sleeping under the Sahara</a><div class="bl-bar"><span></span></div></div>
+            <div class="bl-views"><b>0</b><small>reads</small></div>
+          </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ============ 7. SUBSCRIBE : message in a bottle ============ -->
+  <section class="bl-sec bl-sea" id="subscribe">
+    <div class="bl-sky" aria-hidden="true"><div class="bl-stars" id="blStars"></div><span class="bl-moon"></span></div>
+    <div class="container bl-sea-grid">
+      <div class="bl-sea-copy">
+        <span class="eyebrow" data-aos="fade-up"><i class="fa-solid fa-paper-plane"></i> The weekly postcard</span>
+        <h2 class="section-title" data-aos="fade-up">Put your email in a <em>bottle</em></h2>
+        <p data-aos="fade-up">One short letter every Friday with a place worth knowing, a tip worth stealing and the best fares we spotted. No spam, ever.</p>
+        <form class="bl-bottle-form" id="blBottleForm" novalidate data-aos="fade-up">
+          <label class="bl-field"><i class="fa-regular fa-envelope" aria-hidden="true"></i>
+            <input type="email" id="blEmail" placeholder="Your email address" aria-label="Email address" autocomplete="email" required></label>
+          <button type="submit" class="btn btn-primary magnetic"><span>Send the bottle</span> <i class="fa-solid fa-paper-plane"></i></button>
+        </form>
+        <p class="bl-bottle-msg" id="blBottleMsg" role="status" aria-live="polite"></p>
+      </div>
+
+      <div class="bl-stage" id="blStage" aria-hidden="true">
+        <span class="bl-paper" id="blPaper"></span>
+        <div class="bl-sail" id="blSail">
+          <div class="bl-bob">
+            <svg viewBox="0 0 200 300" class="bl-bottle" role="img" aria-label="">
+              <rect id="blNeck" x="78" y="48" width="44" height="12" fill="none"/>
+              <g class="bl-cork"><rect x="82" y="24" width="36" height="32" rx="7" fill="#b98a5a" stroke="#8a5f36" stroke-width="2"/><path d="M90 32v16M100 30v20M110 32v16" stroke="#8a5f36" stroke-width="2" stroke-linecap="round" opacity=".6"/></g>
+              <g class="bl-scroll-in"><rect x="82" y="150" width="36" height="78" rx="6" fill="#f5ede0" transform="rotate(-7 100 190)"/><path d="M90 168h20M90 180h20M90 192h14M90 204h18" stroke="#0b1f2e" stroke-width="2.4" stroke-linecap="round" opacity=".55" transform="rotate(-7 100 190)"/><circle cx="108" cy="216" r="4" fill="#ff6b3d" transform="rotate(-7 100 190)"/></g>
+              <path d="M78 70h44v30c0 22 34 34 34 78v70c0 14-10 22-24 22H68c-14 0-24-8-24-22v-70c0-44 34-56 34-78z" fill="rgba(245,237,224,.13)" stroke="#f5ede0" stroke-opacity=".75" stroke-width="3" stroke-linejoin="round"/>
+              <rect x="72" y="56" width="56" height="16" rx="6" fill="rgba(245,237,224,.18)" stroke="#f5ede0" stroke-opacity=".75" stroke-width="3"/>
+              <path d="M58 182c0-26 12-36 20-50" fill="none" stroke="#fff" stroke-opacity=".5" stroke-width="5" stroke-linecap="round"/>
+            </svg>
+          </div>
+        </div>
+        <svg class="bl-stage-wave" viewBox="0 0 2400 120" preserveAspectRatio="none"><path d="M0 60 C200 20 400 100 600 60 S1000 100 1200 60 S1600 100 1800 60 S2200 100 2400 60 V120 H0Z"/></svg>
+      </div>
+    </div>
+    <div class="bl-waves" aria-hidden="true">
+      <svg class="bl-wave w1" viewBox="0 0 2400 120" preserveAspectRatio="none"><path d="M0 60 C200 20 400 100 600 60 S1000 100 1200 60 S1600 100 1800 60 S2200 100 2400 60 V120 H0Z"/></svg>
+      <svg class="bl-wave w2" viewBox="0 0 2400 120" preserveAspectRatio="none"><path d="M0 60 C200 20 400 100 600 60 S1000 100 1200 60 S1600 100 1800 60 S2200 100 2400 60 V120 H0Z"/></svg>
+      <svg class="bl-wave w3" viewBox="0 0 2400 120" preserveAspectRatio="none"><path d="M0 60 C200 20 400 100 600 60 S1000 100 1200 60 S1600 100 1800 60 S2200 100 2400 60 V120 H0Z"/></svg>
+    </div>
+  </section>
+
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="foot-marquee" aria-hidden="true">
+      <div class="foot-marquee-track">
+        <span>Pack your bags</span><i class="fa-solid fa-plane"></i><span>Pack your bags</span><i class="fa-solid fa-plane"></i><span>Pack your bags</span><i class="fa-solid fa-plane"></i><span>Pack your bags</span><i class="fa-solid fa-plane"></i>
+      </div>
+    </div>
+    <div class="container foot-grid">
+      <div class="foot-brand">
+        <a href="#home" class="logo" aria-label="Stackly Holidays - home"><img src="Assest/stackly-logo.webp" alt="Stackly logo" width="229" height="58" loading="lazy"></a>
+        <p>Premium holiday packages designed around you. Fly further, feel more and come home with stories worth retelling.</p>
+        <div class="socials">
+          <a href="404.html" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="404.html" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="404.html" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="404.html" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="404.html" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+        </div>
+      </div>
+      <div class="foot-col">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="services.html">Services</a></li><li><a href="blog.html">Blog</a></li><li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>Support</h4>
+        <ul>
+          <li><a href="404.html">Services</a></li><li><a href="404.html">Travel blog</a></li><li><a href="contact.html">Contact</a></li><li><a href="404.html">Privacy policy</a></li><li><a href="404.html">Terms of service</a></li>
+        </ul>
+      </div>
+      <div class="foot-news">
+        <h4>Get travel inspiration</h4>
+        <p>Monthly deals and destination ideas. No spam, ever.</p>
+        <form class="news-form" id="newsForm">
+          <input type="email" placeholder="Your email address" aria-label="Email address" required>
+          <button type="submit" aria-label="Subscribe"><i class="fa-solid fa-paper-plane"></i></button>
+        </form>
+        <p class="news-msg" id="newsMsg" role="status"></p>
+      </div>
+    </div>
+    <div class="container foot-bottom">
+      <p>&copy; 2026 Stackly Holidays. All rights reserved.</p>
+      <p>Crafted with <i class="fa-solid fa-heart"></i> for travellers</p>
+    </div>
+  </footer>
+
+  <button class="to-top" id="toTop" type="button" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
+
+  <!-- ============ LOGIN MODAL ============ -->
+  <div class="modal" id="loginModal" role="dialog" aria-modal="true" aria-labelledby="loginTitle" hidden>
+    <div class="modal-backdrop" data-close></div>
+    <div class="modal-box">
+      <button class="modal-close" type="button" data-close aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+      <div class="modal-side"><img src="Assest/hp27.webp" alt="" width="720" height="960" loading="lazy">
+        <div class="modal-side-text"><i class="fa-solid fa-plane-up"></i><h3>Your next adventure starts here</h3><p>Save wishlists, track bookings and unlock member-only deals.</p></div>
+      </div>
+      <div class="modal-form">
+        <div class="tabs" role="tablist">
+          <button type="button" class="tab active" data-tab="login" role="tab">Login</button>
+          <button type="button" class="tab" data-tab="register" role="tab">Sign up</button>
+        </div>
+        <h3 id="loginTitle">Welcome back</h3>
+        <form id="authForm" novalidate>
+          <div class="f-group light reg-only"><input type="text" id="aName" placeholder=" "><label for="aName"><i class="fa-regular fa-user"></i> Full name</label></div>
+          <div class="f-group light"><input type="email" id="aEmail" placeholder=" " required><label for="aEmail"><i class="fa-regular fa-envelope"></i> Email address</label></div>
+          <div class="f-group light"><input type="password" id="aPass" placeholder=" " required><label for="aPass"><i class="fa-solid fa-lock"></i> Password</label>
+            <button type="button" class="eye" id="eyeBtn" aria-label="Show password"><i class="fa-regular fa-eye"></i></button></div>
+          <div class="auth-row"><label class="check"><input type="checkbox"><span></span> Remember me</label><a href="#" class="forgot">Forgot password?</a></div>
+          <button type="submit" class="btn btn-primary btn-lg block"><span id="authBtnText">Login</span> <i class="fa-solid fa-arrow-right"></i></button>
+          <p class="auth-msg" id="authMsg" role="status"></p>
+        </form>
+        <div class="or"><span>or continue with</span></div>
+        <div class="social-login">
+          <button type="button" class="btn btn-outline"><i class="fa-brands fa-google"></i> Google</button>
+          <button type="button" class="btn btn-outline"><i class="fa-brands fa-facebook-f"></i> Facebook</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <!-- Libraries -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script src="script.js"></script>
+  <!-- Re-encode Unsplash images as real WebP blobs so "Save image as" gives a .webp file -->
+  <script>
+  (function () {
+    function toWebp(blob) {
+      if (blob.type === 'image/webp') return Promise.resolve(blob);
+      return new Promise(function (resolve, reject) {
+        var tmp = URL.createObjectURL(blob), im = new Image();
+        im.onload = function () {
+          var c = document.createElement('canvas');
+          c.width = im.naturalWidth; c.height = im.naturalHeight;
+          c.getContext('2d').drawImage(im, 0, 0);
+          URL.revokeObjectURL(tmp);
+          c.toBlob(function (b) { b && b.type === 'image/webp' ? resolve(b) : reject(); }, 'image/webp', 0.8);
+        };
+        im.onerror = reject;
+        im.src = tmp;
+      });
+    }
+    function convert(img) {
+      var url = img.currentSrc || img.src;
+      if (img.dataset.webp || url.indexOf('https://images.unsplash.com/') !== 0) return;
+      img.dataset.webp = '1';
+      fetch(url, { mode: 'cors' })
+        .then(function (r) { return r.blob(); })
+        .then(toWebp)
+        .then(function (b) { img.src = URL.createObjectURL(b); })
+        .catch(function () { /* keep original image if anything fails */ });
+    }
+    function init() {
+      document.querySelectorAll('img').forEach(function (img) {
+        if (img.complete && img.naturalWidth) convert(img);
+        else img.addEventListener('load', function () { convert(img); }, { once: true });
+      });
+    }
+    if (document.readyState === 'complete') init();
+    else window.addEventListener('load', init);
+  })();
+  </script>
+</body>
+</html>

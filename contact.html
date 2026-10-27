@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us | Stackly Holidays</title>
+  <meta name="description" content="Talk to Stackly Holidays. Call, message or send an enquiry and a travel designer will reply within 24 hours with a personalised plan.">
+  <meta name="theme-color" content="#0b1f2e">
+  <link rel="icon" href="Assest/stackly-logo.webp" type="image/webp">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome (only icon set used) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <!-- AOS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ============ PRELOADER ============ -->
+  <div class="preloader" id="preloader" aria-hidden="true">
+    <div class="pre-panel pre-top"></div>
+    <div class="pre-panel pre-bottom"></div>
+    <div class="pre-center">
+      <img src="Assest/stackly-logo.webp" alt="" width="229" height="58" class="pre-logo">
+      <div class="pre-bar"><span id="preBar"></span></div>
+      <div class="pre-count"><span id="preCount">0</span>%</div>
+    </div>
+  </div>
+
+  <div class="scroll-progress" id="scrollProgress"></div>
+  <div class="cursor" id="cursor" aria-hidden="true"><span id="cursorText"></span></div>
+
+  <!-- ============ HEADER ============ -->
+  <header class="site-header" id="header">
+    <div class="header-inner container">
+      <a href="index.html" class="logo" aria-label="Stackly Holidays - home">
+        <img src="Assest/stackly-logo.webp" alt="Stackly logo" width="229" height="58">
+      </a>
+
+      <nav class="main-nav" id="mainNav" aria-label="Primary navigation">
+        <ul class="nav-list">
+          <li><a href="index.html" class="nav-link" data-text="Home">Home</a></li>
+          <li><a href="about.html" class="nav-link" data-text="About">About</a></li>
+          <li><a href="services.html" class="nav-link" data-text="Services">Services</a></li>
+          <li><a href="blog.html" class="nav-link" data-text="Blog">Blog</a></li>
+          <li><a href="contact.html" class="nav-link active" data-text="Contact">Contact</a></li>
+        </ul>
+        <div class="nav-extra">
+          <p><i class="fa-solid fa-phone"></i> +91 98765 43210</p>
+          <p><i class="fa-solid fa-envelope"></i> hello@stacklyholidays.com</p>
+          <div class="socials">
+            <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          </div>
+        </div>
+      </nav>
+
+      <div class="header-actions">
+        <a href="login.html" class="btn btn-login magnetic" id="loginBtn">
+  <i class="fa-regular fa-user"></i><span>Login</span>
+</a>
+        <button class="hamburger" id="hamburger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mainNav">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="ct-page">
+
+  <!-- ============ 1. HERO : airport split-flap board says hello ============ -->
+  <section class="ct-sec ct-hero" id="top">
+    <div class="ct-hero-bg" aria-hidden="true"><img src="Assest/hp27.webp" alt="" width="1400" height="800" fetchpriority="high"></div>
+    <div class="container ct-hero-in">
+      <nav class="ab-crumb" aria-label="Breadcrumb"><a href="index.html">Home</a><i class="fa-solid fa-chevron-right"></i><span>Contact</span></nav>
+      <h1 class="ct-title" id="ctTitle" aria-label="Let's talk travel">Let's talk <em>travel</em></h1>
+      <p class="ct-lead ct-in">Questions, dream trips or half-formed ideas are all welcome. Tell us where your mind is wandering and a travel designer will take it from there.</p>
+
+      <div class="ct-board ct-in" id="ctBoard" role="img" aria-label="A departure board saying hello in many languages">
+        <div class="ct-board-top"><span><i class="fa-solid fa-plane-departure"></i> Now boarding</span><span id="ctLang">English</span></div>
+        <div class="ct-flaps" id="ctFlaps"></div>
+        <div class="ct-board-bot"><span class="ct-blink"></span> Gate: a conversation &middot; Status: we reply in 24 hrs</div>
+      </div>
+
+      <div class="ct-chips ct-in">
+        <a href="404.html" class="btn btn-primary magnetic"><i class="fa-solid fa-phone"></i> <span>Call us</span></a>
+        <a href="404.html" target="_blank" rel="noopener" class="btn btn-outline magnetic"><i class="fa-brands fa-whatsapp"></i> <span>WhatsApp</span></a>
+        <a href="404.html" class="btn btn-outline magnetic"><i class="fa-solid fa-pen-to-square"></i> <span>Send an enquiry</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 2. CHANNELS : liquid fill from wherever the pointer enters ============ -->
+  <section class="ct-sec ct-chan" id="reach">
+    <div class="container">
+      <div class="section-head split-head">
+        <div>
+          <span class="eyebrow" data-aos="fade-up"><i class="fa-solid fa-headset"></i> Reach us your way</span>
+          <h2 class="section-title" data-aos="fade-up">Four doors, one <em>friendly</em> team</h2>
+        </div>
+        <div class="ct-status" id="ctStatus" data-aos="fade-up" role="status"><span class="ct-dot"></span><span id="ctStatusTxt">Checking availability...</span></div>
+      </div>
+      <div class="ct-ch-grid">
+        <article class="ct-ch" data-aos="fade-up" data-aos-delay="0">
+          <span class="ct-fill" aria-hidden="true"><img src="Assest/hp17_11zon.webp" alt="" width="720" height="720" loading="lazy"></span>
+          <span class="ct-ic"><i class="fa-solid fa-phone"></i></span>
+          <small>Call us</small>
+          <b>+91 98765 43210</b>
+          <p>Talk to a designer, Mon - Sat</p>
+          <div class="ct-ch-act">
+            <a href="404.html" class="ct-go">Call now <i class="fa-solid fa-arrow-right-long"></i></a>
+            <button type="button" class="ct-copy" data-copy="+91 98765 43210" aria-label="Copy call us details"><i class="fa-regular fa-copy"></i><span>Copy</span></button>
+          </div>
+        </article>
+        <article class="ct-ch" data-aos="fade-up" data-aos-delay="90">
+          <span class="ct-fill" aria-hidden="true"><img src="Assest/hp18_11zon.webp" alt="" width="720" height="720" loading="lazy"></span>
+          <span class="ct-ic"><i class="fa-brands fa-whatsapp"></i></span>
+          <small>WhatsApp</small>
+          <b>+91 98765 43210</b>
+          <p>Quick replies with photos and maps</p>
+          <div class="ct-ch-act">
+            <a href="404.html" class="ct-go" target="_blank" rel="noopener">Start chat <i class="fa-solid fa-arrow-right-long"></i></a>
+            <button type="button" class="ct-copy" data-copy="+91 98765 43210" aria-label="Copy whatsapp details"><i class="fa-regular fa-copy"></i><span>Copy</span></button>
+          </div>
+        </article>
+        <article class="ct-ch" data-aos="fade-up" data-aos-delay="180">
+          <span class="ct-fill" aria-hidden="true"><img src="Assest/hp16_11zon.webp" alt="" width="720" height="720" loading="lazy"></span>
+          <span class="ct-ic"><i class="fa-solid fa-envelope"></i></span>
+          <small>Email us</small>
+          <b>hello@stacklyholidays.com</b>
+          <p>Best for itineraries and documents</p>
+          <div class="ct-ch-act">
+            <a href="404.html" class="ct-go">Write email <i class="fa-solid fa-arrow-right-long"></i></a>
+            <button type="button" class="ct-copy" data-copy="hello@stacklyholidays.com" aria-label="Copy email us details"><i class="fa-regular fa-copy"></i><span>Copy</span></button>
+          </div>
+        </article>
+        <article class="ct-ch" data-aos="fade-up" data-aos-delay="270">
+          <span class="ct-fill" aria-hidden="true"><img src="Assest/hp7_11zon.webp" alt="" width="720" height="720" loading="lazy"></span>
+          <span class="ct-ic"><i class="fa-solid fa-location-dot"></i></span>
+          <small>Visit us</small>
+          <b>12 Skyline Avenue, Mumbai</b>
+          <p>Coffee is always on, India 400001</p>
+          <div class="ct-ch-act">
+            <a href="404.html" class="ct-go">See the map <i class="fa-solid fa-arrow-right-long"></i></a>
+            <button type="button" class="ct-copy" data-copy="12 Skyline Avenue, Mumbai, India 400001" aria-label="Copy visit us details"><i class="fa-regular fa-copy"></i><span>Copy</span></button>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 3. ENQUIRY : form with a live boarding-pass summary ============ -->
+  <section class="ct-sec ct-enq" id="enquiry">
+    <div class="container ct-enq-grid">
+      <aside class="ct-ticket-wrap" data-aos="fade-right">
+        <span class="eyebrow"><i class="fa-solid fa-ticket"></i> Your trip so far</span>
+        <h2 class="section-title">Build your <em>boarding pass</em></h2>
+        <p class="ct-enq-p">Fill in the form and watch your pass take shape. We will turn it into a real plan within 24 hours.</p>
+        <div class="ct-ticket" id="ctTicket" aria-live="polite">
+          <div class="ct-ticket-img">
+            <img class="a" id="ctTkA" src="Assest/hp2_11zon.webp" alt="" width="640" height="360" loading="lazy">
+            <img class="b" id="ctTkB" src="" alt="" width="640" height="360">
+            <div class="ct-ticket-route"><span>BOM</span><i class="fa-solid fa-plane"></i><span id="ctTkTo">Anywhere</span></div>
+          </div>
+          <div class="ct-ticket-body">
+            <div><small>Passenger</small><b id="ctTkName">Your name</b></div>
+            <div><small>Date</small><b id="ctTkDate">Flexible</b></div>
+            <div><small>Travellers</small><b id="ctTkPax">2</b></div>
+            <div><small>Budget / person</small><b id="ctTkBud">&#8377;1,00,000</b></div>
+          </div>
+          <div class="ct-ticket-bar" id="ctBars" aria-hidden="true"></div>
+        </div>
+      </aside>
+
+      <form class="ct-form" id="ctForm" novalidate autocomplete="off" data-aos="fade-left">
+        <fieldset class="ct-fs">
+          <legend><span>1</span> Where does your mind wander?</legend>
+          <div class="ct-dests" id="ctDests">
+            <label class="ct-dest"><input type="radio" name="dest" value="Maldives" data-img="Assest/hp2_11zon.webp">
+              <span class="ct-dest-card"><img src="Assest/hp2_11zon.webp" alt="Sailboat on a calm Maldives lagoon" width="260" height="320" loading="lazy"><b>Maldives</b><i class="fa-solid fa-circle-check" aria-hidden="true"></i></span></label>
+            <label class="ct-dest"><input type="radio" name="dest" value="Bali" data-img="Assest/hp10_11zon.webp">
+              <span class="ct-dest-card"><img src="Assest/hp10_11zon.webp" alt="Bali rice terraces" width="260" height="320" loading="lazy"><b>Bali</b><i class="fa-solid fa-circle-check" aria-hidden="true"></i></span></label>
+            <label class="ct-dest"><input type="radio" name="dest" value="Switzerland" data-img="Assest/hp34.webp">
+              <span class="ct-dest-card"><img src="Assest/hp34.webp" alt="Swiss alpine village" width="260" height="320" loading="lazy"><b>Switzerland</b><i class="fa-solid fa-circle-check" aria-hidden="true"></i></span></label>
+            <label class="ct-dest"><input type="radio" name="dest" value="Japan" data-img="Assest/hp15_11zon.webp">
+              <span class="ct-dest-card"><img src="Assest/hp15_11zon.webp" alt="Japanese pagoda at sunrise" width="260" height="320" loading="lazy"><b>Japan</b><i class="fa-solid fa-circle-check" aria-hidden="true"></i></span></label>
+            <label class="ct-dest"><input type="radio" name="dest" value="Kenya" data-img="Assest/hp5_11zon.webp">
+              <span class="ct-dest-card"><img src="Assest/hp5_11zon.webp" alt="Acacia trees on the Kenyan savanna" width="260" height="320" loading="lazy"><b>Kenya</b><i class="fa-solid fa-circle-check" aria-hidden="true"></i></span></label>
+            <label class="ct-dest"><input type="radio" name="dest" value="Paris" data-img="Assest/hp12_11zon.webp">
+              <span class="ct-dest-card"><img src="Assest/hp12_11zon.webp" alt="Paris rooftops and the Eiffel Tower" width="260" height="320" loading="lazy"><b>Paris</b><i class="fa-solid fa-circle-check" aria-hidden="true"></i></span></label>
+          </div>
+          <p class="ct-err" data-for="dest" role="alert"></p>
+        </fieldset>
+
+        <fieldset class="ct-fs">
+          <legend><span>2</span> The details</legend>
+          <div class="ct-two">
+            <div class="ct-grp" data-field="date"><label class="ct-lbl" for="ctDate">Preferred travel date</label><input type="date" id="ctDate" name="date"></div>
+            <div class="ct-grp" data-field="pax">
+              <span class="ct-lbl">Travellers</span>
+              <div class="ct-step">
+                <button type="button" id="ctMinus" aria-label="Fewer travellers"><i class="fa-solid fa-minus"></i></button>
+                <output id="ctPaxNum" aria-live="polite">2</output>
+                <button type="button" id="ctPlus" aria-label="More travellers"><i class="fa-solid fa-plus"></i></button>
+              </div>
+              <div class="ct-people" id="ctPeople" aria-hidden="true"></div>
+            </div>
+          </div>
+          <div class="ct-grp" data-field="budget">
+            <label class="ct-lbl" for="ctBudget">Budget per person</label>
+            <div class="ct-range">
+              <output class="ct-tip" id="ctBudTip">&#8377;1,00,000</output>
+              <input type="range" id="ctBudget" name="budget" min="30000" max="300000" step="5000" value="100000">
+              <div class="ct-range-ends"><span>&#8377;30k</span><span>&#8377;3L+</span></div>
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset class="ct-fs">
+          <legend><span>3</span> How can we reach you?</legend>
+          <div class="ct-two">
+            <div class="ct-grp ct-fl" data-field="name"><input type="text" id="ctName" name="name" placeholder=" " autocomplete="off"><label for="ctName">Full name</label><p class="ct-err" role="alert"></p></div>
+            <div class="ct-grp ct-fl" data-field="email"><input type="email" id="ctEmail" name="email" placeholder=" " autocomplete="off"><label for="ctEmail">Email address</label><p class="ct-err" role="alert"></p></div>
+          </div>
+          <div class="ct-grp ct-fl" data-field="phone"><input type="tel" id="ctPhone" name="phone" placeholder=" " autocomplete="off"><label for="ctPhone">Phone (optional)</label><p class="ct-err" role="alert"></p></div>
+          <div class="ct-grp ct-fl" data-field="msg"><textarea id="ctMsg" name="message" rows="4" placeholder=" "></textarea><label for="ctMsg">Tell us about your dream trip</label><p class="ct-err" role="alert"></p></div>
+        </fieldset>
+
+        <button type="submit" class="btn btn-primary btn-lg ct-send" id="ctSend"><span class="ct-send-t">Send my enquiry</span><i class="fa-solid fa-paper-plane"></i></button>
+        <p class="ct-form-msg" id="ctFormMsg" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </section>
+
+  <!-- ============ 4. VISIT : 24-hour office dial + pin drop ============ -->
+  <section class="ct-sec ct-visit" id="visit">
+    <div class="container ct-visit-grid">
+      <div class="ct-dial-wrap" data-aos="fade-right">
+        <span class="eyebrow"><i class="fa-solid fa-clock"></i> Office hours</span>
+        <h2 class="section-title">Drop by, <em>any</em> working day</h2>
+        <div class="ct-dial" id="ctDialBox">
+          <svg viewBox="0 0 300 300" class="ct-dial-svg" aria-hidden="true">
+            <circle class="ring" cx="150" cy="150" r="128"/>
+            <g id="ctTicks"></g>
+            <circle class="arc-bg" cx="150" cy="150" r="102"/>
+            <circle class="arc" id="ctArc" cx="150" cy="150" r="102"/>
+            <g class="hand" id="ctHand"><line x1="150" y1="150" x2="150" y2="66"/><circle cx="150" cy="62" r="8"/></g>
+            <circle class="hub" cx="150" cy="150" r="7"/>
+            <text x="150" y="20" text-anchor="middle">00</text><text x="288" y="154" text-anchor="middle">06</text><text x="150" y="294" text-anchor="middle">12</text><text x="12" y="154" text-anchor="middle">18</text>
+          </svg>
+          <div class="ct-dial-c"><b id="ctOpen">Open</b><span id="ctNow">--:--</span><small>Mumbai time</small></div>
+        </div>
+        <ul class="ct-days" id="ctDays"><li data-d="0">Mon</li><li data-d="1">Tue</li><li data-d="2">Wed</li><li data-d="3">Thu</li><li data-d="4">Fri</li><li data-d="5">Sat</li><li data-d="6" class="off">Sun</li></ul>
+        <p class="ct-hours-t">Mon - Sat &middot; 9:00 AM - 7:00 PM &nbsp;|&nbsp; Sunday closed</p>
+      </div>
+
+      <div class="ct-map" id="ctMap" data-aos="fade-left">
+        <img src="Assest/hp23.webp" alt="Evening city skyline near the Stackly Holidays office" width="900" height="680" loading="lazy">
+        <div class="ct-pin" id="ctPin" aria-hidden="true"><span class="r r1"></span><span class="r r2"></span><i class="fa-solid fa-location-dot"></i></div>
+        <div class="ct-addr">
+          <small>Stackly Holidays HQ</small>
+          <b>MMR Complex, Chinna Thirupathi</b>
+          <p>near Chinna Muniyappan Kovil &middot; Salem, Tamil Nadu 636008</p>
+          <a href="404.html" class="btn btn-primary btn-sm" data-return="contact.html#visit"><i class="fa-solid fa-diamond-turn-right"></i> <span>Get directions</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 5. WHAT HAPPENS NEXT : chat that types itself ============ -->
+  <section class="ct-sec ct-next" id="next">
+    <div class="container ct-next-grid">
+      <div class="ct-next-copy">
+        <span class="eyebrow" data-aos="fade-up"><i class="fa-solid fa-comments"></i> What happens next</span>
+        <h2 class="section-title" data-aos="fade-up">From "hello" to <em>itinerary</em></h2>
+        <ol class="ct-steps" id="ctSteps">
+          <li data-aos="fade-up"><span>01</span><div><b>You send a note</b><p>Share a destination, dates and a rough budget.</p></div></li>
+          <li data-aos="fade-up" data-aos-delay="80"><span>02</span><div><b>A designer replies</b><p>A real person, usually within a few working hours.</p></div></li>
+          <li data-aos="fade-up" data-aos-delay="160"><span>03</span><div><b>Draft plan in 24 hrs</b><p>Flights, stays and experiences, tweaked until it feels right.</p></div></li>
+          <li data-aos="fade-up" data-aos-delay="240"><span>04</span><div><b>You pack and go</b><p>We stay on call until you are back home.</p></div></li>
+        </ol>
+      </div>
+      <div class="ct-phone-wrap" data-aos="zoom-in">
+        <div class="ct-phone">
+          <div class="ct-phone-top"><img src="Assest/hp43.webp" alt="Aisha, travel designer" width="44" height="44" loading="lazy"><div><b>Aisha &middot; Travel designer</b><small><span class="ct-dot"></span> online</small></div></div>
+          <div class="ct-chat" id="ctChat" aria-live="polite"></div>
+          <div class="ct-phone-in"><span>Type a message...</span><i class="fa-solid fa-paper-plane"></i></div>
+        </div>
+        <button type="button" class="ct-replay" id="ctReplay"><i class="fa-solid fa-rotate-right"></i> Replay conversation</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 6. QUICK ANSWERS : scratch-off cards ============ -->
+  <section class="ct-sec ct-scr" id="answers">
+    <div class="container">
+      <header class="ct-head center">
+        <span class="eyebrow" data-aos="fade-up"><i class="fa-solid fa-circle-question"></i> Quick answers</span>
+        <h2 class="section-title" data-aos="fade-up">Scratch to <em>reveal</em></h2>
+        <p data-aos="fade-up">Use your finger or mouse to scratch the silver foil. Prefer not to? Tap Reveal on any card.</p>
+      </header>
+      <div class="ct-sc-grid">
+        <article class="ct-sc" data-aos="zoom-in" data-aos-delay="0">
+          <img src="Assest/hp8_11zon.webp" alt="Calm lake at sunset" width="480" height="380" loading="lazy">
+          <div class="ct-sc-ans"><span class="ct-sc-no">Answer 01</span><p>Within 24 hours, and usually much sooner during working hours (Mon - Sat, 9 AM - 7 PM).</p></div>
+          <canvas class="ct-foil" data-q="How fast will you reply?" aria-hidden="true"></canvas>
+          <button type="button" class="ct-reveal" aria-label="Reveal answer: How fast will you reply?"><i class="fa-solid fa-eye"></i> Reveal</button>
+        </article>
+        <article class="ct-sc" data-aos="zoom-in" data-aos-delay="90">
+          <img src="Assest/hp37.webp" alt="Safari sunrise" width="480" height="380" loading="lazy">
+          <div class="ct-sc-ans"><span class="ct-sc-no">Answer 02</span><p>Planning and quotes are free. You only pay when you decide to book your trip.</p></div>
+          <canvas class="ct-foil" data-q="Is there a fee for planning?" aria-hidden="true"></canvas>
+          <button type="button" class="ct-reveal" aria-label="Reveal answer: Is there a fee for planning?"><i class="fa-solid fa-eye"></i> Reveal</button>
+        </article>
+        <article class="ct-sc" data-aos="zoom-in" data-aos-delay="180">
+          <img src="Assest/hp25.webp" alt="Snowy peaks under stars" width="480" height="380" loading="lazy">
+          <div class="ct-sc-ans"><span class="ct-sc-no">Answer 03</span><p>Yes. Tell us early and we will rework dates, hotels or flights, subject to each supplier policy.</p></div>
+          <canvas class="ct-foil" data-q="Can I change my plans later?" aria-hidden="true"></canvas>
+          <button type="button" class="ct-reveal" aria-label="Reveal answer: Can I change my plans later?"><i class="fa-solid fa-eye"></i> Reveal</button>
+        </article>
+        <article class="ct-sc" data-aos="zoom-in" data-aos-delay="270">
+          <img src="Assest/hp36.webp" alt="Mountain lake" width="480" height="380" loading="lazy">
+          <div class="ct-sc-ans"><span class="ct-sc-no">Answer 04</span><p>We guide you through the document checklist and timelines for every destination we sell.</p></div>
+          <canvas class="ct-foil" data-q="Do you help with visas?" aria-hidden="true"></canvas>
+          <button type="button" class="ct-reveal" aria-label="Reveal answer: Do you help with visas?"><i class="fa-solid fa-eye"></i> Reveal</button>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 7. SUNRISE CTA : the sky brightens as you scroll ============ -->
+  <section class="ct-sec ct-dawn" id="begin" style="--p:0">
+    <div class="ct-sky night" aria-hidden="true"></div>
+    <div class="ct-sky day" aria-hidden="true"></div>
+    <div class="ct-dstars" id="ctDStars" aria-hidden="true"></div>
+    <div class="ct-sun" aria-hidden="true"><span></span></div>
+    <svg class="ct-birds" viewBox="0 0 160 60" aria-hidden="true"><path d="M5 30c8-12 16-12 22 0 6-12 14-12 22 0M70 14c6-9 12-9 17 0 5-9 11-9 17 0M110 40c5-8 10-8 14 0 4-8 9-8 14 0"/></svg>
+    <div class="ct-ph" aria-hidden="true"><img src="Assest/hp35.webp" alt="" width="1400" height="520" loading="lazy"></div>
+    <svg class="ct-hills" viewBox="0 0 1440 200" preserveAspectRatio="none" aria-hidden="true"><path d="M0 120 C160 40 320 40 520 100 S900 180 1100 90 S1360 40 1440 90 V200 H0Z"/></svg>
+    <div class="container ct-dawn-in">
+      <span class="eyebrow"><i class="fa-solid fa-sun"></i> A new day, a new trip</span>
+      <h2 class="section-title">Every journey begins with a <em>hello</em></h2>
+      <p>Pick up the phone, drop us a message or send an enquiry. Your sunrise is waiting.</p>
+      <div class="ct-dawn-btns">
+        <a href="404.html" class="btn btn-primary btn-lg magnetic"><i class="fa-solid fa-phone"></i> <span>Call +91 98765 43210</span></a>
+        <a href="404.html" class="btn btn-outline btn-lg magnetic"><i class="fa-solid fa-envelope"></i> <span>Email us</span></a>
+      </div>
+    </div>
+  </section>
+
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="foot-marquee" aria-hidden="true">
+      <div class="foot-marquee-track">
+        <span>Pack your bags</span><i class="fa-solid fa-plane"></i><span>Pack your bags</span><i class="fa-solid fa-plane"></i><span>Pack your bags</span><i class="fa-solid fa-plane"></i><span>Pack your bags</span><i class="fa-solid fa-plane"></i>
+      </div>
+    </div>
+    <div class="container foot-grid">
+      <div class="foot-brand">
+        <a href="#home" class="logo" aria-label="Stackly Holidays - home"><img src="Assest/stackly-logo.webp" alt="Stackly logo" width="229" height="58" loading="lazy"></a>
+        <p>Premium holiday packages designed around you. Fly further, feel more and come home with stories worth retelling.</p>
+        <div class="socials">
+          <a href="404.html" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="404.html" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="404.html" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="404.html" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="404.html" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+        </div>
+      </div>
+      <div class="foot-col">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="services.html">Services</a></li><li><a href="blog.html">Blog</a></li><li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>Support</h4>
+        <ul>
+          <li><a href="404.html">Services</a></li><li><a href="404.html">Travel blog</a></li><li><a href="contact.html">Contact</a></li><li><a href="404.html">Privacy policy</a></li><li><a href="404.html">Terms of service</a></li>
+        </ul>
+      </div>
+      <div class="foot-news">
+        <h4>Get travel inspiration</h4>
+        <p>Monthly deals and destination ideas. No spam, ever.</p>
+        <form class="news-form" id="newsForm">
+          <input type="email" placeholder="Your email address" aria-label="Email address" required>
+          <button type="submit" aria-label="Subscribe"><i class="fa-solid fa-paper-plane"></i></button>
+        </form>
+        <p class="news-msg" id="newsMsg" role="status"></p>
+      </div>
+    </div>
+    <div class="container foot-bottom">
+      <p>&copy; 2026 Stackly Holidays. All rights reserved.</p>
+      <p>Crafted with <i class="fa-solid fa-heart"></i> for travellers</p>
+    </div>
+  </footer>
+
+  <button class="to-top" id="toTop" type="button" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
+
+  <!-- ============ LOGIN MODAL ============ -->
+  <div class="modal" id="loginModal" role="dialog" aria-modal="true" aria-labelledby="loginTitle" hidden>
+    <div class="modal-backdrop" data-close></div>
+    <div class="modal-box">
+      <button class="modal-close" type="button" data-close aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+      <div class="modal-side"><img src="Assest/hp27.webp" alt="" width="720" height="960" loading="lazy">
+        <div class="modal-side-text"><i class="fa-solid fa-plane-up"></i><h3>Your next adventure starts here</h3><p>Save wishlists, track bookings and unlock member-only deals.</p></div>
+      </div>
+      <div class="modal-form">
+        <div class="tabs" role="tablist">
+          <button type="button" class="tab active" data-tab="login" role="tab">Login</button>
+          <button type="button" class="tab" data-tab="register" role="tab">Sign up</button>
+        </div>
+        <h3 id="loginTitle">Welcome back</h3>
+        <form id="authForm" novalidate>
+          <div class="f-group light reg-only"><input type="text" id="aName" placeholder=" "><label for="aName"><i class="fa-regular fa-user"></i> Full name</label></div>
+          <div class="f-group light"><input type="email" id="aEmail" placeholder=" " required><label for="aEmail"><i class="fa-regular fa-envelope"></i> Email address</label></div>
+          <div class="f-group light"><input type="password" id="aPass" placeholder=" " required><label for="aPass"><i class="fa-solid fa-lock"></i> Password</label>
+            <button type="button" class="eye" id="eyeBtn" aria-label="Show password"><i class="fa-regular fa-eye"></i></button></div>
+          <div class="auth-row"><label class="check"><input type="checkbox"><span></span> Remember me</label><a href="#" class="forgot">Forgot password?</a></div>
+          <button type="submit" class="btn btn-primary btn-lg block"><span id="authBtnText">Login</span> <i class="fa-solid fa-arrow-right"></i></button>
+          <p class="auth-msg" id="authMsg" role="status"></p>
+        </form>
+        <div class="or"><span>or continue with</span></div>
+        <div class="social-login">
+          <button type="button" class="btn btn-outline"><i class="fa-brands fa-google"></i> Google</button>
+          <button type="button" class="btn btn-outline"><i class="fa-brands fa-facebook-f"></i> Facebook</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <!-- Libraries -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script src="script.js"></script>
+  <!-- Re-encode Unsplash images as real WebP blobs so "Save image as" gives a .webp file -->
+  <script>
+  (function () {
+    function toWebp(blob) {
+      if (blob.type === 'image/webp') return Promise.resolve(blob);
+      return new Promise(function (resolve, reject) {
+        var tmp = URL.createObjectURL(blob), im = new Image();
+        im.onload = function () {
+          var c = document.createElement('canvas');
+          c.width = im.naturalWidth; c.height = im.naturalHeight;
+          c.getContext('2d').drawImage(im, 0, 0);
+          URL.revokeObjectURL(tmp);
+          c.toBlob(function (b) { b && b.type === 'image/webp' ? resolve(b) : reject(); }, 'image/webp', 0.8);
+        };
+        im.onerror = reject;
+        im.src = tmp;
+      });
+    }
+    function convert(img) {
+      var url = img.currentSrc || img.src;
+      if (url.indexOf('https://images.unsplash.com/') !== 0 || img.dataset.webpSrc === url) return;
+      img.dataset.webpSrc = url;
+      fetch(url, { mode: 'cors' })
+        .then(function (r) { return r.blob(); })
+        .then(toWebp)
+        .then(function (b) { img.src = URL.createObjectURL(b); })
+        .catch(function () { /* keep the original image if anything fails */ });
+    }
+    function watch(img) {
+      if (img.complete && img.naturalWidth) convert(img);
+      else img.addEventListener('load', function () { convert(img); }, { once: true });
+    }
+    function init() {
+      document.querySelectorAll('img').forEach(watch);
+      new MutationObserver(function (list) {
+        list.forEach(function (m) {
+          if (m.type === 'attributes') { if (m.target.tagName === 'IMG') watch(m.target); }
+          else m.addedNodes.forEach(function (n) {
+            if (n.nodeType !== 1) return;
+            if (n.tagName === 'IMG') watch(n);
+            else if (n.querySelectorAll) n.querySelectorAll('img').forEach(watch);
+          });
+        });
+      }).observe(document.body, { childList: true, subtree: true, attributes: true, attributeFilter: ['src'] });
+    }
+    if (document.readyState === 'complete') init();
+    else window.addEventListener('load', init);
+  })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services | Stackly Holidays</title>
+  <meta name="description" content="Flights, luxury stays, visas, private guides, transfers and insurance. Explore every Stackly Holidays service and build your trip.">
+  <meta name="theme-color" content="#0b1f2e">
+  <link rel="icon" href="Assest/stackly-logo.webp" type="image/webp">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome (only icon set used) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <!-- AOS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ============ PRELOADER ============ -->
+  <div class="preloader" id="preloader" aria-hidden="true">
+    <div class="pre-panel pre-top"></div>
+    <div class="pre-panel pre-bottom"></div>
+    <div class="pre-center">
+      <img src="Assest/stackly-logo.webp" alt="" width="229" height="58" class="pre-logo">
+      <div class="pre-bar"><span id="preBar"></span></div>
+      <div class="pre-count"><span id="preCount">0</span>%</div>
+    </div>
+  </div>
+
+  <div class="scroll-progress" id="scrollProgress"></div>
+  <div class="cursor" id="cursor" aria-hidden="true"><span id="cursorText"></span></div>
+
+  <!-- ============ HEADER ============ -->
+  <header class="site-header" id="header">
+    <div class="header-inner container">
+      <a href="index.html" class="logo" aria-label="Stackly Holidays - home">
+        <img src="Assest/stackly-logo.webp" alt="Stackly logo" width="229" height="58">
+      </a>
+
+      <nav class="main-nav" id="mainNav" aria-label="Primary navigation">
+        <ul class="nav-list">
+          <li><a href="index.html" class="nav-link" data-text="Home">Home</a></li>
+          <li><a href="about.html" class="nav-link" data-text="About">About</a></li>
+          <li><a href="services.html" class="nav-link active" data-text="Services">Services</a></li>
+          <li><a href="blog.html" class="nav-link" data-text="Blog">Blog</a></li>
+          <li><a href="contact.html" class="nav-link" data-text="Contact">Contact</a></li>
+        </ul>
+        <div class="nav-extra">
+          <p><i class="fa-solid fa-phone"></i> +91 98765 43210</p>
+          <p><i class="fa-solid fa-envelope"></i> hello@stacklyholidays.com</p>
+          <div class="socials">
+            <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          </div>
+        </div>
+      </nav>
+
+      <div class="header-actions">
+        <a href="login.html" class="btn btn-login magnetic" id="loginBtn">
+  <i class="fa-regular fa-user"></i><span>Login</span>
+</a>
+        <button class="hamburger" id="hamburger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mainNav">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="sv-page">
+  <!-- 1. HERO : rolling word reel + orbiting service satellites -->
+  <section class="sv-sec sv-dark sv-hero" id="top">
+    <div class="container sv-hero-grid">
+      <div>
+        <nav class="sv-crumb sv-in" aria-label="Breadcrumb"><a href="index.html">Home</a><i class="fa-solid fa-chevron-right"></i><span>Services</span></nav>
+        <h1 class="sv-h1 sv-in">We take care of your <span class="sv-reel" aria-hidden="true"><span class="sv-reel-in"><b>flights</b><b>stays</b><b>visas</b><b>guides</b><b>transfers</b><b>cover</b><b>flights</b></span></span><span class="sv-sr">flights, stays, visas, guides, transfers and insurance</span></h1>
+        <p class="sv-lead sv-in">Six services, one team. Pick what you need or let us wrap the whole holiday, from the first fare check to the ride home.</p>
+        <div class="sv-cta sv-in">
+          <a href="404.html" class="btn btn-primary magnetic"><span>Build my trip</span> <i class="fa-solid fa-arrow-right"></i></a>
+          <a href="404.html" class="btn btn-login"><span>Browse services</span></a>
+        </div>
+      </div>
+      <div class="sv-orbit" aria-hidden="true">
+        <div class="sv-ring"><b class="sv-sat" style="--a:0deg"><span><i class="fa-solid fa-plane-departure"></i></span></b><b class="sv-sat" style="--a:120deg"><span><i class="fa-solid fa-hotel"></i></span></b><b class="sv-sat" style="--a:240deg"><span><i class="fa-solid fa-passport"></i></span></b></div>
+        <div class="sv-ring r2"><b class="sv-sat" style="--a:60deg"><span><i class="fa-solid fa-map-location-dot"></i></span></b><b class="sv-sat" style="--a:180deg"><span><i class="fa-solid fa-van-shuttle"></i></span></b><b class="sv-sat" style="--a:300deg"><span><i class="fa-solid fa-shield-heart"></i></span></b></div>
+        <div class="sv-core"><img src="Assest/hp2_11zon.webp" alt="" width="520" height="520"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. SERVICE INDEX : photo follows your cursor (tap-to-open on touch) -->
+  <!-- Replace your <section class="sv-sec sv-index" id="index"> ... </section> with this.
+     Only change: the arrow <span class="go"> became <a class="go" href="404.html">.
+     (Row click on desktop is handled by index-update.js) -->
+<section class="sv-sec sv-index" id="index">
+    <div class="container">
+      <header class="sv-head"><span class="eyebrow" data-aos="fade-up"><i class="fa-solid fa-suitcase-rolling"></i> What we do</span>
+        <h2 class="section-title" data-aos="fade-up">Six ways we make it <em>easy</em></h2>
+        <p data-aos="fade-up">Hover a row and a photo follows your cursor. On a phone, tap a row to open it.</p></header>
+      <ul class="sv-list" id="svList">
+        <li class="sv-row" tabindex="0" data-img="Assest/hp9_11zon.webp"><span class="n">01</span><div><h3>Flight Booking</h3><p>Best fares, flexible dates and smart connections.</p></div><span class="tg">Airlines</span><a class="go" href="404.html" aria-label="Open Flight Booking" onkeydown="event.stopPropagation()"><i class="fa-solid fa-arrow-right"></i></a><div class="sv-mob"><div><img src="Assest/hp9_11zon.webp" alt="Aeroplane wing above the clouds" width="600" height="360" loading="lazy"></div></div></li>
+        <li class="sv-row" tabindex="0" data-img="Assest/hp16_11zon.webp"><span class="n">02</span><div><h3>Luxury Stays</h3><p>Resorts, villas and boutique hotels we have vetted.</p></div><span class="tg">Hotels</span><a class="go" href="404.html" aria-label="Open Luxury Stays" onkeydown="event.stopPropagation()"><i class="fa-solid fa-arrow-right"></i></a><div class="sv-mob"><div><img src="Assest/hp16_11zon.webp" alt="Luxury hotel pool" width="600" height="360" loading="lazy"></div></div></li>
+        <li class="sv-row" tabindex="0" data-img="Assest/hp7_11zon.webp"><span class="n">03</span><div><h3>Visa Assistance</h3><p>Document checks, appointments and follow-ups.</p></div><span class="tg">Paperwork</span><a class="go" href="404.html" aria-label="Open Visa Assistance" onkeydown="event.stopPropagation()"><i class="fa-solid fa-arrow-right"></i></a><div class="sv-mob"><div><img src="Assest/hp7_11zon.webp" alt="Travel documents and map" width="600" height="360" loading="lazy"></div></div></li>
+        <li class="sv-row" tabindex="0" data-img="Assest/hp17_11zon.webp"><span class="n">04</span><div><h3>Private Guides</h3><p>Local storytellers who open doors.</p></div><span class="tg">Experiences</span><a class="go" href="404.html" aria-label="Open Private Guides" onkeydown="event.stopPropagation()"><i class="fa-solid fa-arrow-right"></i></a><div class="sv-mob"><div><img src="Assest/hp17_11zon.webp" alt="Friends exploring together" width="600" height="360" loading="lazy"></div></div></li>
+        <li class="sv-row" tabindex="0" data-img="Assest/hp18_11zon.webp"><span class="n">05</span><div><h3>Transfers &amp; Transport</h3><p>Pickups, private cars, trains and ferries on time.</p></div><span class="tg">Ground</span><a class="go" href="404.html" aria-label="Open Transfers and Transport" onkeydown="event.stopPropagation()"><i class="fa-solid fa-arrow-right"></i></a><div class="sv-mob"><div><img src="Assest/hp18_11zon.webp" alt="Travel van on a scenic road" width="600" height="360" loading="lazy"></div></div></li>
+        <li class="sv-row" tabindex="0" data-img="Assest/hp19_11zon.webp"><span class="n">06</span><div><h3>Travel Insurance</h3><p>Medical, baggage and cancellation cover.</p></div><span class="tg">Peace of mind</span><a class="go" href="404.html" aria-label="Open Travel Insurance" onkeydown="event.stopPropagation()"><i class="fa-solid fa-arrow-right"></i></a><div class="sv-mob"><div><img src="Assest/hp19_11zon.webp" alt="Traveller relaxing with peace of mind" width="600" height="360" loading="lazy"></div></div></li>
+      </ul>
+    </div>
+    <div class="sv-float" id="svFloat" aria-hidden="true"></div>
+  </section>
+
+  <!-- 3. PLANS : luggage tags that swing in from a rope -->
+  <section class="sv-sec sv-dark sv-plans" id="plans">
+    <div class="container">
+      <header class="sv-head center"><span class="eyebrow" data-aos="fade-up"><i class="fa-solid fa-tags"></i> Service plans</span>
+        <h2 class="section-title" data-aos="fade-up">Pick the tag that <em>fits</em> your trip</h2>
+        <p data-aos="fade-up">Three ways to travel with us. Hover a tag and it sways.</p></header>
+      <div class="sv-tags">
+        <article class="sv-tag" style="--d:0s"><img src="Assest/hp20.webp" alt="Beach with palm trees" width="600" height="260" loading="lazy"><div class="sv-tag-b"><small>Plan 01</small><h3>Essential</h3><p class="pr">From <b>₹4,999</b></p>
+          <ul><li><i class="fa-solid fa-check"></i>Flights or stay booking</li><li><i class="fa-solid fa-check"></i>Visa document check</li><li><i class="fa-solid fa-check"></i>Email support</li></ul><a href="404.html" class="btn btn-dark btn-sm"><span>Choose</span></a></div></article>
+        <article class="sv-tag mid" style="--d:.25s"><img src="Assest/hp21.webp" alt="Moonlit beach and sailboat" width="600" height="260" loading="lazy"><div class="sv-tag-b"><small>Plan 02 · Most loved</small><h3>Signature</h3><p class="pr">From <b>₹14,999</b></p>
+          <ul><li><i class="fa-solid fa-check"></i>Flights, stays and transfers</li><li><i class="fa-solid fa-check"></i>Full visa assistance</li><li><i class="fa-solid fa-check"></i>24/7 trip support</li></ul><a href="404.html" class="btn btn-dark btn-sm"><span>Choose</span></a></div></article>
+        <article class="sv-tag" style="--d:.5s"><img src="Assest/hp22.webp" alt="Cruise ship at sunset" width="600" height="260" loading="lazy"><div class="sv-tag-b"><small>Plan 03</small><h3>Bespoke</h3><p class="pr">From <b>₹34,999</b></p>
+          <ul><li><i class="fa-solid fa-check"></i>Everything in Signature</li><li><i class="fa-solid fa-check"></i>Private guides and cruises</li><li><i class="fa-solid fa-check"></i>Personal trip concierge</li></ul><a href="404.html" class="btn btn-dark btn-sm"><span>Choose</span></a></div></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. COMPARE : drag between DIY chaos and a Stackly plan -->
+  <section class="sv-sec sv-vs" id="compare" data-side="us">
+    <div class="container sv-vs-grid">
+      <div class="sv-cmp" id="svCmp">
+        <img src="Assest/hp1_11zon.webp" alt="Calm sailboat holiday planned by Stackly" width="800" height="600" loading="lazy">
+        <div class="diy"><img src="Assest/hp23.webp" alt="Busy city at dusk" width="800" height="600" loading="lazy"><em class="stk">Flight delayed</em><em class="stk s2">Hotel full</em><em class="stk s3">Visa rejected</em></div>
+        <span class="lab l">DIY chaos</span><span class="lab r">With Stackly</span>
+        <div class="hd"><span><i class="fa-solid fa-left-right"></i></span></div>
+        <input type="range" min="0" max="100" value="50" aria-label="Slide to compare planning alone with planning with Stackly">
+      </div>
+      <div>
+        <header class="sv-head"><span class="eyebrow" data-aos="fade-up"><i class="fa-solid fa-scale-balanced"></i> Why Stackly</span>
+          <h2 class="section-title" data-aos="fade-up">Drag the line. Feel the <em>difference</em></h2></header>
+        <ul class="sv-vs-list">
+          <li><div class="ic stack"><i class="fa-solid fa-xmark x"></i><i class="fa-solid fa-check y"></i></div><div class="t stack"><span class="x"><b>Ten tabs, one headache</b>Comparing fares and hotels for hours.</span><span class="y"><b>One tailored plan</b>Best options picked and priced for you.</span></div></li>
+          <li><div class="ic stack"><i class="fa-solid fa-xmark x"></i><i class="fa-solid fa-check y"></i></div><div class="t stack"><span class="x"><b>Visa guesswork</b>Missing papers found at the counter.</span><span class="y"><b>Visa desk on call</b>Every document checked before you pay.</span></div></li>
+          <li><div class="ic stack"><i class="fa-solid fa-xmark x"></i><i class="fa-solid fa-check y"></i></div><div class="t stack"><span class="x"><b>Stranded alone</b>Cancelled flight, no one to call.</span><span class="y"><b>A human 24/7</b>We rebook while you finish your coffee.</span></div></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. PACK : tap services and they fly into your suitcase -->
+  <section class="sv-sec sv-dark sv-pack" id="pack">
+    <div class="container sv-pack-grid">
+      <div>
+        <header class="sv-head"><span class="eyebrow" data-aos="fade-up"><i class="fa-solid fa-bag-shopping"></i> Build your trip</span>
+          <h2 class="section-title" data-aos="fade-up">Pack the services you <em>need</em></h2>
+          <p data-aos="fade-up">Tap to drop a service into the suitcase. Prices are illustrative per-person estimates.</p></header>
+        <div class="sv-chips">
+          <button class="sv-chip" type="button" data-k="f" data-p="18000" aria-pressed="false"><span class="ci"><i class="fa-solid fa-plane-departure"></i></span><span>Flights<small>from ₹18,000</small></span></button>
+          <button class="sv-chip" type="button" data-k="s" data-p="26000" aria-pressed="false"><span class="ci"><i class="fa-solid fa-hotel"></i></span><span>Stays<small>from ₹26,000</small></span></button>
+          <button class="sv-chip" type="button" data-k="v" data-p="6500" aria-pressed="false"><span class="ci"><i class="fa-solid fa-passport"></i></span><span>Visa<small>from ₹6,500</small></span></button>
+          <button class="sv-chip" type="button" data-k="g" data-p="9000" aria-pressed="false"><span class="ci"><i class="fa-solid fa-map-location-dot"></i></span><span>Guides<small>from ₹9,000</small></span></button>
+          <button class="sv-chip" type="button" data-k="t" data-p="4500" aria-pressed="false"><span class="ci"><i class="fa-solid fa-van-shuttle"></i></span><span>Transfers<small>from ₹4,500</small></span></button>
+          <button class="sv-chip" type="button" data-k="i" data-p="2200" aria-pressed="false"><span class="ci"><i class="fa-solid fa-shield-heart"></i></span><span>Insurance<small>from ₹2,200</small></span></button>
+        </div>
+      </div>
+      <div>
+        <div class="sv-case" id="svCase"><div class="sv-handle"></div>
+          <div class="sv-case-body"><img class="stk" src="Assest/hp12_11zon.webp" alt="" width="160" height="160" loading="lazy"><p class="sv-empty" id="svEmpty">Your suitcase is empty</p><div class="sv-items" id="svItems"></div></div>
+        </div>
+        <div class="sv-sum"><div><small>Estimated from</small><b id="svTotal">₹0</b></div><div class="sv-meter"><span id="svMeter"></span><small id="svCnt">0 of 6 packed</small></div><a href="404.html" class="btn btn-primary"><span>Request this bundle</span></a></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. FLOW : photo opens like window blinds as each step arrives -->
+  <section class="sv-sec sv-flow" id="flow">
+    <div class="container">
+      <header class="sv-head center"><span class="eyebrow" data-aos="fade-up"><i class="fa-solid fa-route"></i> How it works</span>
+        <h2 class="section-title" data-aos="fade-up">Four steps, <em>zero</em> stress</h2></header>
+      <div class="sv-flow-grid">
+        <div class="sv-stage"><img class="sv-ly on" src="Assest/hp24.webp" alt="Mountain lake at sunrise" width="600" height="750"><img class="sv-ly" src="Assest/hp7_11zon.webp" alt="Maps and travel essentials" width="600" height="750" loading="lazy"><img class="sv-ly" src="Assest/hp25.webp" alt="Resort with a sea view" width="600" height="750" loading="lazy"><img class="sv-ly" src="Assest/hp9_11zon.webp" alt="Aeroplane wing above clouds" width="600" height="750" loading="lazy"><span class="sv-no" id="svNo">01</span></div>
+        <div class="sv-steps">
+          <div class="sv-step on"><span class="no">01</span><h3>Tell us your dream</h3><p>A short call about where, when and how you want to feel.</p></div>
+          <div class="sv-step"><span class="no">02</span><h3>Get a custom plan</h3><p>A priced itinerary with every service lined up within 24 hours.</p></div>
+          <div class="sv-step"><span class="no">03</span><h3>Confirm with confidence</h3><p>Secure it with a small deposit and flexible payment options.</p></div>
+          <div class="sv-step"><span class="no">04</span><h3>Fly, we have you</h3><p>Support stays on standby from takeoff to touchdown.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. FAQ + SKY CTA : answers type themselves, balloon rises as you scroll -->
+  <section class="sv-sec sv-sky" id="faq">
+    <div class="sv-sky-bg" aria-hidden="true"><img src="Assest/hp26.webp" alt="" width="1100" height="800" loading="lazy"></div>
+    <i class="sv-cloud" style="top:12%;left:-10%"></i><i class="sv-cloud c2" style="top:56%;left:30%"></i>
+    <div class="container sv-sky-grid">
+      <div>
+        <header class="sv-head"><span class="eyebrow" data-aos="fade-up"><i class="fa-solid fa-circle-question"></i> Quick answers</span>
+          <h2 class="section-title" data-aos="fade-up">Questions before <em>takeoff</em></h2></header>
+        <div class="sv-faq">
+          <div class="sv-qa open"><button class="sv-q" type="button" aria-expanded="true">Can I book just one service?<i class="fa-solid fa-plane"></i></button><div class="sv-a"><div><p>Yes. Book flights, a stay or a visa on its own, and add more whenever you like.</p></div></div></div>
+          <div class="sv-qa"><button class="sv-q" type="button" aria-expanded="false">How fast will I get a plan?<i class="fa-solid fa-plane"></i></button><div class="sv-a"><div><p>Most itineraries reach you within 24 hours, with clear pricing and no hidden fees.</p></div></div></div>
+          <div class="sv-qa"><button class="sv-q" type="button" aria-expanded="false">What if my plans change?<i class="fa-solid fa-plane"></i></button><div class="sv-a"><div><p>Our team handles changes and rebooking, and flexible options are built into most plans.</p></div></div></div>
+          <div class="sv-qa"><button class="sv-q" type="button" aria-expanded="false">Do you help with visas?<i class="fa-solid fa-plane"></i></button><div class="sv-a"><div><p>Our visa desk checks documents, books appointments and follows up until approval.</p></div></div></div>
+        </div>
+      </div>
+      <div class="sv-sky-side">
+        <div class="sv-balloon" id="svBalloon" aria-hidden="true"><div class="sw"><svg viewBox="0 0 100 140"><path d="M50 4C24 4 6 24 6 48c0 22 16 38 30 52h28c14-14 30-30 30-52C94 24 76 4 50 4z" fill="#ff6b3d"/><path d="M50 4c-14 14-20 30-20 52 0 16 6 30 10 44M50 4c14 14 20 30 20 52 0 16-6 30-10 44" stroke="#0b1f2e" stroke-opacity=".35" fill="none" stroke-width="2"/><path d="M36 100l6 20M64 100l-6 20" stroke="#f5ede0" stroke-width="2"/><rect x="40" y="120" width="20" height="14" rx="3" fill="#f5ede0"/></svg></div></div>
+        <div class="sv-card"><h3>Ready to lift off?</h3><p>Tell us the trip, we handle the rest.</p><div class="sv-cta"><a href="404.html" class="btn btn-primary magnetic"><span>Plan my trip</span> <i class="fa-solid fa-arrow-right"></i></a><a href="404.html" class="btn btn-login"><i class="fa-solid fa-phone"></i><span>Call us</span></a></div></div>
+      </div>
+    </div>
+  </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="foot-marquee" aria-hidden="true">
+      <div class="foot-marquee-track">
+        <span>Pack your bags</span><i class="fa-solid fa-plane"></i><span>Pack your bags</span><i class="fa-solid fa-plane"></i><span>Pack your bags</span><i class="fa-solid fa-plane"></i><span>Pack your bags</span><i class="fa-solid fa-plane"></i>
+      </div>
+    </div>
+    <div class="container foot-grid">
+      <div class="foot-brand">
+        <a href="#home" class="logo" aria-label="Stackly Holidays - home"><img src="Assest/stackly-logo.webp" alt="Stackly logo" width="229" height="58" loading="lazy"></a>
+        <p>Premium holiday packages designed around you. Fly further, feel more and come home with stories worth retelling.</p>
+        <div class="socials">
+          <a href="404.html" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="404.html" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="404.html" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="404.html" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="404.html" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+        </div>
+      </div>
+      <div class="foot-col">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="services.html">Services</a></li><li><a href="blog.html">Blog</a></li><li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>Support</h4>
+        <ul>
+          <li><a href="404.html">Services</a></li><li><a href="404.html">Travel blog</a></li><li><a href="contact.html">Contact</a></li><li><a href="404.html">Privacy policy</a></li><li><a href="404.html">Terms of service</a></li>
+        </ul>
+      </div>
+      <div class="foot-news">
+        <h4>Get travel inspiration</h4>
+        <p>Monthly deals and destination ideas. No spam, ever.</p>
+        <form class="news-form" id="newsForm">
+          <input type="email" placeholder="Your email address" aria-label="Email address" required>
+          <button type="submit" aria-label="Subscribe"><i class="fa-solid fa-paper-plane"></i></button>
+        </form>
+        <p class="news-msg" id="newsMsg" role="status"></p>
+      </div>
+    </div>
+    <div class="container foot-bottom">
+      <p>&copy; 2026 Stackly Holidays. All rights reserved.</p>
+      <p>Crafted with <i class="fa-solid fa-heart"></i> for travellers</p>
+    </div>
+  </footer>
+
+  <button class="to-top" id="toTop" type="button" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
+
+  <!-- ============ LOGIN MODAL ============ -->
+  <div class="modal" id="loginModal" role="dialog" aria-modal="true" aria-labelledby="loginTitle" hidden>
+    <div class="modal-backdrop" data-close></div>
+    <div class="modal-box">
+      <button class="modal-close" type="button" data-close aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+      <div class="modal-side"><img src="Assest/hp27.webp" alt="" width="720" height="960" loading="lazy">
+        <div class="modal-side-text"><i class="fa-solid fa-plane-up"></i><h3>Your next adventure starts here</h3><p>Save wishlists, track bookings and unlock member-only deals.</p></div>
+      </div>
+      <div class="modal-form">
+        <div class="tabs" role="tablist">
+          <button type="button" class="tab active" data-tab="login" role="tab">Login</button>
+          <button type="button" class="tab" data-tab="register" role="tab">Sign up</button>
+        </div>
+        <h3 id="loginTitle">Welcome back</h3>
+        <form id="authForm" novalidate>
+          <div class="f-group light reg-only"><input type="text" id="aName" placeholder=" "><label for="aName"><i class="fa-regular fa-user"></i> Full name</label></div>
+          <div class="f-group light"><input type="email" id="aEmail" placeholder=" " required><label for="aEmail"><i class="fa-regular fa-envelope"></i> Email address</label></div>
+          <div class="f-group light"><input type="password" id="aPass" placeholder=" " required><label for="aPass"><i class="fa-solid fa-lock"></i> Password</label>
+            <button type="button" class="eye" id="eyeBtn" aria-label="Show password"><i class="fa-regular fa-eye"></i></button></div>
+          <div class="auth-row"><label class="check"><input type="checkbox"><span></span> Remember me</label><a href="#" class="forgot">Forgot password?</a></div>
+          <button type="submit" class="btn btn-primary btn-lg block"><span id="authBtnText">Login</span> <i class="fa-solid fa-arrow-right"></i></button>
+          <p class="auth-msg" id="authMsg" role="status"></p>
+        </form>
+        <div class="or"><span>or continue with</span></div>
+        <div class="social-login">
+          <button type="button" class="btn btn-outline"><i class="fa-brands fa-google"></i> Google</button>
+          <button type="button" class="btn btn-outline"><i class="fa-brands fa-facebook-f"></i> Facebook</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <!-- Libraries -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script src="script.js"></script>
+  <!-- Re-encode Unsplash images as real WebP blobs so "Save image as" gives a .webp file -->
+  <script>
+  (function () {
+    function toWebp(blob) {
+      if (blob.type === 'image/webp') return Promise.resolve(blob);
+      return new Promise(function (resolve, reject) {
+        var tmp = URL.createObjectURL(blob), im = new Image();
+        im.onload = function () {
+          var c = document.createElement('canvas');
+          c.width = im.naturalWidth; c.height = im.naturalHeight;
+          c.getContext('2d').drawImage(im, 0, 0);
+          URL.revokeObjectURL(tmp);
+          c.toBlob(function (b) { b && b.type === 'image/webp' ? resolve(b) : reject(); }, 'image/webp', 0.8);
+        };
+        im.onerror = reject;
+        im.src = tmp;
+      });
+    }
+    function convert(img) {
+      var url = img.currentSrc || img.src;
+      if (url.indexOf('https://images.unsplash.com/') !== 0 || img.dataset.webpSrc === url) return;
+      img.dataset.webpSrc = url;
+      fetch(url, { mode: 'cors' })
+        .then(function (r) { return r.blob(); })
+        .then(toWebp)
+        .then(function (b) { img.src = URL.createObjectURL(b); })
+        .catch(function () { /* keep the original image if anything fails */ });
+    }
+    function watch(img) {
+      if (img.complete && img.naturalWidth) convert(img);
+      else img.addEventListener('load', function () { convert(img); }, { once: true });
+    }
+    function init() {
+      document.querySelectorAll('img').forEach(watch);
+      new MutationObserver(function (list) {
+        list.forEach(function (m) {
+          if (m.type === 'attributes') { if (m.target.tagName === 'IMG') watch(m.target); }
+          else m.addedNodes.forEach(function (n) {
+            if (n.nodeType !== 1) return;
+            if (n.tagName === 'IMG') watch(n);
+            else if (n.querySelectorAll) n.querySelectorAll('img').forEach(watch);
+          });
+        });
+      }).observe(document.body, { childList: true, subtree: true, attributes: true, attributeFilter: ['src'] });
+    }
+    if (document.readyState === 'complete') init();
+    else window.addEventListener('load', init);
+  })();
+  </script>
+</body>
+</html>

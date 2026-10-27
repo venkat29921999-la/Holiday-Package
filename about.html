@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us | Stackly Holidays</title>
+  <meta name="description" content="Meet Stackly Holidays: our story, values, milestones and the travel designers who craft your perfect holiday.">
+  <meta name="theme-color" content="#0b1f2e">
+  <link rel="icon" href="Assest/stackly-logo.webp" type="image/webp">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome (only icon set used) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <!-- AOS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ============ PRELOADER ============ -->
+  <div class="preloader" id="preloader" aria-hidden="true">
+    <div class="pre-panel pre-top"></div>
+    <div class="pre-panel pre-bottom"></div>
+    <div class="pre-center">
+      <img src="Assest/stackly-logo.webp" alt="" width="229" height="58" class="pre-logo">
+      <div class="pre-bar"><span id="preBar"></span></div>
+      <div class="pre-count"><span id="preCount">0</span>%</div>
+    </div>
+  </div>
+
+  <div class="scroll-progress" id="scrollProgress"></div>
+  <div class="cursor" id="cursor" aria-hidden="true"><span id="cursorText"></span></div>
+
+  <!-- ============ HEADER ============ -->
+  <header class="site-header" id="header">
+    <div class="header-inner container">
+      <a href="index.html" class="logo" aria-label="Stackly Holidays - home">
+        <img src="Assest/stackly-logo.webp" alt="Stackly logo" width="229" height="58">
+      </a>
+
+      <nav class="main-nav" id="mainNav" aria-label="Primary navigation">
+        <ul class="nav-list">
+          <li><a href="index.html" class="nav-link" data-text="Home">Home</a></li>
+          <li><a href="about.html" class="nav-link active" data-text="About">About</a></li>
+          <li><a href="services.html" class="nav-link" data-text="Services">Services</a></li>
+          <li><a href="blog.html" class="nav-link" data-text="Blog">Blog</a></li>
+          <li><a href="contact.html" class="nav-link" data-text="Contact">Contact</a></li>
+        </ul>
+        <div class="nav-extra">
+          <p><i class="fa-solid fa-phone"></i> +91 98765 43210</p>
+          <p><i class="fa-solid fa-envelope"></i> hello@stacklyholidays.com</p>
+          <div class="socials">
+            <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          </div>
+        </div>
+      </nav>
+
+      <div class="header-actions">
+        <a href="login.html" class="btn btn-login magnetic" id="loginBtn">
+  <i class="fa-regular fa-user"></i><span>Login</span>
+</a>
+        <button class="hamburger" id="hamburger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mainNav">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="ab-page">
+
+  <!-- ============ 1. ABOUT HERO : compass + arch window accordion ============ -->
+  <section class="ab-sec ab-hero" id="top">
+    <div class="ab-compass" aria-hidden="true"><i class="fa-regular fa-compass" id="abNeedle"></i></div>
+    <div class="container">
+      <nav class="ab-crumb" aria-label="Breadcrumb"><a href="index.html">Home</a><i class="fa-solid fa-chevron-right"></i><span>About us</span></nav>
+      <h1 class="ab-title" id="abTitle">We turn trips into <em>stories</em></h1>
+      <p class="ab-lead" data-aos="fade-up" data-aos-delay="200">Since 2012 Stackly Holidays has designed journeys for people who want to feel a place, not just see it. Tap a window to step inside.</p>
+
+     <!-- Replace your <div class="ab-slices" id="abSlices"> ... </div> with this.
+     Only change: a "Explore" button inside each figcaption -> opens 404.html -->
+<div class="ab-slices" id="abSlices">
+  <figure class="ab-slice on" tabindex="0"><img src="Assest/hp2_11zon.webp" alt="Overwater villas in the Maldives" width="600" height="800"><span class="vt">Maldives</span>
+    <figcaption><h3>Maldives</h3><p><i class="fa-solid fa-location-dot"></i>Our most-loved honeymoon escape</p>
+      <a href="404.html" class="btn btn-primary btn-sm slice-btn" onkeydown="event.stopPropagation()"><span>Explore</span> <i class="fa-solid fa-arrow-right"></i></a></figcaption></figure>
+  <figure class="ab-slice" tabindex="0"><img src="Assest/hp3_11zon.webp" alt="Snow capped Swiss Alps" width="600" height="800" loading="lazy"><span class="vt">Alps</span>
+    <figcaption><h3>Swiss Alps</h3><p><i class="fa-solid fa-location-dot"></i>Scenic trains and cosy chalets</p>
+      <a href="404.html" class="btn btn-primary btn-sm slice-btn" onkeydown="event.stopPropagation()"><span>Explore</span> <i class="fa-solid fa-arrow-right"></i></a></figcaption></figure>
+  <figure class="ab-slice" tabindex="0"><img src="Assest/hp15_11zon.webp" alt="Kyoto temple in Japan" width="600" height="800" loading="lazy"><span class="vt">Kyoto</span>
+    <figcaption><h3>Kyoto</h3><p><i class="fa-solid fa-location-dot"></i>Temples, tea and quiet lanes</p>
+      <a href="404.html" class="btn btn-primary btn-sm slice-btn" onkeydown="event.stopPropagation()"><span>Explore</span> <i class="fa-solid fa-arrow-right"></i></a></figcaption></figure>
+  <figure class="ab-slice" tabindex="0"><img src="Assest/hp5_11zon.webp" alt="Safari sunset in Kenya" width="600" height="800" loading="lazy"><span class="vt">Safari</span>
+    <figcaption><h3>Masai Mara</h3><p><i class="fa-solid fa-location-dot"></i>Golden plains and big skies</p>
+      <a href="404.html" class="btn btn-primary btn-sm slice-btn" onkeydown="event.stopPropagation()"><span>Explore</span> <i class="fa-solid fa-arrow-right"></i></a></figcaption></figure>
+  <figure class="ab-slice" tabindex="0"><img src="Assest/hp38.webp" alt="Whitewashed Santorini" width="600" height="800" loading="lazy"><span class="vt">Santorini</span>
+    <figcaption><h3>Santorini</h3><p><i class="fa-solid fa-location-dot"></i>Blue domes above the caldera</p>
+      <a href="404.html" class="btn btn-primary btn-sm slice-btn" onkeydown="event.stopPropagation()"><span>Explore</span> <i class="fa-solid fa-arrow-right"></i></a></figcaption></figure>
+</div>
+    </div>
+  </section>
+
+  <!-- ============ 2. OUR STORY : scroll-dealt polaroids + illuminating text ============ -->
+  <section class="ab-sec ab-story" id="story">
+    <div class="container ab-story-grid">
+      <div class="ab-stage" id="abStage">
+        <figure class="ab-pol"><img src="Assest/hp24.webp" alt="Road trip through the mountains" width="400" height="400" loading="lazy"><figcaption>First road trip, 2012</figcaption></figure>
+        <figure class="ab-pol"><img src="Assest/hp7_11zon.webp" alt="Travel essentials and map" width="400" height="400" loading="lazy"><figcaption>Plans on a napkin</figcaption></figure>
+        <figure class="ab-pol"><img src="Assest/hp29.webp" alt="Traveller beside a mountain lake" width="400" height="400" loading="lazy"><figcaption>Found the lake</figcaption></figure>
+        <figure class="ab-pol"><img src="Assest/hp20.webp" alt="Hiker on a mountain trail" width="400" height="400" loading="lazy"><figcaption>Never looked back</figcaption></figure>
+      </div>
+      <div class="ab-story-text">
+        <span class="eyebrow" data-aos="fade-up"><i class="fa-solid fa-book-open"></i> Our story</span>
+        <h2 class="section-title" data-aos="fade-up">It began with one <em>bad</em> holiday</h2>
+        <svg class="ab-squig" viewBox="0 0 300 18" preserveAspectRatio="none" aria-hidden="true"><path id="abSquig" d="M2 10 C 22 0, 38 18, 58 9 S 96 0, 116 9 S 154 18, 174 9 S 212 0, 232 9 S 272 18, 298 8"/></svg>
+        <p class="ab-read" id="abRead">In 2012 our founder booked a package that promised paradise and delivered a parking lot view. So she started planning trips the way she wished someone had planned hers: <span class="ab-mark">with real local people, honest prices and zero surprises</span> that were not the good kind. Today that idea carries more than forty thousand travellers to eighty five destinations.</p>
+        <p class="ab-sub">Every itinerary is still hand-built by a human travel designer who has actually been there, because the best holidays are never copied and pasted.</p>
+        <div class="ab-sign">
+          <img src="Assest/hp28.webp" alt="Founder of Stackly Holidays" width="64" height="64" loading="lazy">
+          <div><b>Arjun Menon</b><small>Founder &amp; Chief Dreamer</small></div>
+          <svg viewBox="0 0 150 54" aria-hidden="true"><path id="abSig" d="M6 36 C 16 6, 30 6, 28 30 S 22 48, 40 26 S 52 10, 56 30 S 66 44, 82 24 C 90 14, 96 18, 92 32 S 108 40, 118 20 S 128 12, 144 30"/></svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 3. NUMBERS : passport stamps with odometer digits ============ -->
+  <section class="ab-sec ab-stats" id="numbers">
+    <div class="ab-stats-bg" aria-hidden="true"><img src="Assest/hp1_11zon.webp" alt="" width="1400" height="800" loading="lazy"></div>
+    <div class="container">
+      <header class="ab-head center">
+        <span class="eyebrow" data-aos="fade-up"><i class="fa-solid fa-stamp"></i> Stamped &amp; verified</span>
+        <h2 class="section-title" data-aos="fade-up">Numbers we are <em>proud</em> of</h2>
+        <p data-aos="fade-up">Every stamp in our passport is a traveller who came home happy.</p>
+      </header>
+      <div class="ab-stat-grid">
+        <div class="ab-stamp" data-pct="86">
+          <svg class="ab-ring" viewBox="0 0 200 200" aria-hidden="true"><defs><path id="rp1" d="M100,100 m-80,0 a80,80 0 1,1 160,0 a80,80 0 1,1 -160,0"/></defs><circle class="trk" cx="100" cy="100" r="92"/><circle class="prg" cx="100" cy="100" r="92"/><g class="txt"><text><textPath href="#rp1">Happy travellers * since 2012 * happy travellers * since 2012 *</textPath></text></g></svg>
+          <span class="ab-ripple"></span>
+          <div class="ab-stamp-in"><i class="fa-solid fa-face-smile-beam"></i><span class="ab-od" data-val="40" data-suf="K+" aria-label="40 thousand plus">40K+</span><small>Happy travellers</small></div>
+        </div>
+        <div class="ab-stamp" data-pct="72">
+          <svg class="ab-ring" viewBox="0 0 200 200" aria-hidden="true"><defs><path id="rp2" d="M100,100 m-80,0 a80,80 0 1,1 160,0 a80,80 0 1,1 -160,0"/></defs><circle class="trk" cx="100" cy="100" r="92"/><circle class="prg" cx="100" cy="100" r="92"/><g class="txt"><text><textPath href="#rp2">Destinations worldwide * hand picked * destinations worldwide *</textPath></text></g></svg>
+          <span class="ab-ripple"></span>
+          <div class="ab-stamp-in"><i class="fa-solid fa-earth-asia"></i><span class="ab-od" data-val="85" data-suf="+" aria-label="85 plus">85+</span><small>Destinations</small></div>
+        </div>
+        <div class="ab-stamp" data-pct="94">
+          <svg class="ab-ring" viewBox="0 0 200 200" aria-hidden="true"><defs><path id="rp3" d="M100,100 m-80,0 a80,80 0 1,1 160,0 a80,80 0 1,1 -160,0"/></defs><circle class="trk" cx="100" cy="100" r="92"/><circle class="prg" cx="100" cy="100" r="92"/><g class="txt"><text><textPath href="#rp3">Five star reviews * loved by guests * five star reviews *</textPath></text></g></svg>
+          <span class="ab-ripple"></span>
+          <div class="ab-stamp-in"><i class="fa-solid fa-star"></i><span class="ab-od" data-val="98" data-suf="%" aria-label="98 percent">98%</span><small>Five-star reviews</small></div>
+        </div>
+        <div class="ab-stamp" data-pct="60">
+          <svg class="ab-ring" viewBox="0 0 200 200" aria-hidden="true"><defs><path id="rp4" d="M100,100 m-80,0 a80,80 0 1,1 160,0 a80,80 0 1,1 -160,0"/></defs><circle class="trk" cx="100" cy="100" r="92"/><circle class="prg" cx="100" cy="100" r="92"/><g class="txt"><text><textPath href="#rp4">Local travel experts * always on call * local travel experts *</textPath></text></g></svg>
+          <span class="ab-ripple"></span>
+          <div class="ab-stamp-in"><i class="fa-solid fa-headset"></i><span class="ab-od" data-val="120" data-suf="" aria-label="120">120</span><small>Travel experts</small></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 4. VALUES : cards that stack & sink ============ -->
+  <section class="ab-sec ab-values" id="values">
+    <div class="container">
+      <header class="ab-head">
+        <span class="eyebrow" data-aos="fade-up"><i class="fa-solid fa-heart"></i> What we believe</span>
+        <h2 class="section-title" data-aos="fade-up">Four promises behind <em>every</em> trip</h2>
+        <p data-aos="fade-up">Scroll on. Each promise settles on top of the last, the way good memories do.</p>
+      </header>
+      <div class="ab-stack" id="abStack">
+        <article class="ab-card c-ocean" style="--i:0">
+          <div class="ab-card-media"><img src="Assest/hp36.webp" alt="Diver exploring a coral reef" width="700" height="600" loading="lazy"><span class="num">01</span></div>
+          <div class="ab-card-body"><span class="ic"><i class="fa-solid fa-compass"></i></span><h3>Authentic, never generic</h3><p>We skip the tourist traps and design days around real places, local hosts and the kind of moments you cannot book online.</p>
+            <ul class="ab-chips"><li><i class="fa-solid fa-check"></i>Local guides</li><li><i class="fa-solid fa-check"></i>Hidden gems</li><li><i class="fa-solid fa-check"></i>Small groups</li></ul></div>
+        </article>
+        <article class="ab-card c-sun" style="--i:1">
+          <div class="ab-card-media"><img src="Assest/hp16_11zon.webp" alt="Luxury hotel lobby and pool" width="700" height="600" loading="lazy"><span class="num">02</span></div>
+          <div class="ab-card-body"><span class="ic"><i class="fa-solid fa-gem"></i></span><h3>Comfort without compromise</h3><p>Every stay is visited and vetted by our team. If we would not sleep there ourselves, you will never see it in a package.</p>
+            <ul class="ab-chips"><li><i class="fa-solid fa-check"></i>Vetted stays</li><li><i class="fa-solid fa-check"></i>Private transfers</li><li><i class="fa-solid fa-check"></i>Flexible plans</li></ul></div>
+        </article>
+        <article class="ab-card c-line" style="--i:2">
+          <div class="ab-card-media"><img src="Assest/hp17_11zon.webp" alt="Friends travelling together" width="700" height="600" loading="lazy"><span class="num">03</span></div>
+          <div class="ab-card-body"><span class="ic"><i class="fa-solid fa-hand-holding-heart"></i></span><h3>People before itineraries</h3><p>Your pace, your budget, your people. A real designer answers every message, from the first idea until you are safely home.</p>
+            <ul class="ab-chips"><li><i class="fa-solid fa-check"></i>24/7 support</li><li><i class="fa-solid fa-check"></i>One point of contact</li><li><i class="fa-solid fa-check"></i>Honest advice</li></ul></div>
+        </article>
+        <article class="ab-card c-ocean" style="--i:3">
+          <div class="ab-card-media"><img src="Assest/hp35.webp" alt="Calm mountain lake at sunrise" width="700" height="600" loading="lazy"><span class="num">04</span></div>
+          <div class="ab-card-body"><span class="ic"><i class="fa-solid fa-leaf"></i></span><h3>Travel that gives back</h3><p>We partner with community-run lodges and conservation projects, so the places you love are still here for the next traveller.</p>
+            <ul class="ab-chips"><li><i class="fa-solid fa-check"></i>Community stays</li><li><i class="fa-solid fa-check"></i>Eco partners</li><li><i class="fa-solid fa-check"></i>Fair pay</li></ul></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 5. JOURNEY : iris-reveal milestones along a flight line ============ -->
+  <section class="ab-sec ab-journey" id="journey">
+    <div class="container">
+      <header class="ab-head center">
+        <span class="eyebrow" data-aos="fade-up"><i class="fa-solid fa-route"></i> Our journey</span>
+        <h2 class="section-title" data-aos="fade-up">Fourteen years, <em>one</em> flight path</h2>
+        <p data-aos="fade-up">Follow the plane down the line and watch each milestone open like a camera lens.</p>
+      </header>
+      <div class="ab-road" id="abRoad">
+        <div class="ab-road-line"><div class="ab-road-fill" id="abFill"></div></div>
+        <div class="ab-road-plane" id="abPlane"><i class="fa-solid fa-plane"></i></div>
+
+        <article class="ab-ms"><div class="ab-ms-text"><div class="ab-ms-year" data-year="2012">2012</div><h3>The first trip</h3><p>Three friends, one rented van and a handwritten itinerary. Twelve guests joined us, and eleven came back the following year.</p></div>
+          <div class="ab-ms-photo"><div class="iris"><img src="Assest/hp24.webp" alt="Early road trip" width="400" height="400" loading="lazy"></div><span class="orb"></span></div></article>
+        <article class="ab-ms"><div class="ab-ms-text"><div class="ab-ms-year" data-year="2015">2015</div><h3>Going international</h3><p>Our first overseas packages launched with flights, stays and guides under a single roof.</p></div>
+          <div class="ab-ms-photo"><div class="iris"><img src="Assest/hp9_11zon.webp" alt="Airplane wing above the clouds" width="400" height="400" loading="lazy"></div><span class="orb"></span></div></article>
+        <article class="ab-ms"><div class="ab-ms-text"><div class="ab-ms-year" data-year="2018">2018</div><h3>Hand-picked resorts</h3><p>We opened our signature stays collection, every property personally visited and rated by our team.</p></div>
+          <div class="ab-ms-photo"><div class="iris"><img src="Assest/hp25.webp" alt="Resort with a sea view" width="400" height="400" loading="lazy"></div><span class="orb"></span></div></article>
+        <article class="ab-ms"><div class="ab-ms-text"><div class="ab-ms-year" data-year="2021">2021</div><h3>Cruises &amp; escapes</h3><p>Ocean voyages and flexible bookings arrived, so travelling again felt calm and completely safe.</p></div>
+          <div class="ab-ms-photo"><div class="iris"><img src="Assest/hp22.webp" alt="Cruise ship at sea" width="400" height="400" loading="lazy"></div><span class="orb"></span></div></article>
+        <article class="ab-ms"><div class="ab-ms-text"><div class="ab-ms-year" data-year="2026">2026</div><h3>40,000 stories and counting</h3><p>Eighty five destinations, a team of one hundred twenty and a promise that has not changed since day one.</p></div>
+          <div class="ab-ms-photo"><div class="iris"><img src="Assest/hp23.webp" alt="Hot air balloons at sunrise" width="400" height="400" loading="lazy"></div><span class="orb"></span></div></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 6. TEAM : arch portraits with a colour flashlight ============ -->
+  <section class="ab-sec ab-team" id="team">
+    <div class="container">
+      <div class="ab-ribbon" aria-hidden="true">
+        <div class="ab-ribbon-track"><span>Meet the people behind your trip</span><i class="fa-solid fa-plane"></i><span>Curious by nature</span><i class="fa-solid fa-plane"></i><span>Travellers first</span><i class="fa-solid fa-plane"></i></div>
+        <div class="ab-ribbon-track"><span>Meet the people behind your trip</span><i class="fa-solid fa-plane"></i><span>Curious by nature</span><i class="fa-solid fa-plane"></i><span>Travellers first</span><i class="fa-solid fa-plane"></i></div>
+      </div>
+      <header class="ab-head center">
+        <span class="eyebrow" data-aos="fade-up"><i class="fa-solid fa-users"></i> Our team</span>
+        <h2 class="section-title" data-aos="fade-up">Meet your <em>travel</em> designers</h2>
+        <p data-aos="fade-up">Move your cursor over a portrait to switch on the light. On touch screens the colour is already on.</p>
+      </header>
+      <div class="ab-team-grid" id="abTeam">
+        <div class="ab-member"><div class="ab-arch"><img class="bw" src="Assest/hp29.webp" alt="" width="400" height="533" loading="lazy"><img class="clr" src="Assest/hp29.webp" alt="Neha Kapoor, Head of Experiences" width="400" height="533" loading="lazy"></div><span class="ab-badge"><i class="fa-solid fa-earth-asia"></i></span>
+          <div class="ab-mem-info"><h3>Neha Kapoor</h3><p>Head of Experiences</p><div class="ab-soc"><a href="404.html" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a><a href="404.html" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a></div></div></div>
+        <div class="ab-member"><div class="ab-arch"><img class="bw" src="Assest/hp40.webp" alt="" width="400" height="533" loading="lazy"><img class="clr" src="Assest/hp40.webp" alt="Rahul Verma, Lead Trip Designer" width="400" height="533" loading="lazy"></div><span class="ab-badge"><i class="fa-solid fa-mountain-sun"></i></span>
+          <div class="ab-mem-info"><h3>Rahul Verma</h3><p>Lead Trip Designer</p><div class="ab-soc"><a href="404.html" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a><a href="404.html" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a></div></div></div>
+        <div class="ab-member"><div class="ab-arch"><img class="bw" src="Assest/hp41.webp" alt="" width="400" height="533" loading="lazy"><img class="clr" src="Assest/hp41.webp" alt="Anika Rao, Guest Happiness" width="400" height="533" loading="lazy"></div><span class="ab-badge"><i class="fa-solid fa-heart"></i></span>
+          <div class="ab-mem-info"><h3>Anika Rao</h3><p>Guest Happiness</p><div class="ab-soc"><a href="404.html" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a><a href="404.html" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a></div></div></div>
+        <div class="ab-member"><div class="ab-arch"><img class="bw" src="Assest/hp42.webp" alt="" width="400" height="533" loading="lazy"><img class="clr" src="Assest/hp42.webp" alt="Karan Shah, Partnerships" width="400" height="533" loading="lazy"></div><span class="ab-badge"><i class="fa-solid fa-handshake"></i></span>
+          <div class="ab-mem-info"><h3>Karan Shah</h3><p>Partnerships</p><div class="ab-soc"><a href="404.html" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a><a href="404.html" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a></div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 7. CTA : boarding pass + slide to take off ============ -->
+  <section class="ab-sec ab-cta" id="takeoff">
+    <div class="ab-cta-bg" aria-hidden="true"><img src="Assest/hp27.webp" alt="" width="1400" height="900" loading="lazy"></div>
+    <div class="container">
+      <header class="ab-head center">
+        <span class="eyebrow" data-aos="fade-up"><i class="fa-solid fa-plane-departure"></i> Ready when you are</span>
+        <h2 class="section-title" data-aos="fade-up">Your boarding pass is <em>waiting</em></h2>
+        <p data-aos="fade-up">Slide the plane across to start planning with a designer. It takes two minutes and costs nothing.</p>
+      </header>
+
+      <div class="ab-pass" id="abPass">
+        <div class="ab-pass-main">
+          <div class="ab-pass-top"><span><i class="fa-solid fa-plane"></i>Stackly Airways</span><span>Boarding pass</span></div>
+          <div class="ab-route">
+            <div><small>From</small><strong>YOU</strong></div>
+            <div class="ab-route-line"><i class="fa-solid fa-plane"></i></div>
+            <div><small>To</small><strong>ANYWHERE</strong></div>
+          </div>
+          <dl class="ab-pass-meta">
+            <div><dt>Passenger</dt><dd>You</dd></div>
+            <div><dt>Flight</dt><dd>SH 2026</dd></div>
+            <div><dt>Gate</dt><dd>A1</dd></div>
+            <div><dt>Seat</dt><dd>1A</dd></div>
+            <div><dt>Class</dt><dd>Dream</dd></div>
+          </dl>
+        </div>
+        <div class="ab-pass-stub"><div><small>Boarding</small><b>Now open</b></div><div class="ab-barcode" aria-hidden="true"></div></div>
+      </div>
+
+      <div class="ab-slide" id="abSlide">
+        <div class="ab-slide-fill"></div>
+        <div class="ab-slide-text">Slide to take off</div>
+        <div class="ab-slide-knob" id="abKnob" role="slider" tabindex="0" aria-label="Slide to start planning your trip" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><i class="fa-solid fa-plane"></i></div>
+      </div>
+      <p class="ab-cta-alt">Prefer words? <a href="404.html">Write to us</a> or call +91 98765 43210.</p>
+    </div>
+  </section>
+
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+   <footer class="footer">
+    <div class="foot-marquee" aria-hidden="true">
+      <div class="foot-marquee-track">
+        <span>Pack your bags</span><i class="fa-solid fa-plane"></i><span>Pack your bags</span><i class="fa-solid fa-plane"></i><span>Pack your bags</span><i class="fa-solid fa-plane"></i><span>Pack your bags</span><i class="fa-solid fa-plane"></i>
+      </div>
+    </div>
+    <div class="container foot-grid">
+      <div class="foot-brand">
+        <a href="#home" class="logo" aria-label="Stackly Holidays - home"><img src="Assest/stackly-logo.webp" alt="Stackly logo" width="229" height="58" loading="lazy"></a>
+        <p>Premium holiday packages designed around you. Fly further, feel more and come home with stories worth retelling.</p>
+        <div class="socials">
+          <a href="404.html" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="404.html" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="404.html" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="404.html" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="404.html" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+        </div>
+      </div>
+      <div class="foot-col">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="services.html">Services</a></li><li><a href="blog.html">Blog</a></li><li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>Support</h4>
+        <ul>
+          <li><a href="404.html">Services</a></li><li><a href="404.html">Travel blog</a></li><li><a href="contact.html">Contact</a></li><li><a href="404.html">Privacy policy</a></li><li><a href="404.html">Terms of service</a></li>
+        </ul>
+      </div>
+      <div class="foot-news">
+        <h4>Get travel inspiration</h4>
+        <p>Monthly deals and destination ideas. No spam, ever.</p>
+        <form class="news-form" id="newsForm">
+          <input type="email" placeholder="Your email address" aria-label="Email address" required>
+          <button type="submit" aria-label="Subscribe"><i class="fa-solid fa-paper-plane"></i></button>
+        </form>
+        <p class="news-msg" id="newsMsg" role="status"></p>
+      </div>
+    </div>
+    <div class="container foot-bottom">
+      <p>&copy; 2026 Stackly Holidays. All rights reserved.</p>
+      <p>Crafted with <i class="fa-solid fa-heart"></i> for travellers</p>
+    </div>
+  </footer>
+
+  <button class="to-top" id="toTop" type="button" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
+
+  <!-- ============ LOGIN MODAL ============ -->
+  <div class="modal" id="loginModal" role="dialog" aria-modal="true" aria-labelledby="loginTitle" hidden>
+    <div class="modal-backdrop" data-close></div>
+    <div class="modal-box">
+      <button class="modal-close" type="button" data-close aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+      <div class="modal-side"><img src="Assest/hp27.webp" alt="" width="720" height="960" loading="lazy">
+        <div class="modal-side-text"><i class="fa-solid fa-plane-up"></i><h3>Your next adventure starts here</h3><p>Save wishlists, track bookings and unlock member-only deals.</p></div>
+      </div>
+      <div class="modal-form">
+        <div class="tabs" role="tablist">
+          <button type="button" class="tab active" data-tab="login" role="tab">Login</button>
+          <button type="button" class="tab" data-tab="register" role="tab">Sign up</button>
+        </div>
+        <h3 id="loginTitle">Welcome back</h3>
+        <form id="authForm" novalidate>
+          <div class="f-group light reg-only"><input type="text" id="aName" placeholder=" "><label for="aName"><i class="fa-regular fa-user"></i> Full name</label></div>
+          <div class="f-group light"><input type="email" id="aEmail" placeholder=" " required><label for="aEmail"><i class="fa-regular fa-envelope"></i> Email address</label></div>
+          <div class="f-group light"><input type="password" id="aPass" placeholder=" " required><label for="aPass"><i class="fa-solid fa-lock"></i> Password</label>
+            <button type="button" class="eye" id="eyeBtn" aria-label="Show password"><i class="fa-regular fa-eye"></i></button></div>
+          <div class="auth-row"><label class="check"><input type="checkbox"><span></span> Remember me</label><a href="#" class="forgot">Forgot password?</a></div>
+          <button type="submit" class="btn btn-primary btn-lg block"><span id="authBtnText">Login</span> <i class="fa-solid fa-arrow-right"></i></button>
+          <p class="auth-msg" id="authMsg" role="status"></p>
+        </form>
+        <div class="or"><span>or continue with</span></div>
+        <div class="social-login">
+          <button type="button" class="btn btn-outline"><i class="fa-brands fa-google"></i> Google</button>
+          <button type="button" class="btn btn-outline"><i class="fa-brands fa-facebook-f"></i> Facebook</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <!-- Libraries -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script src="script.js"></script>
+  <!-- Re-encode Unsplash images as real WebP blobs so "Save image as" gives a .webp file -->
+  <script>
+  (function () {
+    function toWebp(blob) {
+      if (blob.type === 'image/webp') return Promise.resolve(blob);
+      return new Promise(function (resolve, reject) {
+        var tmp = URL.createObjectURL(blob), im = new Image();
+        im.onload = function () {
+          var c = document.createElement('canvas');
+          c.width = im.naturalWidth; c.height = im.naturalHeight;
+          c.getContext('2d').drawImage(im, 0, 0);
+          URL.revokeObjectURL(tmp);
+          c.toBlob(function (b) { b && b.type === 'image/webp' ? resolve(b) : reject(); }, 'image/webp', 0.8);
+        };
+        im.onerror = reject;
+        im.src = tmp;
+      });
+    }
+    function convert(img) {
+      var url = img.currentSrc || img.src;
+      if (url.indexOf('https://images.unsplash.com/') !== 0 || img.dataset.webpSrc === url) return;
+      img.dataset.webpSrc = url;
+      fetch(url, { mode: 'cors' })
+        .then(function (r) { return r.blob(); })
+        .then(toWebp)
+        .then(function (b) { img.src = URL.createObjectURL(b); })
+        .catch(function () { /* keep the original image if anything fails */ });
+    }
+    function watch(img) {
+      if (img.complete && img.naturalWidth) convert(img);
+      else img.addEventListener('load', function () { convert(img); }, { once: true });
+    }
+    function init() {
+      document.querySelectorAll('img').forEach(watch);
+      new MutationObserver(function (list) {
+        list.forEach(function (m) {
+          if (m.type === 'attributes') { if (m.target.tagName === 'IMG') watch(m.target); }
+          else m.addedNodes.forEach(function (n) {
+            if (n.nodeType !== 1) return;
+            if (n.tagName === 'IMG') watch(n);
+            else if (n.querySelectorAll) n.querySelectorAll('img').forEach(watch);
+          });
+        });
+      }).observe(document.body, { childList: true, subtree: true, attributes: true, attributeFilter: ['src'] });
+    }
+    if (document.readyState === 'complete') init();
+    else window.addEventListener('load', init);
+  })();
+  </script>
+</body>
+</html>

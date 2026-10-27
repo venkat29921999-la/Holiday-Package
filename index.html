@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stackly Holidays | Premium Holiday Packages</title>
+  <meta name="description" content="Handcrafted holiday packages to the world's most beautiful destinations. Honeymoons, family trips, adventures, cruises and more.">
+  <meta name="theme-color" content="#0b1f2e">
+  <link rel="icon" href="Assest/stackly-logo.webp" type="image/webp">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome (only icon set used) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <!-- AOS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ============ PRELOADER ============ -->
+  <div class="preloader" id="preloader" aria-hidden="true">
+    <div class="pre-panel pre-top"></div>
+    <div class="pre-panel pre-bottom"></div>
+    <div class="pre-center">
+      <img src="Assest/stackly-logo.webp" alt="" width="229" height="58" class="pre-logo">
+      <div class="pre-bar"><span id="preBar"></span></div>
+      <div class="pre-count"><span id="preCount">0</span>%</div>
+    </div>
+  </div>
+
+  <div class="scroll-progress" id="scrollProgress"></div>
+  <div class="cursor" id="cursor" aria-hidden="true"><span id="cursorText"></span></div>
+
+  <!-- ============ HEADER ============ -->
+  <header class="site-header" id="header">
+    <div class="header-inner container">
+      <a href="#home" class="logo" aria-label="Stackly Holidays - home">
+        <img src="Assest/stackly-logo.webp" alt="Stackly logo" width="229" height="58">
+      </a>
+
+      <nav class="main-nav" id="mainNav" aria-label="Primary navigation">
+        <ul class="nav-list">
+          <li><a href="index.html" class="nav-link active" data-text="Home">Home</a></li>
+          <li><a href="about.html" class="nav-link" data-text="About">About</a></li>
+          <li><a href="services.html" class="nav-link" data-text="Services">Services</a></li>
+          <li><a href="blog.html" class="nav-link" data-text="Blog">Blog</a></li>
+          <li><a href="contact.html" class="nav-link" data-text="Contact">Contact</a></li>
+        </ul>
+
+        <!-- Login button inside the mobile menu (hidden on desktop) -->
+        <div class="nav-extra">
+          <button type="button" class="btn btn-primary nav-login" id="menuLoginBtn">
+            <i class="fa-regular fa-user"></i><span>Login</span>
+          </button>
+        </div>
+      </nav>
+
+      <div class="header-actions">
+        <a href="login.html" class="btn btn-login magnetic" id="loginBtn">
+  <i class="fa-regular fa-user"></i><span>Login</span>
+</a>
+        <button class="hamburger" id="hamburger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mainNav">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+  <!-- ============ 1. HERO ============ -->
+  <section class="hero" id="home">
+    <div class="hero-bg">
+      <img src="Assest/hp1_11zon.webp" alt="Palm trees and a sailboat on a calm sea at sunset" width="1920" height="1080" fetchpriority="high">
+      <div class="hero-overlay"></div>
+      <div class="hero-grain"></div>
+    </div>
+
+    <div class="container hero-grid">
+      <div class="hero-copy">
+        <span class="eyebrow" data-hero="fade"><i class="fa-solid fa-plane"></i> Holiday Packages 2026</span>
+        <h1 class="hero-title" id="heroTitle">Discover the world, one <em>unforgettable</em> journey at a time</h1>
+        <p class="hero-text" data-hero="fade">Handcrafted escapes to 85+ destinations. Pick a dream, we take care of flights, stays, guides and every little detail in between.</p>
+        <div class="hero-cta" data-hero="fade">
+          <a href="404.html" class="btn btn-primary magnetic"><span>Explore Packages</span> <i class="fa-solid fa-arrow-right"></i></a>
+          <a href="404.html" class="play-link hover-view" data-cursor="Play">
+            <span class="play-ring"><i class="fa-solid fa-play"></i></span>
+            <span>Our Story</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-stage" id="heroStage" aria-hidden="false">
+        <svg class="flight-path" viewBox="0 0 400 440" fill="none" aria-hidden="true">
+          <path id="flightPath" d="M20 410 C 60 250, 170 330, 200 210 S 330 90, 385 20" stroke-width="1.5" stroke-dasharray="3 9" stroke-linecap="round"/>
+        </svg>
+        <div class="plane" id="plane"><i class="fa-solid fa-plane"></i></div>
+
+        <figure class="h-card c1" data-depth="26">
+          <img src="Assest/hp2_11zon.webp" alt="Sailboat drifting across a warm sunset sea" width="640" height="820">
+          <figcaption><i class="fa-solid fa-umbrella-beach"></i> Maldives</figcaption>
+        </figure>
+        <figure class="h-card c2" data-depth="44">
+          <img src="Assest/hp3_11zon.webp" alt="Layered misty mountain ridges at sunrise" width="640" height="820">
+          <figcaption><i class="fa-solid fa-mountain"></i> Switzerland</figcaption>
+        </figure>
+        <figure class="h-card c3" data-depth="34">
+          <img src="Assest/hp4_11zon.webp" alt="Glowing city skyline under a full moon" width="640" height="820">
+          <figcaption><i class="fa-solid fa-city"></i> Dubai</figcaption>
+        </figure>
+        <figure class="h-card c4" data-depth="52">
+          <img src="Assest/hp5_11zon.webp" alt="Golden desert dunes at dawn" width="640" height="820">
+          <figcaption><i class="fa-solid fa-sun"></i> Sahara</figcaption>
+        </figure>
+
+        <div class="spin-badge" data-depth="18">
+          <svg viewBox="0 0 120 120" aria-hidden="true">
+            <defs><path id="circ" d="M60,60 m-46,0 a46,46 0 1,1 92,0 a46,46 0 1,1 -92,0"/></defs>
+            <text><textPath href="#circ" startOffset="0">EXPLORE • DISCOVER • ESCAPE • </textPath></text>
+          </svg>
+          <i class="fa-solid fa-compass"></i>
+        </div>
+      </div>
+    </div>
+
+    <form class="booking-bar container" id="bookingBar" autocomplete="off">
+      <label class="field">
+        <span class="field-label"><i class="fa-solid fa-location-dot"></i> Destination</span>
+        <select aria-label="Destination">
+          <option>Maldives</option><option>Bali</option><option>Switzerland</option><option>Paris</option>
+          <option>Dubai</option><option>Kerala</option><option>Japan</option><option>Kenya</option>
+        </select>
+      </label>
+      <label class="field">
+        <span class="field-label"><i class="fa-solid fa-calendar-days"></i> Travel Date</span>
+        <input type="date" aria-label="Travel date">
+      </label>
+      <label class="field">
+        <span class="field-label"><i class="fa-solid fa-users"></i> Travellers</span>
+        <select aria-label="Travellers">
+          <option>1 Traveller</option><option selected>2 Travellers</option><option>3 - 4 Travellers</option><option>5+ Travellers</option>
+        </select>
+      </label>
+<a href="404.html" class="btn btn-primary magnetic"><i class="fa-solid fa-magnifying-glass"></i> <span>Find Trips</span></a>
+    </form>
+
+    <a href="#about" class="scroll-hint" aria-label="Scroll down"><span class="mouse"><i></i></span><small>Scroll</small></a>
+  </section>
+
+  <!-- ============ 2. MARQUEE + STATS ============ -->
+  <section class="strip" id="strip">
+    <div class="strip-bg"><img src="Assest/hp6_11zon.webp" alt="" width="1600" height="800" loading="lazy"></div>
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <span>Maldives</span><i class="fa-solid fa-star"></i><span>Bali</span><i class="fa-solid fa-star"></i><span>Switzerland</span><i class="fa-solid fa-star"></i><span>Paris</span><i class="fa-solid fa-star"></i><span>Dubai</span><i class="fa-solid fa-star"></i><span>Kerala</span><i class="fa-solid fa-star"></i><span>Japan</span><i class="fa-solid fa-star"></i><span>Kenya</span><i class="fa-solid fa-star"></i>
+        <span>Maldives</span><i class="fa-solid fa-star"></i><span>Bali</span><i class="fa-solid fa-star"></i><span>Switzerland</span><i class="fa-solid fa-star"></i><span>Paris</span><i class="fa-solid fa-star"></i><span>Dubai</span><i class="fa-solid fa-star"></i><span>Kerala</span><i class="fa-solid fa-star"></i><span>Japan</span><i class="fa-solid fa-star"></i><span>Kenya</span><i class="fa-solid fa-star"></i>
+      </div>
+    </div>
+    <div class="container stats-grid">
+      <div class="stat" data-aos="fade-up">
+        <i class="fa-solid fa-face-smile-beam"></i>
+        <strong><span data-count="12500">0</span>+</strong>
+        <p>Happy travellers</p>
+      </div>
+      <div class="stat" data-aos="fade-up" data-aos-delay="100">
+        <i class="fa-solid fa-earth-asia"></i>
+        <strong><span data-count="85">0</span>+</strong>
+        <p>Destinations covered</p>
+      </div>
+      <div class="stat" data-aos="fade-up" data-aos-delay="200">
+        <i class="fa-solid fa-award"></i>
+        <strong><span data-count="15">0</span></strong>
+        <p>Years of experience</p>
+      </div>
+      <div class="stat" data-aos="fade-up" data-aos-delay="300">
+        <i class="fa-solid fa-star"></i>
+        <strong><span data-count="4.9" data-decimals="1">0</span></strong>
+        <p>Average guest rating</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 3. ABOUT ============ -->
+  <section class="section about" id="about">
+    <div class="container about-grid">
+      <div class="about-media">
+        <div class="am am-1 reveal-img"><img src="Assest/hp7_11zon.webp" alt="Pine forest and mountains at dawn" width="800" height="1000" loading="lazy"></div>
+        <div class="am am-2 reveal-img"><img src="Assest/hp8_11zon.webp" alt="Calm lake reflecting a sunset sky" width="640" height="640" loading="lazy"></div>
+        <div class="am am-3 reveal-img"><img src="Assest/hp9_11zon.webp" alt="Hot air balloons floating over layered hills" width="640" height="640" loading="lazy"></div>
+        <div class="years-badge">
+          <svg viewBox="0 0 120 120" aria-hidden="true">
+            <defs><path id="circ2" d="M60,60 m-46,0 a46,46 0 1,1 92,0 a46,46 0 1,1 -92,0"/></defs>
+            <text><textPath href="#circ2">TRUSTED TRAVEL PARTNER • SINCE 2011 • </textPath></text>
+          </svg>
+          <strong>15<small>yrs</small></strong>
+        </div>
+      </div>
+
+      <div class="about-copy">
+        <span class="eyebrow" data-aos="fade-up"><i class="fa-solid fa-compass"></i> About us</span>
+        <h2 class="section-title" data-split>We turn travel dreams into <em>effortless</em> reality</h2>
+        <p data-aos="fade-up">Stackly Holidays began with one simple belief: a holiday should feel like a gift, not a project. For fifteen years our planners, local hosts and guides have shaped journeys that are personal, seamless and full of small surprises.</p>
+        <ul class="check-list">
+          <li data-aos="fade-up"><i class="fa-solid fa-check"></i><div><h4>Handcrafted itineraries</h4><p>Every plan is tailored to your pace, budget and interests.</p></div></li>
+          <li data-aos="fade-up" data-aos-delay="100"><i class="fa-solid fa-check"></i><div><h4>Verified stays and partners</h4><p>Hotels, guides and transfers we have personally vetted.</p></div></li>
+          <li data-aos="fade-up" data-aos-delay="200"><i class="fa-solid fa-check"></i><div><h4>24/7 on-trip support</h4><p>A real human is one call away, wherever you land.</p></div></li>
+        </ul>
+        <div class="about-cta" data-aos="fade-up">
+          <a href="404.html" class="btn btn-dark magnetic"><span>Plan my trip</span> <i class="fa-solid fa-arrow-right"></i></a>
+          <a href="404.html" class="call-link"><span class="call-icon"><i class="fa-solid fa-phone-volume"></i></span><span><small>Talk to an expert</small><b>+91 98765 43210</b></span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 4. DESTINATIONS (horizontal scroll) ============ -->
+  <section class="dest" id="destinations">
+    <div class="dest-pin" id="destPin">
+      <div class="container dest-head">
+        <div>
+          <span class="eyebrow" data-aos="fade-up"><i class="fa-solid fa-earth-asia"></i> Top destinations</span>
+          <h2 class="section-title" data-split>Where will you go <em>next?</em></h2>
+        </div>
+        <p class="dest-note" data-aos="fade-up"><i class="fa-solid fa-hand-pointer"></i> Keep scrolling or swipe to explore</p>
+      </div>
+      <div class="dest-track-wrap">
+        <div class="dest-track" id="destTrack">
+          <article class="d-card hover-view" data-cursor="View"><div class="d-img"><img src="Assest/hp2_11zon.webp" alt="Maldives sunset with a sailboat" width="800" height="1040" loading="lazy"></div>
+            <div class="d-info"><span class="tag">Island escape</span><h3>Maldives</h3><p>Overwater villas, glowing lagoons.</p><div class="d-foot"><span>From <b>₹89,999</b></span><a href="404.html" class="round-btn" aria-label="View Maldives packages"><i class="fa-solid fa-arrow-right"></i></a></div></div></article>
+          <article class="d-card hover-view" data-cursor="View"><div class="d-img"><img src="Assest/hp10_11zon.webp" alt="Bali beach with palm trees at dawn" width="800" height="1040" loading="lazy"></div>
+            <div class="d-info"><span class="tag">Tropical</span><h3>Bali</h3><p>Temples, rice terraces and surf.</p><div class="d-foot"><span>From <b>₹49,999</b></span><a href="404.html" class="round-btn" aria-label="View Bali packages"><i class="fa-solid fa-arrow-right"></i></a></div></div></article>
+          <article class="d-card hover-view" data-cursor="View"><div class="d-img"><img src="Assest/hp11_11zon.webp" alt="Snowy Swiss peaks at sunrise" width="800" height="1040" loading="lazy"></div>
+            <div class="d-info"><span class="tag">Alpine</span><h3>Switzerland</h3><p>Scenic trains and snow-capped peaks.</p><div class="d-foot"><span>From <b>₹1,29,999</b></span><a href="404.html" class="round-btn" aria-label="View Switzerland packages"><i class="fa-solid fa-arrow-right"></i></a></div></div></article>
+          <article class="d-card hover-view" data-cursor="View"><div class="d-img"><img src="Assest/hp12_11zon.webp" alt="Paris skyline with the Eiffel Tower at night" width="800" height="1040" loading="lazy"></div>
+            <div class="d-info"><span class="tag">Romance</span><h3>Paris</h3><p>Cafes, art and lights by the Seine.</p><div class="d-foot"><span>From <b>₹99,999</b></span><a href="404.html" class="round-btn" aria-label="View Paris packages"><i class="fa-solid fa-arrow-right"></i></a></div></div></article>
+          <article class="d-card hover-view" data-cursor="View"><div class="d-img"><img src="Assest/hp13_11zon.webp" alt="Dubai skyline with a tall tower at sunset" width="800" height="1040" loading="lazy"></div>
+            <div class="d-info"><span class="tag">Luxury</span><h3>Dubai</h3><p>Skyscrapers, souks and desert nights.</p><div class="d-foot"><span>From <b>₹54,999</b></span><a href="404.html" class="round-btn" aria-label="View Dubai packages"><i class="fa-solid fa-arrow-right"></i></a></div></div></article>
+          <article class="d-card hover-view" data-cursor="View"><div class="d-img"><img src="Assest/hp14_11zon.webp" alt="Kerala backwaters with a houseboat and palms" width="800" height="1040" loading="lazy"></div>
+            <div class="d-info"><span class="tag">Backwaters</span><h3>Kerala</h3><p>Houseboats, spice hills and calm.</p><div class="d-foot"><span>From <b>₹24,999</b></span><a href="404.html" class="round-btn" aria-label="View Kerala packages"><i class="fa-solid fa-arrow-right"></i></a></div></div></article>
+          <article class="d-card hover-view" data-cursor="View"><div class="d-img"><img src="Assest/hp15_11zon.webp" alt="Japanese pagoda in front of a rising sun" width="800" height="1040" loading="lazy"></div>
+            <div class="d-info"><span class="tag">Culture</span><h3>Japan</h3><p>Pagodas, blossoms and bullet trains.</p><div class="d-foot"><span>From <b>₹1,19,999</b></span><a href="404.html" class="round-btn" aria-label="View Japan packages"><i class="fa-solid fa-arrow-right"></i></a></div></div></article>
+          <article class="d-card hover-view" data-cursor="View"><div class="d-img"><img src="Assest/hp5_11zon.webp" alt="Acacia trees on the African savanna at sunset" width="800" height="1040" loading="lazy"></div>
+            <div class="d-info"><span class="tag">Safari</span><h3>Kenya</h3><p>The Big Five and golden savannas.</p><div class="d-foot"><span>From <b>₹1,09,999</b></span><a href="404.html" class="round-btn" aria-label="View Kenya packages"><i class="fa-solid fa-arrow-right"></i></a></div></div></article>
+        </div>
+      </div>
+      <div class="dest-progress container"><span id="destBar"></span></div>
+    </div>
+  </section>
+
+  <!-- ============ 5. SERVICES ============ -->
+  <section class="section services" id="services">
+    <div class="container">
+      <div class="section-head center">
+        <span class="eyebrow" data-aos="fade-up"><i class="fa-solid fa-suitcase-rolling"></i> What we do</span>
+        <h2 class="section-title" data-split>Everything for a <em>perfect</em> holiday</h2>
+        <p data-aos="fade-up">From the first idea to the journey home, our end-to-end services keep every moment smooth.</p>
+      </div>
+      <div class="svc-grid">
+        <article class="svc" data-aos="fade-up">
+          <div class="svc-bg"><img src="Assest/hp9_11zon.webp" alt="" width="640" height="420" loading="lazy"></div>
+          <span class="svc-num">01</span>
+          <div class="svc-icon"><i class="fa-solid fa-plane-departure"></i></div>
+          <h3>Flight Booking</h3><p>Best fares, flexible dates and smart connections on every major airline.</p>
+          <a href="404.html" class="svc-link">Learn more <i class="fa-solid fa-arrow-right"></i></a>
+        </article>
+        <article class="svc" data-aos="fade-up" data-aos-delay="100">
+          <div class="svc-bg"><img src="Assest/hp16_11zon.webp" alt="" width="640" height="420" loading="lazy"></div>
+          <span class="svc-num">02</span>
+          <div class="svc-icon"><i class="fa-solid fa-hotel"></i></div>
+          <h3>Luxury Stays</h3><p>Resorts, villas and boutique hotels chosen for comfort and character.</p>
+          <a href="404.html" class="svc-link">Learn more <i class="fa-solid fa-arrow-right"></i></a>
+        </article>
+        <article class="svc" data-aos="fade-up" data-aos-delay="200">
+          <div class="svc-bg"><img src="Assest/hp7_11zon.webp" alt="" width="640" height="420" loading="lazy"></div>
+          <span class="svc-num">03</span>
+          <div class="svc-icon"><i class="fa-solid fa-passport"></i></div>
+          <h3>Visa Assistance</h3><p>Document checks, appointments and follow-ups handled by our visa desk.</p>
+          <a href="404.html" class="svc-link">Learn more <i class="fa-solid fa-arrow-right"></i></a>
+        </article>
+        <article class="svc" data-aos="fade-up">
+          <div class="svc-bg"><img src="Assest/hp17_11zon.webp" alt="" width="640" height="420" loading="lazy"></div>
+          <span class="svc-num">04</span>
+          <div class="svc-icon"><i class="fa-solid fa-map-location-dot"></i></div>
+          <h3>Private Guides</h3><p>Local storytellers who open doors you would never find on your own.</p>
+          <a href="404.html" class="svc-link">Learn more <i class="fa-solid fa-arrow-right"></i></a>
+        </article>
+        <article class="svc" data-aos="fade-up" data-aos-delay="100">
+          <div class="svc-bg"><img src="Assest/hp18_11zon.webp" alt="" width="640" height="420" loading="lazy"></div>
+          <span class="svc-num">05</span>
+          <div class="svc-icon"><i class="fa-solid fa-van-shuttle"></i></div>
+          <h3>Transfers and Transport</h3><p>Airport pickups, private cars, trains and ferries, all timed to your plan.</p>
+          <a href="404.html" class="svc-link">Learn more <i class="fa-solid fa-arrow-right"></i></a>
+        </article>
+        <article class="svc" data-aos="fade-up" data-aos-delay="200">
+          <div class="svc-bg"><img src="Assest/hp19_11zon.webp" alt="" width="640" height="420" loading="lazy"></div>
+          <span class="svc-num">06</span>
+          <div class="svc-icon"><i class="fa-solid fa-shield-heart"></i></div>
+          <h3>Travel Insurance</h3><p>Medical, baggage and cancellation cover so you can relax completely.</p>
+          <a href="404.html" class="svc-link">Learn more <i class="fa-solid fa-arrow-right"></i></a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 6. PACKAGES ============ -->
+  <section class="section packages" id="packages">
+    <div class="container">
+      <div class="section-head split-head">
+        <div>
+          <span class="eyebrow" data-aos="fade-up"><i class="fa-solid fa-umbrella-beach"></i> Holiday packages</span>
+          <h2 class="section-title" data-split>Curated trips, <em>ready</em> to book</h2>
+        </div>
+        <div class="filters" id="filters" role="tablist" aria-label="Filter packages">
+          <button class="chip active" data-filter="all" type="button">All</button>
+          <button class="chip" data-filter="romance" type="button">Romance</button>
+          <button class="chip" data-filter="adventure" type="button">Adventure</button>
+          <button class="chip" data-filter="family" type="button">Family</button>
+          <button class="chip" data-filter="luxury" type="button">Luxury</button>
+          <button class="chip" data-filter="culture" type="button">Culture</button>
+        </div>
+      </div>
+
+      <div class="pkg-grid" id="pkgGrid">
+        <article class="pkg tilt" data-cat="romance luxury">
+          <div class="pkg-img"><img src="Assest/hp21.webp" alt="Moonlit beach with a sailboat" width="900" height="640" loading="lazy">
+            <span class="pkg-badge"><i class="fa-solid fa-clock"></i> 5N / 6D</span>
+            <button class="wish" type="button" aria-label="Save to wishlist" aria-pressed="false"><i class="fa-regular fa-heart"></i></button></div>
+          <div class="pkg-body">
+            <div class="pkg-meta"><span><i class="fa-solid fa-location-dot"></i> Maldives</span><span class="rate"><i class="fa-solid fa-star"></i> 4.9</span></div>
+            <h3>Maldives Honeymoon Retreat</h3>
+            <ul class="pkg-incl"><li><i class="fa-solid fa-bed"></i> Water villa</li><li><i class="fa-solid fa-utensils"></i> Meals</li><li><i class="fa-solid fa-plane"></i> Flights</li></ul>
+            <div class="pkg-foot"><div class="price"><small>From</small><b>₹1,12,999</b><span>/ person</span></div><a href="404.html" class="btn btn-primary btn-sm"><span>Book now</span></a></div>
+          </div>
+        </article>
+
+        <article class="pkg tilt" data-cat="adventure">
+          <div class="pkg-img"><img src="Assest/hp20.webp" alt="Snowy mountain peaks under a starry sky" width="900" height="640" loading="lazy">
+            <span class="pkg-badge"><i class="fa-solid fa-clock"></i> 7N / 8D</span>
+            <button class="wish" type="button" aria-label="Save to wishlist" aria-pressed="false"><i class="fa-regular fa-heart"></i></button></div>
+          <div class="pkg-body">
+            <div class="pkg-meta"><span><i class="fa-solid fa-location-dot"></i> Switzerland</span><span class="rate"><i class="fa-solid fa-star"></i> 4.8</span></div>
+            <h3>Swiss Alps Adventure</h3>
+            <ul class="pkg-incl"><li><i class="fa-solid fa-person-hiking"></i> Guided treks</li><li><i class="fa-solid fa-train"></i> Rail pass</li><li><i class="fa-solid fa-bed"></i> Lodges</li></ul>
+            <div class="pkg-foot"><div class="price"><small>From</small><b>₹1,49,999</b><span>/ person</span></div><a href="404.html" class="btn btn-primary btn-sm"><span>Book now</span></a></div>
+          </div>
+        </article>
+
+        <article class="pkg tilt" data-cat="family">
+          <div class="pkg-img"><img src="Assest/hp14_11zon.webp" alt="Sunny tropical beach with palms and a boat" width="900" height="640" loading="lazy">
+            <span class="pkg-badge"><i class="fa-solid fa-clock"></i> 6N / 7D</span>
+            <button class="wish" type="button" aria-label="Save to wishlist" aria-pressed="false"><i class="fa-regular fa-heart"></i></button></div>
+          <div class="pkg-body">
+            <div class="pkg-meta"><span><i class="fa-solid fa-location-dot"></i> Bali</span><span class="rate"><i class="fa-solid fa-star"></i> 4.9</span></div>
+            <h3>Bali Family Beach Escape</h3>
+            <ul class="pkg-incl"><li><i class="fa-solid fa-child-reaching"></i> Kids activities</li><li><i class="fa-solid fa-utensils"></i> Breakfast</li><li><i class="fa-solid fa-van-shuttle"></i> Transfers</li></ul>
+            <div class="pkg-foot"><div class="price"><small>From</small><b>₹62,999</b><span>/ person</span></div><a href="404.html" class="btn btn-primary btn-sm"><span>Book now</span></a></div>
+          </div>
+        </article>
+
+        <article class="pkg tilt" data-cat="luxury romance">
+          <div class="pkg-img"><img src="Assest/hp22.webp" alt="Cruise ship sailing into a glowing sunset" width="900" height="640" loading="lazy">
+            <span class="pkg-badge"><i class="fa-solid fa-clock"></i> 8N / 9D</span>
+            <button class="wish" type="button" aria-label="Save to wishlist" aria-pressed="false"><i class="fa-regular fa-heart"></i></button></div>
+          <div class="pkg-body">
+            <div class="pkg-meta"><span><i class="fa-solid fa-location-dot"></i> Mediterranean</span><span class="rate"><i class="fa-solid fa-star"></i> 4.9</span></div>
+            <h3>Mediterranean Luxury Cruise</h3>
+            <ul class="pkg-incl"><li><i class="fa-solid fa-ship"></i> Suite cabin</li><li><i class="fa-solid fa-champagne-glasses"></i> All dining</li><li><i class="fa-solid fa-camera"></i> Shore trips</li></ul>
+            <div class="pkg-foot"><div class="price"><small>From</small><b>₹2,19,999</b><span>/ person</span></div><a href="404.html" class="btn btn-primary btn-sm"><span>Book now</span></a></div>
+          </div>
+        </article>
+
+        <article class="pkg tilt" data-cat="culture">
+          <div class="pkg-img"><img src="Assest/hp32.webp" alt="Pagoda silhouette with drifting blossoms at sunset" width="900" height="640" loading="lazy">
+            <span class="pkg-badge"><i class="fa-solid fa-clock"></i> 8N / 9D</span>
+            <button class="wish" type="button" aria-label="Save to wishlist" aria-pressed="false"><i class="fa-regular fa-heart"></i></button></div>
+          <div class="pkg-body">
+            <div class="pkg-meta"><span><i class="fa-solid fa-location-dot"></i> Japan</span><span class="rate"><i class="fa-solid fa-star"></i> 4.8</span></div>
+            <h3>Japan Heritage and Blossoms</h3>
+            <ul class="pkg-incl"><li><i class="fa-solid fa-torii-gate"></i> Temple tours</li><li><i class="fa-solid fa-train"></i> Bullet train</li><li><i class="fa-solid fa-bowl-rice"></i> Food walks</li></ul>
+            <div class="pkg-foot"><div class="price"><small>From</small><b>₹1,59,999</b><span>/ person</span></div><a href="404.html" class="btn btn-primary btn-sm"><span>Book now</span></a></div>
+          </div>
+        </article>
+
+        <article class="pkg tilt" data-cat="adventure family">
+          <div class="pkg-img"><img src="Assest/hp33.webp" alt="Acacia trees on the savanna at dawn" width="900" height="640" loading="lazy">
+            <span class="pkg-badge"><i class="fa-solid fa-clock"></i> 6N / 7D</span>
+            <button class="wish" type="button" aria-label="Save to wishlist" aria-pressed="false"><i class="fa-regular fa-heart"></i></button></div>
+          <div class="pkg-body">
+            <div class="pkg-meta"><span><i class="fa-solid fa-location-dot"></i> Kenya</span><span class="rate"><i class="fa-solid fa-star"></i> 4.9</span></div>
+            <h3>Masai Mara Wildlife Safari</h3>
+            <ul class="pkg-incl"><li><i class="fa-solid fa-paw"></i> Game drives</li><li><i class="fa-solid fa-campground"></i> Luxury camp</li><li><i class="fa-solid fa-plane"></i> Flights</li></ul>
+            <div class="pkg-foot"><div class="price"><small>From</small><b>₹1,39,999</b><span>/ person</span></div><a href="404.html" class="btn btn-primary btn-sm"><span>Book now</span></a></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 7. PROCESS ============ -->
+  <section class="section process" id="process">
+    <div class="container process-grid">
+      <div class="process-media">
+        <div class="pm-main reveal-img"><img src="Assest/hp26.webp" alt="Hot air balloons rising over a sunset landscape" width="800" height="800" loading="lazy"></div>
+        <div class="pm-float pm-f1"><i class="fa-solid fa-circle-check"></i><div><b>Trip confirmed</b><small>Pack your bags!</small></div></div>
+        <div class="pm-float pm-f2"><i class="fa-solid fa-headset"></i><div><b>24/7 support</b><small>Always with you</small></div></div>
+      </div>
+      <div class="process-copy">
+        <span class="eyebrow" data-aos="fade-up"><i class="fa-solid fa-route"></i> How it works</span>
+        <h2 class="section-title" data-split>Four simple steps to <em>take off</em></h2>
+        <div class="timeline" id="timeline">
+          <div class="tl-line"><span id="tlFill"></span></div>
+          <div class="step"><span class="step-dot"><i class="fa-solid fa-lightbulb"></i></span><div><h4>Share your dream</h4><p>Tell us where, when and how you want to feel. A quick call is all it takes.</p></div></div>
+          <div class="step"><span class="step-dot"><i class="fa-solid fa-pen-ruler"></i></span><div><h4>Get a custom plan</h4><p>Receive a detailed itinerary with transparent pricing within 24 hours.</p></div></div>
+          <div class="step"><span class="step-dot"><i class="fa-solid fa-credit-card"></i></span><div><h4>Book with confidence</h4><p>Lock in with a small deposit and flexible payment options.</p></div></div>
+          <div class="step"><span class="step-dot"><i class="fa-solid fa-plane-departure"></i></span><div><h4>Travel and enjoy</h4><p>Fly out with every detail sorted and a support team on standby.</p></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 8. TESTIMONIALS ============ -->
+  <section class="section testi" id="testimonials">
+    <div class="testi-bg"><img src="Assest/hp29.webp" alt="" width="1600" height="700" loading="lazy"></div>
+    <div class="container">
+      <div class="section-head center">
+        <span class="eyebrow" data-aos="fade-up"><i class="fa-solid fa-heart"></i> Happy travellers</span>
+        <h2 class="section-title" data-split>Stories from our <em>guests</em></h2>
+      </div>
+
+      <div class="testi-slider" id="testiSlider">
+        <i class="fa-solid fa-quote-left big-quote" aria-hidden="true"></i>
+        <div class="t-slides">
+          <blockquote class="t-slide active">
+            <p>Our Maldives honeymoon was beyond anything we imagined. Every transfer, every dinner, every sunrise was arranged perfectly. We never had to think about logistics.</p>
+            <footer><b>Aarav and Meera</b><span>Maldives Honeymoon</span></footer>
+          </blockquote>
+          <blockquote class="t-slide">
+            <p>The Swiss Alps trip was planned to the last detail. Our guide knew every hidden viewpoint, and the support team answered within minutes whenever we needed anything.</p>
+            <footer><b>Priya Nair</b><span>Swiss Alps Adventure</span></footer>
+          </blockquote>
+          <blockquote class="t-slide">
+            <p>Travelling with two kids can be stressful, but Stackly made our Bali holiday so smooth. The family activities were a huge hit and the hotel was spotless.</p>
+            <footer><b>Rohan Mehta</b><span>Bali Family Escape</span></footer>
+          </blockquote>
+          <blockquote class="t-slide">
+            <p>The Kenya safari was the trip of a lifetime. Watching the migration at golden hour with a guide who truly loved his work is something I will remember forever.</p>
+            <footer><b>Sana Fernandes</b><span>Masai Mara Safari</span></footer>
+          </blockquote>
+        </div>
+
+        <div class="t-controls">
+          <button class="round-btn" id="tPrev" type="button" aria-label="Previous testimonial"><i class="fa-solid fa-chevron-left"></i></button>
+          <div class="t-avatars" id="tAvatars">
+            <button type="button" class="active" aria-label="Show testimonial 1"><img src="Assest/hp41.webp" alt="Aarav" width="240" height="240" loading="lazy"></button>
+            <button type="button" aria-label="Show testimonial 2"><img src="Assest/hp28.webp" alt="Priya" width="240" height="240" loading="lazy"></button>
+            <button type="button" aria-label="Show testimonial 3"><img src="Assest/hp43.webp" alt="Rohan" width="240" height="240" loading="lazy"></button>
+            <button type="button" aria-label="Show testimonial 4"><img src="Assest/hp40.webp" alt="Sana" width="240" height="240" loading="lazy"></button>
+          </div>
+          <button class="round-btn" id="tNext" type="button" aria-label="Next testimonial"><i class="fa-solid fa-chevron-right"></i></button>
+        </div>
+        <div class="t-progress"><span id="tProgress"></span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 9. GALLERY ============ -->
+  <section class="section gallery" id="gallery">
+    <div class="container">
+      <div class="section-head center">
+        <span class="eyebrow" data-aos="fade-up"><i class="fa-solid fa-camera"></i> Gallery</span>
+        <h2 class="section-title" data-split>Moments from the <em>road</em></h2>
+        <p data-aos="fade-up">A glimpse of the colours, skies and places our travellers fall in love with.</p>
+      </div>
+      <div class="masonry" id="masonry">
+        <figure class="gi hover-view" data-cursor="Zoom"><img src="Assest/hp35.webp" alt="Layered mountains at sunset" width="800" height="1000" loading="lazy"><figcaption>Highlands at dusk</figcaption></figure>
+        <figure class="gi hover-view" data-cursor="Zoom"><img src="Assest/hp38.webp" alt="Dawn on a palm-fringed beach" width="800" height="600" loading="lazy"><figcaption>Beach sunrise</figcaption></figure>
+        <figure class="gi hover-view" data-cursor="Zoom"><img src="Assest/hp30.webp" alt="Golden dunes under a setting sun" width="800" height="800" loading="lazy"><figcaption>Desert gold</figcaption></figure>
+        <figure class="gi hover-view" data-cursor="Zoom"><img src="Assest/hp23.webp" alt="City skyline and iron tower at sunset" width="800" height="1000" loading="lazy"><figcaption>City of lights</figcaption></figure>
+        <figure class="gi hover-view" data-cursor="Zoom"><img src="Assest/hp36.webp" alt="Still lake mirroring mountains" width="800" height="600" loading="lazy"><figcaption>Mirror lake</figcaption></figure>
+        <figure class="gi hover-view" data-cursor="Zoom"><img src="Assest/hp31.webp" alt="Pine forest under a night sky" width="800" height="1000" loading="lazy"><figcaption>Forest night</figcaption></figure>
+        <figure class="gi hover-view" data-cursor="Zoom"><img src="Assest/hp37.webp" alt="Acacia silhouettes at sunset" width="800" height="600" loading="lazy"><figcaption>Savanna glow</figcaption></figure>
+        <figure class="gi hover-view" data-cursor="Zoom"><img src="Assest/hp25.webp" alt="Snowy peaks beneath the stars" width="800" height="800" loading="lazy"><figcaption>Starlit peaks</figcaption></figure>
+        <figure class="gi hover-view" data-cursor="Zoom"><img src="Assest/hp9_11zon.webp" alt="Balloons drifting over hills" width="640" height="640" loading="lazy"><figcaption>Sky journeys</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 10. BLOG ============ -->
+  <section class="section blog" id="blog">
+    <div class="container">
+      <div class="section-head split-head">
+        <div>
+          <span class="eyebrow" data-aos="fade-up"><i class="fa-solid fa-pen-nib"></i> Travel journal</span>
+          <h2 class="section-title" data-split>Stories, tips and <em>inspiration</em></h2>
+        </div>
+        <a href="#" class="btn btn-dark magnetic" data-aos="fade-up"><span>View all posts</span> <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+      <div class="blog-grid">
+        <article class="post" data-aos="fade-up">
+          <a href="#" class="post-img hover-view" data-cursor="Read"><img src="Assest/hp24.webp" alt="Sunrise over a calm mountain lake" width="800" height="520" loading="lazy"><span class="post-cat">Guides</span></a>
+          <div class="post-body">
+            <div class="post-meta"><span><i class="fa-regular fa-calendar"></i> 12 Oct 2026</span><span><i class="fa-regular fa-clock"></i> 6 min read</span></div>
+            <h3><a href="404.html">10 quiet lakes you should visit before the crowds do</a></h3>
+            <p>Hidden shores, mirror-still water and the best time to see each one.</p>
+            <a href="404.html" class="read">Read more <i class="fa-solid fa-arrow-right-long"></i></a>
+          </div>
+        </article>
+        <article class="post" data-aos="fade-up" data-aos-delay="100">
+          <a href="#" class="post-img hover-view" data-cursor="Read"><img src="Assest/hp29.webp" alt="Warm dawn light over a city skyline" width="800" height="520" loading="lazy"><span class="post-cat">City breaks</span></a>
+          <div class="post-body">
+            <div class="post-meta"><span><i class="fa-regular fa-calendar"></i> 04 Oct 2026</span><span><i class="fa-regular fa-clock"></i> 5 min read</span></div>
+            <h3><a href="404.html">A 48-hour guide to the world's most photogenic cities</a></h3>
+            <p>Where to wake up, what to eat and how to see more with less rushing.</p>
+            <a href="404.html" class="read">Read more <i class="fa-solid fa-arrow-right-long"></i></a>
+          </div>
+        </article>
+        <article class="post" data-aos="fade-up" data-aos-delay="200">
+          <a href="#" class="post-img hover-view" data-cursor="Read"><img src="Assest/hp20.webp" alt="Bright beach with palm trees and a boat" width="800" height="520" loading="lazy"><span class="post-cat">Tips</span></a>
+          <div class="post-body">
+            <div class="post-meta"><span><i class="fa-regular fa-calendar"></i> 27 Sep 2026</span><span><i class="fa-regular fa-clock"></i> 7 min read</span></div>
+            <h3><a href="404.html">Smart packing for island holidays: the only checklist you need</a></h3>
+            <p>Travel light, stay prepared and skip the extra baggage fees.</p>
+            <a href="404.html" class="read">Read more <i class="fa-solid fa-arrow-right-long"></i></a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 11. CONTACT ============ -->
+  <section class="section contact" id="contact">
+    <div class="container contact-grid">
+      <div class="contact-info">
+        <span class="eyebrow" data-aos="fade-up"><i class="fa-solid fa-paper-plane"></i> Contact us</span>
+        <h2 class="section-title" data-split>Let's plan your <em>escape</em></h2>
+        <p data-aos="fade-up">Share a few details and our travel designers will reply within 24 hours with a personalised plan.</p>
+        <ul class="info-list">
+          <li data-aos="fade-up"><span class="ic"><i class="fa-solid fa-location-dot"></i></span><div><small>Visit us</small><b>12 Skyline Avenue, Mumbai, India 400001</b></div></li>
+          <li data-aos="fade-up" data-aos-delay="100"><span class="ic"><i class="fa-solid fa-phone"></i></span><div><small>Call us</small><b>+91 98765 43210</b></div></li>
+          <li data-aos="fade-up" data-aos-delay="200"><span class="ic"><i class="fa-solid fa-envelope"></i></span><div><small>Email us</small><b>hello@stacklyholidays.com</b></div></li>
+          <li data-aos="fade-up" data-aos-delay="300"><span class="ic"><i class="fa-solid fa-clock"></i></span><div><small>Working hours</small><b>Mon - Sat, 9:00 AM - 7:00 PM</b></div></li>
+        </ul>
+        <div class="socials big" data-aos="fade-up">
+          <a href="#" aria-label="Facebook" class="magnetic"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" aria-label="Instagram" class="magnetic"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" aria-label="WhatsApp" class="magnetic"><i class="fa-brands fa-whatsapp"></i></a>
+          <a href="#" aria-label="YouTube" class="magnetic"><i class="fa-brands fa-youtube"></i></a>
+        </div>
+      </div>
+
+      <form class="contact-form" id="contactForm" data-aos="fade-left" novalidate>
+        <div class="form-row">
+          <div class="f-group"><input type="text" id="cName" name="name" placeholder=" " required><label for="cName"><i class="fa-regular fa-user"></i> Full name</label></div>
+          <div class="f-group"><input type="email" id="cEmail" name="email" placeholder=" " required><label for="cEmail"><i class="fa-regular fa-envelope"></i> Email address</label></div>
+        </div>
+        <div class="form-row">
+          <div class="f-group"><input type="tel" id="cPhone" name="phone" placeholder=" "><label for="cPhone"><i class="fa-solid fa-phone"></i> Phone number</label></div>
+          <div class="f-group select-group">
+            <select id="cDest" name="destination" required>
+              <option value="" disabled selected hidden></option>
+              <option>Maldives</option><option>Bali</option><option>Switzerland</option><option>Paris</option>
+              <option>Dubai</option><option>Kerala</option><option>Japan</option><option>Kenya</option><option>Not sure yet</option>
+            </select>
+            <label for="cDest"><i class="fa-solid fa-location-dot"></i> Dream destination</label>
+            <i class="fa-solid fa-chevron-down sel-arrow"></i>
+          </div>
+        </div>
+        <div class="f-group"><textarea id="cMsg" name="message" rows="4" placeholder=" " required></textarea><label for="cMsg"><i class="fa-regular fa-comment-dots"></i> Tell us about your trip</label></div>
+        <button type="submit" class="btn btn-primary btn-lg magnetic"><span>Send enquiry</span> <i class="fa-solid fa-paper-plane"></i></button>
+        <p class="form-msg" id="formMsg" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </section>
+
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="foot-marquee" aria-hidden="true">
+      <div class="foot-marquee-track">
+        <span>Pack your bags</span><i class="fa-solid fa-plane"></i><span>Pack your bags</span><i class="fa-solid fa-plane"></i><span>Pack your bags</span><i class="fa-solid fa-plane"></i><span>Pack your bags</span><i class="fa-solid fa-plane"></i>
+      </div>
+    </div>
+    <div class="container foot-grid">
+      <div class="foot-brand">
+        <a href="#home" class="logo" aria-label="Stackly Holidays - home"><img src="Assest/stackly-logo.webp" alt="Stackly logo" width="229" height="58" loading="lazy"></a>
+        <p>Premium holiday packages designed around you. Fly further, feel more and come home with stories worth retelling.</p>
+        <div class="socials">
+          <a href="404.html" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="404.html" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="404.html" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="404.html" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="404.html" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+        </div>
+      </div>
+      <div class="foot-col">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="services.html">Services</a></li><li><a href="blog.html">Blog</a></li><li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>Support</h4>
+        <ul>
+          <li><a href="404.html">Services</a></li><li><a href="404.html">Travel blog</a></li><li><a href="contact.html">Contact</a></li><li><a href="404.html">Privacy policy</a></li><li><a href="404.html">Terms of service</a></li>
+        </ul>
+      </div>
+      <div class="foot-news">
+        <h4>Get travel inspiration</h4>
+        <p>Monthly deals and destination ideas. No spam, ever.</p>
+        <form class="news-form" id="newsForm">
+          <input type="email" placeholder="Your email address" aria-label="Email address" required>
+          <button type="submit" aria-label="Subscribe"><i class="fa-solid fa-paper-plane"></i></button>
+        </form>
+        <p class="news-msg" id="newsMsg" role="status"></p>
+      </div>
+    </div>
+    <div class="container foot-bottom">
+      <p>&copy; 2026 Stackly Holidays. All rights reserved.</p>
+      <p>Crafted with <i class="fa-solid fa-heart"></i> for travellers</p>
+    </div>
+  </footer>
+
+  <button class="to-top" id="toTop" type="button" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
+
+  <!-- ============ LOGIN MODAL ============ -->
+  <div class="modal" id="loginModal" role="dialog" aria-modal="true" aria-labelledby="loginTitle" hidden>
+    <div class="modal-backdrop" data-close></div>
+    <div class="modal-box">
+      <button class="modal-close" type="button" data-close aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+      <div class="modal-side"><img src="Assest/hp27.webp" alt="" width="720" height="960" loading="lazy">
+        <div class="modal-side-text"><i class="fa-solid fa-plane-up"></i><h3>Your next adventure starts here</h3><p>Save wishlists, track bookings and unlock member-only deals.</p></div>
+      </div>
+      <div class="modal-form">
+        <div class="tabs" role="tablist">
+          <button type="button" class="tab active" data-tab="login" role="tab">Login</button>
+          <button type="button" class="tab" data-tab="register" role="tab">Sign up</button>
+        </div>
+        <h3 id="loginTitle">Welcome back</h3>
+        <form id="authForm" novalidate>
+          <div class="f-group light reg-only"><input type="text" id="aName" placeholder=" "><label for="aName"><i class="fa-regular fa-user"></i> Full name</label></div>
+          <div class="f-group light"><input type="email" id="aEmail" placeholder=" " required><label for="aEmail"><i class="fa-regular fa-envelope"></i> Email address</label></div>
+          <div class="f-group light"><input type="password" id="aPass" placeholder=" " required><label for="aPass"><i class="fa-solid fa-lock"></i> Password</label>
+            <button type="button" class="eye" id="eyeBtn" aria-label="Show password"><i class="fa-regular fa-eye"></i></button></div>
+          <div class="auth-row"><label class="check"><input type="checkbox"><span></span> Remember me</label><a href="#" class="forgot">Forgot password?</a></div>
+          <button type="submit" class="btn btn-primary btn-lg block"><span id="authBtnText">Login</span> <i class="fa-solid fa-arrow-right"></i></button>
+          <p class="auth-msg" id="authMsg" role="status"></p>
+        </form>
+        <div class="or"><span>or continue with</span></div>
+        <div class="social-login">
+          <button type="button" class="btn btn-outline"><i class="fa-brands fa-google"></i> Google</button>
+          <button type="button" class="btn btn-outline"><i class="fa-brands fa-facebook-f"></i> Facebook</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ LIGHTBOX ============ -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer" hidden>
+    <button class="lb-btn lb-close" type="button" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+    <button class="lb-btn lb-prev" type="button" aria-label="Previous image"><i class="fa-solid fa-chevron-left"></i></button>
+    <figure class="lb-fig"><img id="lbImg" src="" alt=""><figcaption id="lbCap"></figcaption></figure>
+    <button class="lb-btn lb-next" type="button" aria-label="Next image"><i class="fa-solid fa-chevron-right"></i></button>
+  </div>
+
+  <!-- Libraries -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script src="script.js"></script>
+  <script>
+    /* Menu Login button -> opens the same login popup as the header button */
+    (function () {
+      var menuBtn = document.getElementById('menuLoginBtn');
+      var headerBtn = document.getElementById('loginBtn');
+      if (menuBtn && headerBtn) menuBtn.addEventListener('click', function () { headerBtn.click(); });
+    })();
+  </script>
+  <script>
+    /* Login buttons -> go to login.html (the popup modal is no longer used).
+       Capture phase runs before script.js, so the modal never opens. */
+    (function () {
+      var modal = document.getElementById('loginModal');
+      if (modal) { modal.hidden = true; modal.style.display = 'none'; }
+      ['loginBtn', 'menuLoginBtn'].forEach(function (id) {
+        var el = document.getElementById(id);
+        if (!el) return;
+        el.addEventListener('click', function (e) {
+          e.preventDefault();
+          e.stopImmediatePropagation();
+          window.location.href = 'login.html';
+        }, true);
+      });
+    })();
+  </script>
+</body>
+</html>

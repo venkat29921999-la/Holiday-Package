@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Log in | Stackly Holidays</title>
+<meta name="theme-color" content="#0b1f2e">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"><link rel="stylesheet" href="auth.css">
+
+</head>
+<body class="pg-fade" data-page="login">
+<main class="a-wrap">
+  <section class="a-visual" aria-hidden="true">
+    <img class="bg" src="images/blog/feature-sunrise.webp" alt="" width="1400" height="1120">
+    <span class="orb o1"></span><span class="orb o2"></span>
+    <svg class="a-plane" viewBox="0 0 700 700" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><path id="ap" d="M-20 520 C 160 380, 260 560, 380 360 S 600 200, 760 90"/><g><path d="M0 -7 L18 0 L0 7 L5 0Z" fill="#ff6b3d"/><animateMotion dur="9s" repeatCount="indefinite" rotate="auto" path="M-20 520 C 160 380, 260 560, 380 360 S 600 200, 760 90"/></g></svg>
+    <a class="a-logo" href="index.html" tabindex="-1"><img src="Assest/stackly-logo.webp" alt="" width="229" height="58"></a>
+    <div class="a-hero"><h2>Your next <em>adventure</em> starts at sunrise</h2><p>Manage bookings, chat with your travel designer and track every trip in one calm place.</p><div class="a-quote"><blockquote>“They planned everything and I only had to pack.”<cite>Meera, Kyoto trip</cite></blockquote><blockquote>“Honest prices, real people, zero surprises.”<cite>Rahul, Maldives</cite></blockquote><blockquote>“Best holiday we have ever had as a family.”<cite>Sneha, Santorini</cite></blockquote></div></div>
+  </section>
+  <section class="a-panel">
+    <div class="a-row">
+      <a href="index.html" class="a-back"><i class="fa-solid fa-arrow-left"></i><span>Back to home</span></a>
+    </div>
+    <div class="a-card">
+      <div><h1>Welcome <em>back</em></h1><p class="sub">Log in to reach your dashboard, mailbox and trips.</p></div>
+      <div id="aMsg" aria-live="polite"></div>
+      <form id="loginForm" novalidate>
+        <div class="role-switch" data-role="user" role="radiogroup" aria-label="Account type"><label><input type="radio" name="role" value="user" checked><span><i class="fa-regular fa-user"></i> User</span></label><label><input type="radio" name="role" value="admin"><span><i class="fa-solid fa-user-shield"></i> Admin</span></label></div>
+        <div class="fld"><i class="ic fa-solid fa-envelope"></i><input id="lEmail" type="email" placeholder=" " autocomplete="username" required><label for="lEmail">Email address</label><p class="ferr" role="alert"></p></div>
+        <div class="fld"><i class="ic fa-solid fa-lock"></i><input id="lPass" type="password" placeholder=" " autocomplete="current-password" required><label for="lPass">Password</label><button type="button" class="eye" aria-label="Show password"><i class="fa-regular fa-eye"></i></button><p class="ferr" role="alert"></p></div>
+        <button type="submit" class="btn btn-primary btn-block" id="loginBtn"><span class="spin"></span><span class="lbl">Log in</span><i class="fa-solid fa-arrow-right"></i></button>
+      </form>
+      <p class="a-foot">New to Stackly? <a href="signup.html">Create an account</a></p>
+      <div class="demo"><b>Demo accounts</b><div><button type="button" data-r="user" data-e="user@stackly.com" data-p="User@123"><i class="fa-regular fa-user"></i> Fill user</button><button type="button" data-r="admin" data-e="admin@stackly.com" data-p="Admin@123"><i class="fa-solid fa-user-shield"></i> Fill admin</button></div></div>
+    </div>
+  </section>
+</main>
+<script src="auth.js"></script>
+</body>
+</html>
