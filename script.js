@@ -3366,3 +3366,28 @@ document.addEventListener('error', (e) => {
     });
   });
 })();
+
+/* ==========================================================================
+   LINKS TO 404.html OPEN IN THE SAME TAB (add-on only)
+   The WhatsApp links on contact.html have target="_blank", so they open a
+   new tab. This removes it so they open in the same tab like every other
+   link, and the "return to the same spot" logic above can work for them.
+   Nothing above this block is edited.
+   ========================================================================== */
+(function () {
+  'use strict';
+  var fix = function (root) {
+    (root || document).querySelectorAll('a[target="_blank"]').forEach(function (a) {
+      if (/(^|\/)404(\.html)?([?#].*)?$/i.test(a.getAttribute('href') || '')) {
+        a.removeAttribute('target');
+        a.removeAttribute('rel');
+      }
+    });
+  };
+  fix();
+  /* safety net: if a link is added or changed later, fix it just before it is opened */
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest && e.target.closest('a[target="_blank"]');
+    if (a) fix(a.parentNode);
+  }, true);
+})();
