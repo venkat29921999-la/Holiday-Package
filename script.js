@@ -3391,3 +3391,19 @@ document.addEventListener('error', (e) => {
     if (a) fix(a.parentNode);
   }, true);
 })();
+
+
+/* ==========================================================================
+   MOBILE MENU: LOGIN BUTTON ON EVERY PAGE (add-on only)
+   About / Services / Blog / Contact show phone, email and social icons at
+   the bottom of the mobile menu. This swaps that area for the same Login
+   button the home page has, linking straight to login.html. The home page
+   already has its own Login button there, so it is left alone.
+   Nothing above this block is edited.
+   ========================================================================== */
+(function () {
+  'use strict';
+  var extra = document.querySelector('.main-nav .nav-extra');
+  if (!extra || extra.querySelector('#menuLoginBtn')) return;
+  extra.innerHTML = '<a href="login.html" class="btn btn-primary nav-login" id="menuLoginBtn"><i class="fa-regular fa-user"></i><span>Login</span></a>';
+})();
